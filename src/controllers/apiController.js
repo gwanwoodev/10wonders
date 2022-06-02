@@ -1,5 +1,6 @@
+import Order from "../models/Order";
 import Product from "../models/Product";
-
+import { createOrderNumber } from "../utils/generator";
 
 function productReqChecker({ productType, productMaker, productName, productSubHead }) {
     if (!productType || !productMaker || !productName || !productSubHead)
@@ -134,4 +135,39 @@ export const removeProduct = async (req, res) => {
 
     return res.json({ success: true, msg: 'success removeProduct' });
 
+}
+
+export const createNewOrder = async (req, res) => {
+    const { clientEmail, clientName, clientAddress, orderProducts } = req.body;
+
+    let isExists = true;
+    let orderNumber;
+
+    while (isExists) {
+        orderNumber = createOrderNumber();
+        isExists = await Order.exists({ orderNumber });
+    }
+
+    try {
+        await Order.create({
+            clientEmail,
+            clientName,
+            clientAddress,
+            orderNumber,
+            orderProducts
+        })
+
+        return res.json({ success: true, msg: 'success createNewOrder' });
+
+    } catch (e) {
+        console.error("Error - createNewOrder");
+        console.error(e);
+
+        return res.json({ success: false, msg: 'error - createNewOrder' });
+    }
+
+
+
+
+    /* TODO send Email to client */
 }

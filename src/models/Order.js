@@ -20,13 +20,21 @@ const orderSchema = new mongoose.Schema({
     },
     orderProducts: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            productQuantity: Number,
+            product: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Product"
+            },
+
+            productQuantity: {
+                type: Number,
+                default: 0
+            },
+
             estimate: {
                 type: Number,
                 default: 0
             },
-            ref: "Product"
+
         }
     ],
 

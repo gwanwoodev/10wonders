@@ -1,6 +1,7 @@
 import Order from "../models/Order";
 import Product from "../models/Product";
 import { createOrderNumber } from "../utils/generator";
+import { sendClientMail } from "../utils/mailer";
 
 function productReqChecker({ productType, productMaker, productName, productSubHead }) {
     if (!productType || !productMaker || !productName || !productSubHead)
@@ -149,15 +150,20 @@ export const createNewOrder = async (req, res) => {
     }
 
     try {
-        await Order.create({
-            clientEmail,
-            clientName,
-            clientAddress,
-            orderNumber,
-            orderProducts
-        })
 
-        return res.json({ success: true, msg: 'success createNewOrder' });
+        const newOrder = new Order();
+
+        newOrder.clientEmail = clientEmail;
+        newOrder.clientName = clientName;
+        newOrder.clientAddress = clientAddress;
+        newOrder.orderNumber = orderNumber;
+        newOrder.orderProducts = orderProducts;
+
+        const savedDoc = await newOrder.save();
+
+        const populatedDoc = await savedDoc.populate("orderProducts.product");
+
+        await sendClientMail(populatedDoc);
 
     } catch (e) {
         console.error("Error - createNewOrder");
@@ -166,8 +172,10 @@ export const createNewOrder = async (req, res) => {
         return res.json({ success: false, msg: 'error - createNewOrder' });
     }
 
-
-
-
     /* TODO send Email to client */
+
+
+
+
+    return res.json({ success: true, msg: 'success createNewOrder' });
 }

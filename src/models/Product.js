@@ -15,7 +15,8 @@ const productSchema = new mongoose.Schema({
     },
 
     productImage: {
-        type: String
+        type: String,
+        default: '',
     },
 
     productName: {
@@ -40,7 +41,8 @@ const productSchema = new mongoose.Schema({
     ],
 
     productDataSheet: {
-        type: String
+        type: String,
+        default: '',
     }
 })
 

@@ -1,0 +1,60 @@
+{
+  "name": "10wonders",
+  "version": "1.0.0",
+  "description": "10wonders company website",
+  "main": "init.js",
+  "scripts": {
+    "start": "node build/init.js",
+    "build": "npm run build:server && npm run build:assets",
+    "build:server": "babel src -d build",
+    "build:assets": "webpack --mode=production",
+    "dev:server": "nodemon",
+    "dev:assets": "webpack --mode=development -w"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gwanwoodev/10wonders.git"
+  },
+  "keywords": [],
+  "author": "elcode",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gwanwoodev/10wonders/issues"
+  },
+  "homepage": "https://github.com/gwanwoodev/10wonders#readme",
+  "dependencies": {
+    "autoprefix": "^1.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.5",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "node-fetch": "^3.2.5",
+    "pug": "^3.0.2",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.2",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.18.2",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "nodemon": "^2.0.16",
+    "postcss": "^8.4.14",
+    "postcss-custom-properties": "^12.1.7",
+    "postcss-loader": "^7.0.0",
+    "postcss-preset-env": "^7.7.0",
+    "sass": "^1.52.1",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  }
+}

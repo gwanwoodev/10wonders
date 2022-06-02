@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import mongoosePaginate from "mongoose-paginate-v2";
 
 const orderSchema = new mongoose.Schema({
     process: {
@@ -32,6 +33,8 @@ const orderSchema = new mongoose.Schema({
     createdAt: { type: Date, required: true, default: Date.now },
     updatedAt: { type: Date, required: true, default: Date.now },
 })
+
+orderSchema.plugin(mongoosePaginate);
 
 const Order = mongoose.model("Order", orderSchema);
 

@@ -1,6 +1,5 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const autoprefixer = require("autoprefix");
 
 const BASE_JS = "./src/client/js/";
 
@@ -26,12 +25,14 @@ module.exports = {
                     loader: "babel-loader",
                     options: {
                         presets: [
-                            "@babel/preset-env",
-                            {
-                                targets: {
-                                    browsers: ["> 1%", "Firefox >= 52", "ie >= 10"]
+                            [
+                                "@babel/preset-env",
+                                {
+                                    targets: {
+                                        browsers: ["> 1%", "Firefox >= 52", "ie >= 10"]
+                                    }
                                 }
-                            }
+                            ]
                         ]
                     }
                 }

@@ -172,10 +172,61 @@ export const createNewOrder = async (req, res) => {
         return res.json({ success: false, msg: 'error - createNewOrder' });
     }
 
-    /* TODO send Email to client */
-
-
 
 
     return res.json({ success: true, msg: 'success createNewOrder' });
+}
+
+export const getMyOrder = async (req, res) => {
+    const { orderNumber, clientEmail } = req.query;
+
+    if (!orderNumber || !clientEmail) return res.json({ success: false, msg: 'your request invalid' });
+
+    let isExists = await Order.exists({ orderNumber, clientEmail });
+
+    if (!isExists) return res.json({ success: false, msg: 'not found your order' });
+
+    try {
+        const selectOrder = await Order.findOne({ orderNumber, clientEmail });
+        return res.json({ success: true, order: selectOrder });
+
+    } catch (e) {
+        console.error("Error - getMyOrder");
+        console.error(e);
+
+        return res.json({ success: false, msg: 'error - getMyOrder' });
+    }
+}
+
+export const updateOrder = async (req, res) => {
+    const { orderNumber, orderProducts } = req.body;
+
+    let isExists = await Order.exists({ orderNumber });
+
+    if (!isExists) return res.json({ success: false, msg: 'not found orders' });
+
+    try {
+        await Order.updateOne({ orderNumber }, {
+            orderProducts
+        });
+    } catch (e) {
+        console.error("ERror - updateOrder");
+        console.error(e);
+        return res.json({ success: false, msg: 'error - updateOrder' });
+    }
+}
+
+export const updateOrderProcess = async (req, res) => {
+    const { orderNumber, process = 0 } = req.body;
+
+    let isExists = await Order.exists({ orderNumber });
+    if (!isExists) return res.json({ success: false, msg: 'not found orders' });
+
+    try {
+        await Order.updateOne({ orderNumber }, { process });
+    } catch (e) {
+        console.error("Error - updateOrderProcess");
+        console.error(e);
+        return res.json({ success: false, msg: "error - updateOrderProcess" });
+    }
 }

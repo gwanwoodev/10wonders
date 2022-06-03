@@ -38,3 +38,4 @@ export const sendClientMail = async (content) => {
     transporter.sendMail(emailOptions);
     transporter.close();
 }
+

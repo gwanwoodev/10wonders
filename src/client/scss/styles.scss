@@ -1,0 +1,22 @@
+/* Configs */
+
+@import "./config/reset";
+@import "./config/variable";
+//@import "//cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/all.min.css";
+
+/* ----------------------------------------- */
+
+
+/* Components */
+
+@import "../scss/components/header.scss";
+@import "../scss/components/footer.scss";
+
+
+/* ----------------------------------------- */
+
+
+/* Screens */
+@import "./screens/home.scss";
+
+/* ----------------------------------------- */

@@ -3,6 +3,7 @@ import morgan from "morgan";
 import apiRouter from "./routers/apiRouter";
 import rootRouter from "./routers/rootRouter";
 import methodOverride from "method-override";
+
 import { localsMiddleware } from "./middlewares";
 
 const app = express();
@@ -14,12 +15,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(localsMiddleware);
-
 app.use((req, res, next) => {
-    res.header("Cross-Origin-Embedder-Policy", "require-corp");
+    res.header("Cross-Origin-Embedder-Policy", "credentialless");
     res.header("Cross-Origin-Opener-Policy", "same-origin");
     next();
 });
+
 
 app.use(methodOverride("_method"));
 

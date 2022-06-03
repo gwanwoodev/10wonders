@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BASE_JS = "./src/client/js/";
 
 module.exports = {
+
     entry: {
         main: BASE_JS + "main.js"
     },
@@ -29,31 +30,32 @@ module.exports = {
                                 "@babel/preset-env",
                                 {
                                     targets: {
-                                        browsers: ["> 1%", "Firefox >= 52", "ie >= 10"]
-                                    }
-                                }
-                            ]
-                        ]
-                    }
-                }
+                                        browsers: ["last 2 versions", "ie >= 11"],
+                                    },
+                                },
+                            ],
+                        ],
+                    },
+                },
             },
             {
                 test: /\.scss$/,
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader
+                        loader: MiniCssExtractPlugin.loader,
                     },
                     {
-                        loader: "css-loader"
+                        loader: "css-loader",
                     },
                     {
-                        loader: "postcss-loader"
+                        loader: "postcss-loader",
                     },
+
                     {
-                        loader: "sass-loader"
+                        loader: "sass-loader",
                     },
-                ]
-            }
+                ],
+            },
         ]
     }
 }

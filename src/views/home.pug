@@ -1,8 +1,22 @@
 extends layouts/base.pug
 
 block content
-    div#home
-        h1 Home
+    include ./partials/header.pug
+    #home
+        .main__section(style="background-image:url('/static/images/main_background01.jpg')")
+            .section__heading--box
+                h1.section__head--text the best solar energy
+                h1.section__head--text equipments from Korea
+
+            .section__subheading--box
+                p.section__subhead--text We provide the world's heighest quality solar energy equipments from variouis brands.
+                .subheading__child--box
+                    p.section__subhead--text Especially from Korea.
+                    a(href="/shop") SHOP
+            
+            .section__process
+                h2.section__process--text Our process
+        
 
 block scripts
     script(src="/static/js/main.js")

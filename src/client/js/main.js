@@ -12,3 +12,5 @@ import "../images/scroll_icon.png";
 import "../images/scroll_back01.jpg";
 import "../images/scroll_back02.jpg";
 import "../images/scroll_back03.jpg";
+import "../images/slice_back01.jpg";
+import "../images/slice_back03.jpg";

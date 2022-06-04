@@ -1,33 +1,42 @@
 .header {
-    background-color: rgba($defaultHeaderBg, 0.84);
-    padding: 0px 18.75rem;
     width: 100%;
     height: 120px;
-    display: flex;
-    align-items: center;
-    font-family: "SDGothicR";
+    background-color: rgba($defaultHeaderBg, 0.84);
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
+    right: 0;
 
-    .header__column {
+    .header__columns {
+
+        max-width: 1320px;
+        width: 100%;
+        height: 120px;
         display: flex;
         align-items: center;
+        font-family: "SDGothicR";
 
-        &:last-child {
-            margin-left: auto;
-        }
+        margin: 0 auto;
 
-        .header__link--text {
-            color: white;
-        }
+        .header__column {
+            display: flex;
+            align-items: center;
 
-        .header__icon {
-            width: 22px;
-        }
+            &:last-child {
+                margin-left: auto;
+            }
 
-        .header--mg {
-            margin-right: 20px;
+            .header__link--text {
+                color: white;
+            }
+
+            .header__icon {
+                width: 22px;
+            }
+
+            .header--mg {
+                margin-right: 20px;
+            }
         }
     }
 }

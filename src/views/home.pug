@@ -4,18 +4,79 @@ block content
     include ./partials/header.pug
     #home
         .main__section(style="background-image:url('/static/images/main_background01.jpg')")
-            .section__heading--box
-                h1.section__head--text the best solar energy
-                h1.section__head--text equipments from Korea
+            .main__section__wrapper 
+                .section__heading--box
+                    h1.section__head--text the best solar energy
+                    h1.section__head--text equipments from Korea
 
-            .section__subheading--box
-                p.section__subhead--text We provide the world's heighest quality solar energy equipments from variouis brands.
-                .subheading__child--box
-                    p.section__subhead--text Especially from Korea.
-                    a(href="/shop") SHOP
-            
-            .section__process
-                h2.section__process--text Our process
+                .section__subheading--box
+                    p.section__subhead--text We provide the world's heighest quality solar energy equipments from variouis brands.
+                    .subheading__child--box
+                        p.section__subhead--text Especially from Korea.
+                        a(href="/shop") SHOP
+                
+                .section__process
+                    .scroll__div
+                        img(src="/static/images/scroll_icon.png")
+                        p.scroll__text Scroll down
+                        
+                    h2.section__process--text Our process
+
+                    .process__child--box
+                        h3.process__child--text Select
+                        h3.process__child--text items
+
+                    img(src="/static/images/right_arrow.png").right__arrow--icon
+
+                    .process__child--box
+                        h3.process__child--text Make an
+                        h3.process__child--text order
+
+                        .process__child__sub--box
+                            p.process__child__sub--text *We will send
+                            p.process__child--sub--text you an estimate
+
+                    img(src="/static/images/right_arrow.png").right__arrow--icon    
+
+                    .process__child--box
+                        h3.process__child--text Send
+                        h3.process__child--text money
+
+                        .process__child__sub--box
+                            
+                            a.process__child__sub--popup.process__child__sub--text *Account Info
+                            p.process__child--sub--text &nbsp;
+
+                    img(src="/static/images/right_arrow.png").right__arrow--icon     
+
+                    .process__child--box
+                        h3.process__child--text Order will be
+                        h3.process__child--text placed
+
+                        .process__child__sub--box
+                            p.process__child__sub--text *Confirmation
+                            p.process__child--sub--text Mail will be sent
+
+                    img(src="/static/images/right_arrow.png").right__arrow--icon     
+
+                    .process__child--box
+                        h3.process__child--text Shipping
+                        .process__child__sub--box
+                            p.process__child__sub--text *It takes about
+                            p.process__child--sub--text 2 weeks
+
+                .main__section__footer
+                    .main__section__footer__column
+                        p.main__footer__text Any questions?
+                    .main__section__footer__column
+                        img(src="/static/images/phone_icon.png")
+                        p.main__footer__text 82+ 2-2088-1955
+                    .main__section__footer__column
+                        img(src="/static/images/mail_icon.png")
+                        p.main__footer__text 10wonder@naver.com
+
+                
+                
         
 
 block scripts

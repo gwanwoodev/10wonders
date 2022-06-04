@@ -1,7 +1,4 @@
 #home {
-
-
-
     .main__section {
 
         width: 100%;
@@ -153,6 +150,36 @@
                     }
 
                 }
+            }
+        }
+    }
+
+    .scroll__section {
+        height: 100vh;
+        max-height: 100vh;
+        overflow-y: scroll;
+
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll__back {
+            height: 100%;
+            background-size: cover;
+
+            &:nth-child(1) {
+                background-position: center top;
+            }
+
+            &:nth-child(2) {
+                background-position: center 80%;
+            }
+
+            &:nth-child(3) {
+                background-position: center 50%;
+                filter: contrast(0.78);
+                -webkit-filter: contrast(0.78);
             }
         }
     }

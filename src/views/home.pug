@@ -3,17 +3,18 @@ extends layouts/base.pug
 block content
     include ./partials/header.pug
     #home
+
         .main__section(style="background-image:url('/static/images/main_background01.jpg')")
             .main__section__wrapper 
                 .section__heading--box
                     h1.section__head--text the best solar energy
                     h1.section__head--text equipments from Korea
 
-                .section__subheading--box
-                    p.section__subhead--text We provide the world's heighest quality solar energy equipments from variouis brands.
-                    .subheading__child--box
-                        p.section__subhead--text Especially from Korea.
-                        a(href="/shop") SHOP
+                    .section__subheading--box
+                        p.section__subhead--text We provide the world's heighest quality solar energy equipments from variouis brands.
+                        .subheading__child--box
+                            p.section__subhead--text Especially from Korea.
+                            a(href="/shop") SHOP
                 
                 .section__process
                     .scroll__div
@@ -65,15 +66,15 @@ block content
                             p.process__child__sub--text *It takes about
                             p.process__child--sub--text 2 weeks
 
-                .main__section__footer
-                    .main__section__footer__column
-                        p.main__footer__text Any questions?
-                    .main__section__footer__column
-                        img(src="/static/images/phone_icon.png")
-                        p.main__footer__text 82+ 2-2088-1955
-                    .main__section__footer__column
-                        img(src="/static/images/mail_icon.png")
-                        p.main__footer__text 10wonder@naver.com
+                    .main__section__footer
+                        .main__section__footer__column
+                            p.main__footer__text Any questions?
+                        .main__section__footer__column
+                            img(src="/static/images/phone_icon.png")
+                            p.main__footer__text 82+ 2-2088-1955
+                        .main__section__footer__column
+                            img(src="/static/images/mail_icon.png")
+                            p.main__footer__text 10wonder@naver.com
         .scroll__section
             .scroll__back(style="background-image:url('/static/images/scroll_back01.jpg')")
             .scroll__back(style="background-image:url('/static/images/scroll_back02.jpg')")

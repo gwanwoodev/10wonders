@@ -322,4 +322,76 @@
             }
         }
     }
+
+    .brand__section {
+        height: 100vh;
+        max-height: 100vh;
+
+        background-size: cover !important;
+
+        .brand__section__wrapper {
+            margin: 0 auto;
+            max-width: 1320px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .brand__text--zone {
+                color: white;
+
+                .brand__section--title {
+                    font-family: "SDGothicH";
+                    font-size: 72px;
+                    margin-bottom: 25px;
+                }
+
+                .brand__section--text {
+                    font-family: "SDGothicR";
+                    font-size: 20px;
+                    margin-bottom: 7px;
+                }
+            }
+
+            .brand__image--zone {
+                margin-top: 82px;
+                margin-bottom: 100px;
+                display: flex;
+
+                flex-wrap: wrap;
+                max-width: 1220px;
+
+                .brand__image--back {
+                    width: 210px;
+                    height: 70px;
+                    background-color: white;
+                    text-align: center;
+                    margin-bottom: 25px;
+                    margin-right: 25px;
+                    position: relative;
+
+                    img {
+                        width: 80px;
+                        height: auto;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+
+                    }
+                }
+            }
+
+            .brand__find--btn {
+                background-color: #003CFF;
+                color: white;
+                font-family: "SDGothicR";
+                width: 210px;
+                height: 60px;
+                text-align: center;
+                font-size: 22px;
+                line-height: 64px;
+            }
+        }
+    }
 }

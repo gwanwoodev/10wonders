@@ -3,7 +3,7 @@ extends layouts/base.pug
 block content
     include ./partials/header.pug
     #home
-
+        #popupOverlay
         .main__section(style="background-image:url('/static/images/main_background01.jpg')")
             .main__section__wrapper 
                 .section__heading--box
@@ -42,11 +42,11 @@ block content
                     .process__child--box
                         h3.process__child--text Send
                         h3.process__child--text money
-
+                        include ./popups/account-info-popup.pug                                                                                          
                         .process__child__sub--box
-                            
                             a.process__child__sub--popup.process__child__sub--text *Account Info
                             p.process__child--sub--text &nbsp;
+
 
                     img(src="/static/images/right_arrow.png").right__arrow--icon     
 

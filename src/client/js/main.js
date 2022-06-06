@@ -32,3 +32,4 @@ import "../images/brand12.jpg";
 import "../images/brand13.png";
 import "../images/pageup_icon.png";
 
+import "../images/close_icon.png";

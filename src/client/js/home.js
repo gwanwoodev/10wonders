@@ -1,6 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-    let index = 0;
+    let index = 1;
 
     const pageUp = document.querySelector(".pageup--icon");
     const mainSection = document.querySelector(".main__section");
@@ -8,6 +8,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const mainSectionHeads = document.querySelectorAll(".section__head--text");
     const mainSectionSubs = document.querySelectorAll(".section__subhead--text");
 
+    /* Popups */
+    const popupOverlay = document.getElementById("popupOverlay");
+    const accountPopup = document.querySelector(".process__account--popup");
+    const accountPopupBtn = document.querySelector(".process__child__sub--popup");
+    const accountPopupCloseBtn = document.querySelector(".account__close--icon");
+
+    accountPopupBtn.addEventListener("click", () => {
+        accountPopup.style.display = "block";
+        accountPopup.classList.replace("animate__fadeOut", "animate__fadeIn");
+        popupOverlay.style.display = "block";
+
+    })
+
+    accountPopupCloseBtn.addEventListener("click", () => {
+        accountPopup.classList.replace("animate__fadeIn", "animate__fadeOut");
+        accountPopup.style.display = "none;"
+        popupOverlay.style.display = "none";
+    })
 
     pageUp.addEventListener("click", scrollToTop);
     const interval = setInterval(backgroundChange, 5000);

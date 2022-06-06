@@ -28,3 +28,4 @@ import "../images/brand10.jpg";
 import "../images/brand11.png";
 import "../images/brand12.jpg";
 import "../images/brand13.png";
+import "../images/pageup_icon.png";

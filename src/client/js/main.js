@@ -5,6 +5,8 @@ import "../scss/styles.scss";
 import "../images/cart_icon.png";
 import "../images/logo.png";
 import "../images/main_background01.jpg";
+import "../images/main_background02.jpg";
+import "../images/main_background03.jpg";
 import "../images/right_arrow.png";
 import "../images/mail_icon.png";
 import "../images/phone_icon.png";
@@ -29,3 +31,4 @@ import "../images/brand11.png";
 import "../images/brand12.jpg";
 import "../images/brand13.png";
 import "../images/pageup_icon.png";
+

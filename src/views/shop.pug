@@ -1,0 +1,63 @@
+extends layouts/base.pug
+
+block content
+    include ./partials/header-dark.pug
+    #shop
+        #popupOverlay
+        .shop__section
+            .shop__wrapper
+                .shop__category__wrapper
+                    .shop__main__categories
+                        a(href="#").shop__main--category.selected__category INVERTER
+                        a(href="#").shop__main--category MODULE
+                        a(href="#").shop__main--category OPTIMIZE
+                    .shop__sub__categories
+                        a(href="#").shop__sub--category.selected__category SUNGROW
+                        a(href="#").shop__sub--category FIMER
+                        a(href="#").shop__sub--category HUNDAI
+                        a(href="#").shop__sub--category HANWHA Q C ELL
+                        a(href="#").shop__sub--category OCI POWER
+                        a(href="#").shop__sub--category KSTAR
+                        a(href="#").shop__sub--category SOLIS
+                        a(href="#").shop__sub--category SHIN SUNG E&G
+                .shop__products
+                    .shop__product
+                        .product__column
+                            img(src="/static/images/sample.jpg")
+                        .product__column.product__align
+                            .product__title--box
+                                h1.product__name SG15 / 17 / 20RT
+                                p.product__subhead Multi - MPPT String lnverter for 1000 Vdc System
+                            .product__specs--box
+                                .specs__column
+                                    h3.product__spec--title EASY AND USER FRIENDLY
+                                    p.product__spec--text 21 kg compact design
+                                        | Unique push-in connectors
+                                        | Fast and easy commissioning via App
+
+                                .specs__column
+                                    h3.product__spec--title SMART MANAGEMENT
+                                    p.product__spec--text Smart IV curve scanning
+                                        | 24 / 7 Live monitoring
+                                        | Remote firmware updates
+
+                                .specs__column
+                                    h3.product__spec--title SAFE AND DURABLE
+                                    p.product__spec--text Quick arc fault circuit interrupter
+                                        | Build-in Type II DC & AC SPD
+                                        | High anti-corrosion rating C5
+
+                                .specs__column
+                                    h3.product__spec--title HIGH YIELD
+                                    p.product__spec--text Lower startup & wider MPPT voltage
+                                        | Compatible with bifacial modules
+                                        | Built-in PID recovery function
+                            .product__action--box
+                                a(href="#").action__download--btn DOWNLOADS DATASHEET
+                                a(href="#").action__ordersheet--btn  ADD TO ORDER SHEET                                                                                                                                                                          
+                include ./partials/pagination.pug
+
+    //-include ./partials/footer.pug
+
+block scripts
+    script(src="/static/js/main.js")

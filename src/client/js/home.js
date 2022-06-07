@@ -14,6 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const accountPopupBtn = document.querySelector(".process__child__sub--popup");
     const accountPopupCloseBtn = document.querySelector(".account__close--icon");
 
+
+    headerElement.style.backgroundColor = "black";
+
     accountPopupBtn.addEventListener("click", () => {
         accountPopup.style.display = "block";
         accountPopup.classList.replace("animate__fadeOut", "animate__fadeIn");

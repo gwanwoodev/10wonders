@@ -1,0 +1,26 @@
+.pagination {
+    justify-content: center;
+    display: flex;
+
+    a {
+        display: block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-family: "SDGothicB";
+        font-size: 18px;
+
+        margin-right: 7px;
+    }
+
+    .pagination__current {
+        background-color: #003CFF;
+        color: white;
+    }
+
+    .left__arrow,
+    .right__arrow {
+        font-size: 30px;
+    }
+}

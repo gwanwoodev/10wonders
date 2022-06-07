@@ -13,6 +13,7 @@
 
 @import "../scss/components/header.scss";
 @import "../scss/components/footer.scss";
+@import "../scss/components/pagination.scss";
 
 
 /* ----------------------------------------- */
@@ -20,5 +21,6 @@
 
 /* Screens */
 @import "./screens/home.scss";
+@import "./screens/shop.scss";
 
 /* ----------------------------------------- */

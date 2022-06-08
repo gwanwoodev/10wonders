@@ -32,7 +32,7 @@ export const home = (req, res) => {
 export const shop = async (req, res) => {
     const { page = 1, maker = "SUNGROW" } = req.query;
     const PRODUCT_TYPE = "inverter";
-    const CONTENTS_LIMIT = 1;
+    const CONTENTS_LIMIT = 5;
     let sortOptions = {
         createdAt: -1
     };
@@ -51,6 +51,7 @@ export const shop = async (req, res) => {
         CONTENTS_LIMIT,
         page
     );
+    const mainCategoryList = [{ value: "inverter", target: '/shop' }, { value: 'module', target: '/shop/module' }, { value: 'optimize', target: '/shop/optimize' }];
 
     const categoryList = [{ value: "SUNGROW", label: "SUNGROW" }, { value: "FIMER", label: "FIMER" }, { value: "HUNDAI", label: "HUNDAI" }, { value: "HANWHAQCELL", label: "HANWHA Q CELL" }, { value: "OCIPOWER", label: "OCI POWER" }, { value: "KSTAR", label: "KSTAR" }, { value: "SOLIS", label: "SOLIS" }, { value: "SHINSUNGEG", label: "SHIN SUNG E&G" }];
 
@@ -64,6 +65,8 @@ export const shop = async (req, res) => {
         totalDocs: contents.totalDocs,
         page,
         maker,
-        categoryList
+        categoryList,
+        productType: PRODUCT_TYPE,
+        mainCategoryList
     });
 }

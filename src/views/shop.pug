@@ -6,17 +6,7 @@ block content
         #popupOverlay
         .shop__section
             .shop__wrapper
-                .shop__category__wrapper
-                    .shop__main__categories
-                        a(href="/shop").shop__main--category.selected__category INVERTER
-                        a(href="/shop/module").shop__main--category MODULE
-                        a(href="/shop/optimize").shop__main--category OPTIMIZE
-                    .shop__sub__categories
-                        each category in categoryList
-                            if category.value === maker
-                                a(href=`/shop?maker=${category.value}`).shop__sub--category.selected__category #{category.label}
-                            else
-                                a(href=`/shop?maker=${category.value}`).shop__sub--category #{category.label}
+                include ./partials/product-categories.pug
                 .shop__products
                     each content in contents
                         .shop__product

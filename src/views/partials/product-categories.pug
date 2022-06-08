@@ -9,6 +9,6 @@
     .shop__sub__categories
         each category in categoryList
             if category.value === maker
-                a(href=`/shop?maker=${category.value}`).shop__sub--category.selected__category #{category.label}
+                a(href=`?maker=${category.value}&productType=${productType}`).shop__sub--category.selected__category #{category.label}
             else
-                a(href=`/shop?maker=${category.value}`).shop__sub--category #{category.label}
+                a(href=`?maker=${category.value}&productType=${productType}`).shop__sub--category #{category.label}

@@ -30,15 +30,14 @@ export const home = (req, res) => {
 }
 
 export const shop = async (req, res) => {
-    const { page = 1, maker = "SUNGROW" } = req.query;
-    const PRODUCT_TYPE = "inverter";
+    const { page = 1, maker = "SUNGROW", productType = "inverter" } = req.query;
     const CONTENTS_LIMIT = 5;
     let sortOptions = {
         createdAt: -1
     };
 
     const contents = await Product.paginate({
-        productType: PRODUCT_TYPE,
+        productType,
         productMaker: maker
     }, {
         page: page,
@@ -66,7 +65,89 @@ export const shop = async (req, res) => {
         page,
         maker,
         categoryList,
-        productType: PRODUCT_TYPE,
+        productType,
+        mainCategoryList
+    });
+}
+
+export const shopModule = async (req, res) => {
+    const { page = 1, maker = "LONGISOLAR", productType = "module" } = req.query;
+    const CONTENTS_LIMIT = 5;
+    let sortOptions = {
+        createdAt: -1
+    };
+
+    const contents = await Product.paginate({
+        productType,
+        productMaker: maker
+    }, {
+        page: page,
+        limit: CONTENTS_LIMIT,
+        sort: sortOptions
+    });
+
+    const { currentPage, startPage, endPage, totalPage } = getPageAccessData(
+        contents.totalDocs,
+        CONTENTS_LIMIT,
+        page
+    );
+    const mainCategoryList = [{ value: "inverter", target: '/shop' }, { value: 'module', target: '/shop/module' }, { value: 'optimize', target: '/shop/optimize' }];
+
+    const categoryList = [{ value: "LONGISOLAR", label: "LONGI SOLAR" }, { value: "HANSOL", label: "HANSOL" }, { value: "HUNDAI", label: "HUNDAI" }, { value: "HANWHAQCELL", label: "HANWHA Q CELL" }, { value: "JASOLAR", label: "JA SOLAR" }, { value: "A STRONERGY", label: "ASTRONEGY" }, { value: "SHINSUNGEG", label: "SHIN SUNG E&G" }];
+
+    return res.render("shop", {
+        pageTitle: "Shop",
+        contents: contents.docs,
+        startPage,
+        endPage,
+        totalPage,
+        currentPage,
+        totalDocs: contents.totalDocs,
+        page,
+        maker,
+        categoryList,
+        productType,
+        mainCategoryList
+    });
+}
+
+export const shopOptimize = async (req, res) => {
+    const { page = 1, maker = "TAIGO", productType = "optimize" } = req.query;
+    const CONTENTS_LIMIT = 5;
+    let sortOptions = {
+        createdAt: -1
+    };
+
+    const contents = await Product.paginate({
+        productType,
+        productMaker: maker
+    }, {
+        page: page,
+        limit: CONTENTS_LIMIT,
+        sort: sortOptions
+    });
+
+    const { currentPage, startPage, endPage, totalPage } = getPageAccessData(
+        contents.totalDocs,
+        CONTENTS_LIMIT,
+        page
+    );
+    const mainCategoryList = [{ value: "inverter", target: '/shop' }, { value: 'module', target: '/shop/module' }, { value: 'optimize', target: '/shop/optimize' }];
+
+    const categoryList = [{ value: "TAIGO", label: "TAIGO" }];
+
+    return res.render("shop", {
+        pageTitle: "Shop",
+        contents: contents.docs,
+        startPage,
+        endPage,
+        totalPage,
+        currentPage,
+        totalDocs: contents.totalDocs,
+        page,
+        maker,
+        categoryList,
+        productType,
         mainCategoryList
     });
 }

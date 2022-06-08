@@ -21,7 +21,10 @@
         .header__column {
             display: flex;
             align-items: center;
-            color: white;
+
+            .header__link--text {
+                color: white;
+            }
 
             &:last-child {
                 margin-left: auto;
@@ -40,6 +43,6 @@
 
 .header__dark {
     .header__link--text {
-        color: black;
+        color: black !important;
     }
 }

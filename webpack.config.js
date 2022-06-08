@@ -8,7 +8,8 @@ module.exports = {
     entry: {
         main: BASE_JS + "main.js",
         home: BASE_JS + "home.js",
-        page: BASE_JS + "page.js"
+        page: BASE_JS + "page.js",
+        shop: BASE_JS + "shop.js"
     },
     plugins: [
         new MiniCssExtractPlugin({

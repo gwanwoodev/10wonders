@@ -1,0 +1,14 @@
+.shop__ordersheet__popup.animate__animated.animate__fadeOut
+    .ordersheet__popup--head
+        img(src="/static/images/close_icon.png").ordersheet__close--btn
+    .ordersheet__popup--body
+        .ordersheet__popup__column
+            img(src=content.productImage).ordersheet__product--img
+        .ordersheet__popup__column
+            h1.ordersheet__popup--title ORDER
+            h1.ordersheet__popup--productName #{content.productName}
+            p.ordersheet__popup--text #{content.productSubHead}
+            p.ordersheet__popup--guide Enter the quantity
+            .ordersheet__popup__active--box
+                input(type="text" class="input__quantity")
+                button.ordersheet__add--btn(_id=content._id) Order Sheet +

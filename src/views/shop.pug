@@ -10,6 +10,7 @@ block content
                 .shop__products
                     each content in contents
                         .shop__product
+                            include ./popups/shop-ordersheet-popup.pug
                             .product__column
                                 img(src=content.productImage)
                             .product__column.product__align
@@ -23,7 +24,7 @@ block content
                                             p.product__spec--text #{spec.specSubTitle}
                                 .product__action--box
                                     a(href=content.productDataSheet download).action__download--btn DOWNLOADS DATASHEET
-                                    a(href="#").action__ordersheet--btn  ADD TO ORDER SHEET
+                                    a.action__ordersheet--btn(_id=content._id)  ADD TO ORDER SHEET
                     else
                         p.notFound Not Found                                                                                                                                                                  
                 include ./partials/pagination.pug
@@ -33,3 +34,4 @@ block content
 block scripts
     script(src="/static/js/main.js")
     script(src="/static/js/page.js")
+    script(src="/static/js/shop.js")

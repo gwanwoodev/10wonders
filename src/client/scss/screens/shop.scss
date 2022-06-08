@@ -58,6 +58,7 @@
                 .shop__product {
                     margin-bottom: 80px;
                     display: flex;
+                    position: relative;
 
                     .product__align {
                         display: flex;
@@ -72,7 +73,7 @@
                             border: 1px solid #dddddd;
                         }
 
-                        &:first-child {
+                        &>img {
                             margin-right: 70px;
                         }
 
@@ -138,9 +139,106 @@
                                 }
 
                                 &.action__ordersheet--btn {
+                                    cursor: pointer;
                                     background-color: #003CFF;
 
                                 }
+                            }
+                        }
+                    }
+
+                    .shop__ordersheet__popup {
+
+                        position: fixed;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        z-index: 2;
+                        background-color: white;
+                        width: 900px;
+                        height: 450px;
+                        padding: 0px 30px 30px 30px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        display: none;
+
+                        .ordersheet__popup--head {
+                            display: flex;
+                            justify-content: flex-end;
+                            margin-bottom: 20px;
+
+                            .ordersheet__close--btn {
+                                cursor: pointer;
+                            }
+                        }
+
+                        .ordersheet__popup--body {
+                            display: flex;
+
+                            .ordersheet__popup__column {
+
+                                &:first-child {
+                                    margin-right: 45px;
+                                }
+
+                                .ordersheet__product--img {
+                                    width: 290px;
+                                    height: 290px;
+                                    object-fit: cover;
+
+                                }
+
+                                .ordersheet__popup--title {
+                                    font-size: 42px;
+                                    font-family: "SDGothicR";
+                                    margin-bottom: 15px;
+                                }
+
+                                .ordersheet__popup--productName {
+                                    font-size: 38px;
+                                    font-family: "SDGothicB";
+                                    margin-bottom: 12px;
+                                }
+
+                                .ordersheet__popup--text {
+                                    word-break: break-all;
+                                    font-family: "SDGothicR";
+                                    font-size: 22px;
+                                    margin-bottom: 46px;
+                                }
+
+                                .ordersheet__popup--guide {
+                                    font-size: 22px;
+                                    font-family: "SDGothicR";
+                                    margin-bottom: 15px;
+                                }
+
+                                .ordersheet__popup__active--box {
+                                    display: flex;
+
+                                    .input__quantity {
+                                        background-color: #DDDDDD;
+                                        font-family: "SDGothicR";
+                                        border: none;
+                                        height: 46px;
+                                        font-size: 22px;
+                                        text-align: center;
+                                        margin-right: 15px;
+                                    }
+
+                                    .ordersheet__add--btn {
+                                        height: 46px;
+                                        background-color: #003CFF;
+                                        color: white;
+                                        font-family: "SDGothicR";
+                                        font-size: 22px;
+                                        border: none;
+                                        text-align: center;
+                                        width: 100%;
+                                    }
+                                }
+
                             }
                         }
                     }

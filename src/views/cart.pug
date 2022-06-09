@@ -49,14 +49,14 @@ block content
                                             p.product__info--subHead #{item.productSubHead}
                                 td.tdQtyBox
                                     .tdQty__wrapper
-                                        input(type="text", required, value=item.orderQuantity)
+                                        input(type="text", required, value=item.orderQuantity, disabled)
                                         .qty__control--box
-                                            img(src="/static/images/controlUp_icon.png" _id=item._id)
-                                            img(src="/static/images/controlDown_icon.png" _id=item._id)
+                                            img(src="/static/images/controlUp_icon.png" _id=item._id).qtyUp--btn
+                                            img(src="/static/images/controlDown_icon.png" _id=item._id).qtyDown--btn
 
 
                                 td.tdDelBox
-                                    img(src="/static/images/trashbin_icon.png", _id=item._id)
+                                    img(src="/static/images/trashbin_icon.png", _id=item._id).tdDel--btn
 
     //-include ./partials/footer.pug
 

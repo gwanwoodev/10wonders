@@ -155,9 +155,11 @@ export const shopOptimize = async (req, res) => {
 export const cart = async (req, res) => {
     const { cart_items = '[]' } = req.cookies;
 
-
-
     const items = JSON.parse(cart_items);
     console.log(items);
     return res.render("cart", { pageTitle: "Cart", items });
+}
+
+export const order = async (req, res) => {
+    return res.render("order-enter", { pageTitle: "Order" });
 }

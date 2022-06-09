@@ -146,6 +146,10 @@ export const createNewOrder = async (req, res) => {
     let isExists = true;
     let orderNumber;
 
+    if (orderProducts.length < 1) {
+        return res.json({ success: false, msg: "There's nothing in the cart" });
+    }
+
     while (isExists) {
         orderNumber = createOrderNumber();
         isExists = await Order.exists({ orderNumber });

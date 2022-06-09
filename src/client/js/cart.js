@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             orderCompleteYesBtn.setAttribute("clientEmail", emailValue);
             orderCompleteYesBtn.setAttribute("orderNumber", resultJson.orderNumber);
         } else {
-            Notiflix.Notify.failure("Server Error.");
+            Notiflix.Notify.failure(resultJson.msg);
             return;
         }
 
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const email = this.getAttribute("clientEmail");
         const orderNumber = this.getAttribute("orderNumber");
 
-        const redirectUrl = `/order?email=${email}&orderNumber=${orderNumber}`;
+        const redirectUrl = `/order/result?email=${email}&orderNumber=${orderNumber}`;
         location.href = redirectUrl;
     })
 

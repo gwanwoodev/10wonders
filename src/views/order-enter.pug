@@ -1,0 +1,26 @@
+extends layouts/base.pug
+
+block content
+    include ./partials/header-dark.pug
+    #order
+        #popupOverlay
+        .order__section
+            .order__wrapper
+                .order__main__categories
+                    a(href="/cart") YOUR CART
+                    a(href="/order").selected__category YOUR ORDER
+                h1.order__enter--title Please enter the order information.
+
+                .order__enter__form
+                    .order__enter__form--box
+                        p.order__enter__form--head E-mail
+                        input(type="text", required).order__input.order__input--email
+                    .order__enter__form--box
+                        p.order__enter__form--head Order Number
+                        input(type="text", required).order__input.order__input--orderNumber
+                    button.order__enter--btn Search Info
+
+
+block scripts
+    script(src="/static/js/main.js")
+    script(src="/static/js/order.js")

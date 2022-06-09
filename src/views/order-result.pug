@@ -6,6 +6,7 @@ block content
         #popupOverlay
         .order__section
             .order__wrapper
+                include ./popups/order-result-howtopay-popup
                 .order__main__categories
                     a(href="/cart") YOUR CART
                     a(href="/order").selected__category YOUR ORDER
@@ -21,11 +22,15 @@ block content
                         img(src="/static/images/payment_icon.png").payment__icon
                         .step__texts
                             p.order__process__step--text Payment
-                            p.order__process__popup--text How to pay
+                            p.order__process__popup--text.howtopay How to pay
 
                     img(src="/static/images/process_deactive.png").process__img
                     .order__process__step
-                        img(src="/static/images/shipping_icon.png").shipping__icon
+                        if order[0]
+                            if order[0].process === 2
+                                img(src="/static/images/shipping_icon.png").shipping__icon.brightness
+                            else
+                                img(src="/static/images/shipping_icon.png").shipping__icon
                         .step__texts
                             p.order__process__step--text Shipping
                             p.order__process__popup--text Shipping Info
@@ -45,17 +50,18 @@ block content
                     - return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                     - }
                     tbody
-                        each item, index in order[0].orderProducts
-                            tr
-                                td.tdNum #{index+1}
-                                td.tdBox
-                                    .table__product
-                                        img(src=item.product.productImage)
-                                        .product__info--box
-                                            h1.product__info--title #{item.product.productName}
-                                            p.product__info--subHead #{item.product.productSubHead}
-                                td.tdQtyBox #{item.productQuantity}
-                                td.tdPaymentBox $ #{numberWithCommas(item.estimate)}
+                        if order[0]
+                            each item, index in order[0].orderProducts
+                                tr
+                                    td.tdNum #{index+1}
+                                    td.tdBox
+                                        .table__product
+                                            img(src=item.product.productImage)
+                                            .product__info--box
+                                                h1.product__info--title #{item.product.productName}
+                                                p.product__info--subHead #{item.product.productSubHead}
+                                    td.tdQtyBox #{item.productQuantity}
+                                    td.tdPaymentBox $ #{numberWithCommas(item.estimate)}
                                 
 
                 .order__current__footer
@@ -68,4 +74,5 @@ block content
 
 block scripts
     script(src="/static/js/main.js")
+    script(src="/static/js/orderResult.js")
     

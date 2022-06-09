@@ -21,97 +21,7 @@
             height: 100%;
             position: relative;
 
-            .cart__order__complete__popup {
-                display: none;
-                position: fixed;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                background-color: white;
-                max-width: 900px;
-                width: 100%;
 
-
-                z-index: 2;
-                padding: 30px 35px;
-
-                .order__complete__header {
-                    display: flex;
-                    justify-content: flex-end;
-                    margin-bottom: 20px;
-
-                    .order__complete__close--icon {
-                        cursor: pointer;
-                    }
-                }
-
-                .order__complete__titles {
-                    .order__complete--title {
-                        font-family: "SDGothicB";
-                        font-weight: 600;
-                        font-size: 32px;
-                        color: #003CFF;
-                        margin-bottom: 7px;
-                    }
-
-                    margin-bottom: 40px;
-                }
-
-                .order__complete__contents {
-                    margin-bottom: 50px;
-
-                    .order__complete--content {
-                        display: flex;
-                        align-items: flex-start;
-                        position: relative;
-
-                        &:not(:last-child) {
-                            margin-bottom: 24px;
-                        }
-
-                        .order__complete--subtitle {
-                            font-size: 20px;
-                            font-family: "SDGothicB";
-                            position: absolute;
-                            font-weight: 600;
-                            left: 0;
-                        }
-
-                        .order__complete--text {
-                            font-family: "SDGothicR";
-                            font-size: 20px;
-                            margin-left: 250px;
-                        }
-                    }
-                }
-
-                .order__complete__alerts {
-                    margin-bottom: 70px;
-
-                    .order__complete__alert {
-                        font-family: "SDGothicR";
-                        font-size: 16px;
-                        margin-bottom: 6px;
-
-                    }
-                }
-
-                .order__complete__footer {
-                    margin-bottom: 15px;
-                    text-align: center;
-
-                    .order__complete--yes {
-                        background-color: #003CFF;
-                        color: white;
-                        font-family: "SDGothicR";
-                        border: none;
-                        width: 210px;
-                        height: 46px;
-                        font-size: 22px;
-                        cursor: pointer;
-                    }
-                }
-            }
 
             .cart__main__categories {
                 margin-bottom: 25px;
@@ -302,5 +212,97 @@
             }
         }
 
+    }
+}
+
+.cart__order__complete__popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    max-width: 900px;
+    width: 100%;
+
+
+    z-index: 2;
+    padding: 30px 35px;
+
+    .order__complete__header {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+
+        .order__complete__close--icon {
+            cursor: pointer;
+        }
+    }
+
+    .order__complete__titles {
+        .order__complete--title {
+            font-family: "SDGothicB";
+            font-weight: 600;
+            font-size: 32px;
+            color: #003CFF;
+            margin-bottom: 7px;
+        }
+
+        margin-bottom: 40px;
+    }
+
+    .order__complete__contents {
+        margin-bottom: 50px;
+
+        .order__complete--content {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+
+            .order__complete--subtitle {
+                font-size: 20px;
+                font-family: "SDGothicB";
+                position: absolute;
+                font-weight: 600;
+                left: 0;
+            }
+
+            .order__complete--text {
+                font-family: "SDGothicR";
+                font-size: 20px;
+                margin-left: 250px;
+            }
+        }
+    }
+
+    .order__complete__alerts {
+        margin-bottom: 70px;
+
+        .order__complete__alert {
+            font-family: "SDGothicR";
+            font-size: 16px;
+            margin-bottom: 6px;
+
+        }
+    }
+
+    .order__complete__footer {
+        margin-bottom: 15px;
+        text-align: center;
+
+        .order__complete--yes {
+            background-color: #003CFF;
+            color: white;
+            font-family: "SDGothicR";
+            border: none;
+            width: 210px;
+            height: 46px;
+            font-size: 22px;
+            cursor: pointer;
+        }
     }
 }

@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     orderCompleteCloseBtn.addEventListener("click", () => {
         orderCompletePopup.classList.replace("animate__fadeIn", "animate__fadeOut");
-        orderCompletePopup.style.display = "none;"
+        orderCompletePopup.style.display = "none";
         popupOverlay.style.display = "none";
     });
 

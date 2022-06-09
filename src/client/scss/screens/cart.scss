@@ -1,0 +1,208 @@
+#cart {
+
+
+    #popupOverlay {
+        background-color: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: none;
+    }
+
+    .cart__section {
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 120px;
+
+        .cart__wrapper {
+            margin: 0 auto;
+            max-width: 1320px;
+            height: 100%;
+            position: relative;
+
+            .cart__main__categories {
+                margin-bottom: 25px;
+
+                a {
+                    font-family: "SDGothicB";
+                    font-weight: 600;
+                    font-size: 32px;
+                    margin-right: 64px;
+                    color: #DDDDDD;
+                    text-transform: uppercase;
+
+                    &.selected__category {
+                        color: #000;
+                    }
+                }
+            }
+
+            .cart__guide--box {
+
+                margin-top: 30px;
+                margin-bottom: 50px;
+
+                .cart__guide--head {
+                    font-size: 25px;
+                    font-family: "SDGothicB";
+                }
+
+                .cart__guide--subhead {
+                    margin-top: 15px;
+                    font-family: "SDGothicR";
+                    font-size: 17px;
+                }
+
+            }
+
+            .cart__request--box {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 74px;
+
+                .cart__request__column {
+                    display: flex;
+                    align-items: center;
+
+                    .cart__input--box {
+                        margin-right: 40px;
+                        margin-bottom: 20px;
+
+                        .cart__input--label {
+                            font-family: "SDGothicB";
+                            font-size: 20px;
+                            margin-bottom: 5px;
+                        }
+
+                        .cart__input {
+                            width: 400px;
+                            height: 50px;
+                            outline: none;
+                            border: none;
+                            background-color: #F3F3F3;
+                            font-family: "SDGothicR";
+                            font-size: 20px;
+                            padding: 0px 10px;
+                        }
+                    }
+
+                    .request__estimate--btn {
+                        margin-left: auto;
+                        background-color: #003CFF;
+                        color: white;
+                        font-family: "SDGothicB";
+                        font-size: 20px;
+                        height: 50px;
+                        border: none;
+                        padding: 0px 10px;
+                    }
+                }
+            }
+
+            .cart__table {
+                width: 100%;
+
+                thead {
+                    th {
+                        border: 2px solid #222222;
+                        font-family: "SDGothicB";
+                        font-size: 20px;
+                        padding: 10px 0px;
+                    }
+                }
+
+                tbody {
+                    tr {
+                        height: 120px;
+                        border-left: 2px solid #222222;
+                        border-bottom: 2px solid #222222;
+
+                        td {
+                            text-align: center;
+                            border-right: 2px solid #222222;
+                            vertical-align: middle;
+                            font-family: "SDGothicB";
+
+                            &.tdNum {
+                                font-size: 17px;
+                            }
+
+                            &.tdBox {
+                                padding: 10px 20px;
+
+                                .table__product {
+                                    display: flex;
+                                    align-items: center;
+
+                                    img {
+                                        width: 112px;
+                                        height: 112px;
+                                        object-fit: cover;
+                                        border: 1px solid #DDDDDD;
+                                        margin-right: 30px;
+                                    }
+
+                                    .product__info--box {
+
+
+                                        .product__info--title {
+                                            font-size: 32px;
+                                            margin-bottom: 5px;
+                                            text-align: left;
+                                        }
+
+                                        .product__info--subHead {
+                                            font-family: "SDGothicR";
+                                        }
+                                    }
+                                }
+                            }
+
+                            &.tdQtyBox {
+
+                                .tdQty__wrapper {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    input {
+                                        margin-right: 10px;
+                                        border: none;
+                                        //background-color: #F3F3F3;
+                                        background-color: transparent;
+                                        width: 100px;
+                                        height: 30px;
+                                        text-align: center;
+                                        font-family: "SDGothicR";
+                                        font-size: 17px;
+                                    }
+
+                                    .qty__control--box {
+
+                                        display: flex;
+                                        flex-direction: column;
+
+                                        img:first-child {
+                                            margin-bottom: 20px;
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+
+
+                            }
+
+                            &.tdDelBox {
+                                img {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

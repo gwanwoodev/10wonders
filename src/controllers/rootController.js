@@ -151,3 +151,13 @@ export const shopOptimize = async (req, res) => {
         mainCategoryList
     });
 }
+
+export const cart = async (req, res) => {
+    const { cart_items = '[]' } = req.cookies;
+
+
+
+    const items = JSON.parse(cart_items);
+    console.log(items);
+    return res.render("cart", { pageTitle: "Cart", items });
+}

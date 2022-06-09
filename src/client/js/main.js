@@ -36,3 +36,6 @@ import "../images/close_icon.png";
 import "../images/logo_dark.png";
 import "../images/cart_icon_black.png";
 import "../images/sample.jpg";
+import "../images/trashbin_icon.png";
+import "../images/controlUp_icon.png";
+import "../images/controlDown_icon.png";

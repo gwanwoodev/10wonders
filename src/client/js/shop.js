@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const productName = parentBox.querySelector(".ordersheet__popup--productName").innerText;
             const productSubHead = parentBox.querySelector(".ordersheet__popup--text").innerText;
             const orderQuantity = parentBox.querySelector(".input__quantity").value;
+            const productImage = nodeBox.querySelector(".ordersheet__product--img").src;
             const _id = this.getAttribute("_id");
             let prevCookies = getCookie('cart_items') ? getCookie('cart_items') : '[]';
 
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 productName,
                 productSubHead,
                 orderQuantity,
+                productImage,
                 _id
             }
 

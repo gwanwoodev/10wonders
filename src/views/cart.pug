@@ -1,0 +1,65 @@
+extends layouts/base.pug
+
+block content
+    include ./partials/header-dark.pug
+    #cart
+        #popupOverlay
+        .cart__section
+            .cart__wrapper
+                .cart__main__categories
+                    a(href="/cart").selected__category YOUR CART
+                    a(href="/order") YOUR ORDER
+                .cart__guide--box
+                    p.cart__guide--head Please don't forget your email and password.
+                    p.cart__guide--head They are used to check the process of an order.
+                    p.cart__guide--subhead You can inquire the order information with the information your entered.
+                .cart__request--box
+                    .cart__request__column
+                        .cart__input--box
+                            p.cart__input--label E-mail
+                            input(type="text", required, name="email").cart__input
+                    .cart__request__column
+                        .cart__input--box
+                            p.cart__input--label Depositer
+                            input(type="text", required, name="depositer").cart__input
+                        .cart__input--box
+                            p.cart__input--label Address
+                            input(type="text", required, name="address").cart__input
+                        button.request__estimate--btn Request Estimate
+                table.cart__table
+                    colgroup
+                        col(style="width: 10%")
+                        col(style="width: 60%")
+                        col(style="width: 20%")
+                        col(style="width: 10%")
+                    thead
+                        th.cart__table__head--text No.
+                        th.cart__table__head--text PRODUCT
+                        th.cart__table__head--text Qty
+                        th.cart__table__head--text Del
+                    tbody
+                        each item,index in items
+                            tr
+                                td.tdNum #{index+1}
+                                td.tdBox
+                                    .table__product
+                                        img(src=item.productImage)
+                                        .product__info--box
+                                            h1.product__info--title #{item.productName}
+                                            p.product__info--subHead #{item.productSubHead}
+                                td.tdQtyBox
+                                    .tdQty__wrapper
+                                        input(type="text", required, value=item.orderQuantity)
+                                        .qty__control--box
+                                            img(src="/static/images/controlUp_icon.png" _id=item._id)
+                                            img(src="/static/images/controlDown_icon.png" _id=item._id)
+
+
+                                td.tdDelBox
+                                    img(src="/static/images/trashbin_icon.png", _id=item._id)
+
+    //-include ./partials/footer.pug
+
+block scripts
+    script(src="/static/js/main.js")
+    script(src="/static/js/cart.js")

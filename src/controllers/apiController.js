@@ -1,5 +1,7 @@
 import Order from "../models/Order";
 import Product from "../models/Product";
+import User from "../models/User";
+import bcrypt from "bcrypt";
 import { createOrderNumber } from "../utils/generator";
 import { sendClientMail } from "../utils/mailer";
 
@@ -237,4 +239,25 @@ export const updateOrderProcess = async (req, res) => {
         console.error(e);
         return res.json({ success: false, msg: "error - updateOrderProcess" });
     }
+}
+
+export const tryLogin = async (req, res) => {
+    const { userId, userPw } = req.body;
+    const user = await User.findOne({ userId });
+
+    if (!user) {
+        return res.json({ success: false });
+    }
+    const pw = user.password;
+    const ok = await bcrypt.compare(userPw, pw);
+
+    if (!ok) {
+        return res.json({ success: false });
+    }
+
+    req.session.loggedIn = true;
+    req.session.user = user;
+
+
+    return res.json({ success: true });
 }

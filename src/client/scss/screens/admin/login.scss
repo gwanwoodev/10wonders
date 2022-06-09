@@ -1,0 +1,47 @@
+#content {
+    .admin__section {
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 120px;
+        background-color: #f3f3f3;
+
+        .section__wrapper {
+            margin: 0 auto;
+            max-width: 1320px;
+            height: calc(100vh - 120px);
+            position: relative;
+
+            .login__form {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+
+                input {
+                    background-color: white;
+                    height: 50px;
+                    width: 350px;
+                    border: none;
+                    padding: 0px 30px;
+                    font-size: 28px;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    font-family: "SDGothicR";
+                }
+
+                .loginButton {
+                    width: 350px;
+                    height: 50px;
+                    text-align: center;
+                    background-color: black;
+                    color: white;
+                    font-family: "SDGothicR";
+                    font-size: 17px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

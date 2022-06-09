@@ -1,0 +1,15 @@
+extends ../layouts/base.pug
+
+block content
+    include ../partials/header-admin.pug
+    #content
+        .admin__section
+            .section__wrapper
+                .login__form
+                    input(type="text", required, placeholder="ID").inputId
+                    input(type="password", required, placeholder="PASSWORD").inputPw
+                    button.loginButton LOGIN
+
+block scripts
+    script(src="/static/js/main.js")
+    script(src="/static/js/login.js")

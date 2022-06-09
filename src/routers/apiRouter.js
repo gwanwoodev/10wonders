@@ -1,5 +1,5 @@
 import express from "express";
-import { createNewProduct, removeProduct, updateProduct, createNewOrder, getMyOrder, updateOrder, updateOrderProcess } from "../controllers/apiController";
+import { createNewProduct, removeProduct, updateProduct, createNewOrder, getMyOrder, updateOrder, updateOrderProcess, tryLogin } from "../controllers/apiController";
 import { protectorApiMiddleware } from "../middlewares";
 import { fileUpload } from "../utils/file";
 
@@ -12,4 +12,5 @@ apiRouter.post("/order", createNewOrder);
 apiRouter.put("/order", protectorApiMiddleware, updateOrder);
 apiRouter.get("/order", getMyOrder);
 apiRouter.put("/order/process", protectorApiMiddleware, updateOrderProcess);
+apiRouter.post("/login", tryLogin);
 export default apiRouter;

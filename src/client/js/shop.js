@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
         item.addEventListener("click", function () {
             const parentBox = this.parentElement.parentElement.parentElement;
             const popup = parentBox.querySelector(".shop__ordersheet__popup");
-            popup.classList.remove("hidden");
+
+            popup.style.display = "flex";
+            popup.classList.replace("animate__fadeOut", "animate__fadeIn");
             popupOverlay.style.display = "block";
         })
     })
@@ -21,7 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
         item.addEventListener("click", function () {
             const parentBox = this.parentElement.parentElement;
 
-            parentBox.classList.add("hidden");
+
+            parentBox.classList.replace("animate__fadeIn", "animate__fadeOut");
+            parentBox.style.display = "none"
             popupOverlay.style.display = "none";
         })
     })
@@ -70,14 +74,17 @@ document.addEventListener("DOMContentLoaded", () => {
             newArray.push(item);
             createCookie('cart_items', JSON.stringify(newArray), 7);
 
-            nodeBox.classList.add("hidden");
-            orderSuccessPopup.classList.remove("hidden");
+            nodeBox.classList.replace("animate__fadeIn", "animate__fadeOut");
+            nodeBox.style.display = "none"
+            orderSuccessPopup.style.display = "flex";
+            orderSuccessPopup.classList.replace("animate__fadeOut", "animate__fadeIn");
 
         })
     })
 
     keepShopping.addEventListener("click", function () {
-        orderSuccessPopup.classList.add("hidden");
+        orderSuccessPopup.classList.replace("animate__fadeIn", "animate__fadeOut");
+        orderSuccessPopup.style.display = "none"
         popupOverlay.style.display = "none";
     })
 });

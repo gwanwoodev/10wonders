@@ -1,0 +1,126 @@
+.admin__section {
+
+
+
+    .admin__categories {
+        margin-top: 50px;
+        margin-bottom: 100px;
+        display: flex;
+
+        .admin__categories--item {
+            cursor: pointer;
+            font-family: "SDGothicB";
+            font-size: 28px;
+            color: #d3d3d3;
+
+            &:first-child {
+                margin-right: 25px;
+            }
+
+            &.selected__item {
+                color: black;
+            }
+        }
+
+    }
+
+    .admin__product__action--box {
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+
+
+        .search__input {
+            height: 40px;
+            width: 200px;
+            border: none;
+            font-family: "SDGothicR";
+            font-size: 20px;
+            border: 2px solid #222222;
+            padding: 0px 15px;
+            text-align: center;
+            border-radius: 3px;
+        }
+
+        .redirect--newProduct {
+            background-color: black;
+            display: block;
+            width: 70px;
+            height: 40px;
+            line-height: 40px;
+            color: white;
+            font-family: "SDGothicB";
+            font-size: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-left: 20px;
+
+        }
+
+    }
+
+
+    .admin__product__table {
+        width: 100%;
+        margin-bottom: 50px;
+
+        thead {
+            th {
+                border: 2px solid #222222;
+                font-family: "SDGothicB";
+                font-size: 20px;
+                padding: 10px 0px;
+            }
+        }
+
+        tbody {
+            tr {
+                height: 120px;
+                border-left: 2px solid #222222;
+                border-bottom: 2px solid #222222;
+            }
+
+            td {
+                text-align: center;
+                border-right: 2px solid #222222;
+                vertical-align: middle;
+                font-family: "SDGothicB";
+                font-size: 20px;
+                padding: 0px 10px;
+
+                .product__td--flex {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: 80px;
+                        height: 80px;
+                        object-fit: cover;
+                        border: 1px solid #DDDDDD;
+                        margin-right: 30px;
+                    }
+                }
+
+                a {
+                    background-color: black;
+                    color: white;
+                    padding: 7px;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                    &:first-child {
+                        margin-right: 7px;
+                    }
+                }
+
+                &.tdSmall {
+
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

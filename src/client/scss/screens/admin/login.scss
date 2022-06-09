@@ -3,16 +3,19 @@
         width: 100%;
         min-height: 100vh;
         padding-top: 120px;
-        background-color: #f3f3f3;
+
+        &.login__section {
+            background-color: #f3f3f3;
+        }
+
 
         .section__wrapper {
             margin: 0 auto;
             max-width: 1320px;
-            height: calc(100vh - 120px);
             position: relative;
 
             .login__form {
-                height: 100%;
+                height: calc(100vh - 120px);
                 display: flex;
                 flex-direction: column;
                 align-items: center;

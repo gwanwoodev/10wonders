@@ -13,7 +13,8 @@ module.exports = {
         cart: BASE_JS + "cart.js",
         order: BASE_JS + "order.js",
         orderResult: BASE_JS + "orderResult.js",
-        login: BASE_JS + "login.js"
+        login: BASE_JS + "login.js",
+        dashboard: BASE_JS + "dashboard.js"
     },
     plugins: [
         new MiniCssExtractPlugin({

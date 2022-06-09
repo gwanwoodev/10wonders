@@ -34,6 +34,35 @@ export const login = (req, res) => {
 }
 
 
-export const dashboard = (req, res) => {
-    res.send('dd');
+export const dashboard = async (req, res) => {
+    const { page = 1, keyword = '' } = req.query;
+    const CONTENTS_LIMIT = 5;
+
+    const options = {
+        page: page,
+        limit: CONTENTS_LIMIT
+    }
+
+
+    const products = await Product.paginate({
+        productName: {
+            $regex: keyword,
+            $options: "i"
+        }
+    }, {
+        page: page,
+        limit: CONTENTS_LIMIT
+    });
+
+
+    const { currentPage, startPage, endPage, totalPage } = getPageAccessData(
+        products.totalDocs,
+        CONTENTS_LIMIT,
+        page
+    );
+
+    console.log(products);
+
+
+    return res.render("admins/dashboard", { pageTitle: "Dashboard", products: products.docs, startPage, endPage, totalPage, currentPage, totalDocs: products.totalDocs, page });
 }

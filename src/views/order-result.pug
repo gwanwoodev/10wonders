@@ -1,0 +1,71 @@
+extends layouts/base.pug
+
+block content
+    include ./partials/header-dark.pug
+    #order
+        #popupOverlay
+        .order__section
+            .order__wrapper
+                .order__main__categories
+                    a(href="/cart") YOUR CART
+                    a(href="/order").selected__category YOUR ORDER
+                h1.order__enter--title.order__result--title YOUR ORDER (#{email})
+                .order__current__process
+                    .order__process__step
+                        img(src="/static/images/order_icon.png").order__icon
+                        .step__texts
+                            p.order__process__step--text Order
+                            p.order__process__popup--text
+                    img(src="/static/images/process_active.png").process__img
+                    .order__process__step
+                        img(src="/static/images/payment_icon.png").payment__icon
+                        .step__texts
+                            p.order__process__step--text Payment
+                            p.order__process__popup--text How to pay
+
+                    img(src="/static/images/process_deactive.png").process__img
+                    .order__process__step
+                        img(src="/static/images/shipping_icon.png").shipping__icon
+                        .step__texts
+                            p.order__process__step--text Shipping
+                            p.order__process__popup--text Shipping Info
+                table.order__table
+                    colgroup
+                        col(style="width: 10%")
+                        col(style="width: 60%")
+                        col(style="width: 10%")
+                        col(style="width: 20%")
+
+                    thead
+                        th.order__table__head--text No.
+                        th.order__table__head--text PRODUCT
+                        th.order__table__head--text Qty
+                        th.order__table__head--text PAYMENT
+                    -function numberWithCommas(x) {
+                    - return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    - }
+                    tbody
+                        each item, index in order[0].orderProducts
+                            tr
+                                td.tdNum #{index+1}
+                                td.tdBox
+                                    .table__product
+                                        img(src=item.product.productImage)
+                                        .product__info--box
+                                            h1.product__info--title #{item.product.productName}
+                                            p.product__info--subHead #{item.product.productSubHead}
+                                td.tdQtyBox #{item.productQuantity}
+                                td.tdPaymentBox $ #{numberWithCommas(item.estimate)}
+                                
+
+                .order__current__footer
+                    .current__footer__column
+                        button.ourprocess__btn Our process
+                    .current__footer__column
+                        p.subtotal--head SUBTOTAL
+                        p.subtotal--body $ #{numberWithCommas(subTotal)}
+
+
+block scripts
+    script(src="/static/js/main.js")
+    

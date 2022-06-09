@@ -33,12 +33,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const productName = parentBox.querySelector(".ordersheet__popup--productName").innerText;
             const productSubHead = parentBox.querySelector(".ordersheet__popup--text").innerText;
-            const orderQuantity = parentBox.querySelector(".input__quantity").value;
+            const productQuantity = parentBox.querySelector(".input__quantity").value;
             const productImage = nodeBox.querySelector(".ordersheet__product--img").src;
             const _id = this.getAttribute("_id");
             let prevCookies = getCookie('cart_items') ? getCookie('cart_items') : '[]';
 
-            if (!orderQuantity) {
+            if (!productQuantity) {
                 Notiflix.Notify.failure("Enter the quantity.");
                 return;
             }
@@ -46,8 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
             let item = {
                 productName,
                 productSubHead,
-                orderQuantity,
+                productQuantity,
                 productImage,
+                product: _id,
                 _id
             }
 

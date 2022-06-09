@@ -171,6 +171,8 @@ export const createNewOrder = async (req, res) => {
 
         await sendClientMail(populatedDoc);
 
+        res.clearCookie("cart_items");
+
     } catch (e) {
         console.error("Error - createNewOrder");
         console.error(e);

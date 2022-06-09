@@ -22,7 +22,7 @@
             position: relative;
 
             .order__main__categories {
-                margin-bottom: 200px;
+
 
                 a {
                     font-family: "SDGothicB";
@@ -41,7 +41,13 @@
             .order__enter--title {
                 font-family: "SDGothicB";
                 font-size: 24px;
-                margin-bottom: 110px;
+                margin-top: 80px;
+                margin-bottom: 100px;
+
+                &.order__result--title {
+                    margin-top: 70px;
+                    margin-bottom: 30px;
+                }
             }
 
             .order__enter__form {
@@ -78,6 +84,175 @@
                     font-size: 18px;
                     border: none;
                     cursor: pointer;
+                }
+            }
+
+            .order__current__process {
+                display: flex;
+                align-items: center;
+                margin-bottom: 80px;
+
+                .order__process__step {
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    height: 110px;
+                    align-items: center;
+
+                    .order__icon {
+                        width: 58.74px;
+
+                    }
+
+                    .payment__icon {
+                        width: 80.26px;
+
+
+                    }
+
+                    .shipping__icon {
+                        width: 60px;
+
+                    }
+
+                    .step__texts {
+                        // position: absolute;
+                        // bottom: -50px;
+                        // left: 50%;
+                        // transform: translateX(-50%);
+                        text-align: center;
+
+                        .order__process__step--text {
+                            margin-top: 15px;
+                            margin-bottom: 8px;
+                            font-family: "SDGothicB";
+                            font-size: 28px;
+                        }
+
+                        .order__process__popup--text {
+                            cursor: pointer;
+                            font-family: "SDGothicR";
+                            text-decoration: underline;
+                            font-size: 17px;
+                        }
+                    }
+                }
+
+                .process__img {
+                    margin: 0px 53px;
+                    height: 10px;
+                }
+            }
+
+            .order__table {
+                width: 100%;
+
+
+                thead {
+                    th {
+                        border: 2px solid #222222;
+                        font-family: "SDGothicB";
+                        font-size: 20px;
+                        padding: 10px 0px;
+                    }
+                }
+
+                tbody {
+                    tr {
+                        height: 120px;
+                        border-left: 2px solid #222222;
+                        border-bottom: 2px solid #222222;
+
+                        td {
+                            text-align: center;
+                            border-right: 2px solid #222222;
+                            vertical-align: middle;
+                            font-family: "SDGothicB";
+
+                            &.tdNum,
+                            &.tdQtyBox,
+                            &.tdPaymentBox {
+                                font-size: 20px;
+                            }
+
+
+                            &.tdBox {
+                                padding: 10px 20px;
+
+                                .table__product {
+                                    display: flex;
+                                    align-items: center;
+
+                                    img {
+                                        width: 112px;
+                                        height: 112px;
+                                        object-fit: cover;
+                                        border: 1px solid #DDDDDD;
+                                        margin-right: 30px;
+                                    }
+
+                                    .product__info--box {
+
+
+                                        .product__info--title {
+                                            font-size: 32px;
+                                            margin-bottom: 5px;
+                                            text-align: left;
+                                        }
+
+                                        .product__info--subHead {
+                                            font-family: "SDGothicR";
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .order__current__footer {
+                display: flex;
+                font-size: 20px;
+                font-family: "SDGothicB";
+                margin-bottom: 50px;
+
+                .current__footer__column {
+                    display: flex;
+                    height: 90px;
+                    align-items: center;
+
+                    &:last-child {
+                        margin-left: auto;
+                    }
+
+                    .ourprocess__btn {
+                        font-size: 20px;
+                        font-family: "SDGothicB";
+                        color: white;
+                        background-color: #003CFF;
+                        border: none;
+                        width: 222px;
+                        height: 50px;
+                        cursor: pointer;
+
+                    }
+
+                    p {
+                        width: 222px;
+                        height: 93px;
+                        text-align: center;
+                        line-height: 93px;
+                    }
+
+                    .subtotal--head {
+                        color: #003CFF;
+                    }
+
+                    .subtotal--body {
+                        background-color: #003CFF;
+                        color: white;
+                    }
                 }
             }
         }

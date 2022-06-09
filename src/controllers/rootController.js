@@ -1,3 +1,4 @@
+import Order from "../models/Order";
 import Product from "../models/Product";
 
 const getPageAccessData = (totalDocs, limit, page) => {
@@ -162,4 +163,15 @@ export const cart = async (req, res) => {
 
 export const order = async (req, res) => {
     return res.render("order-enter", { pageTitle: "Order" });
+}
+
+export const orderResult = async (req, res) => {
+    const { email, orderNumber } = req.query;
+    const order = await Order.find({ clientEmail: email, orderNumber }).populate("orderProducts.product");
+    let subTotal = 0;
+    order[0].orderProducts.forEach(item => {
+        subTotal += item.estimate;
+    })
+
+    return res.render("order-result", { pageTitle: "Result", email, order, subTotal });
 }

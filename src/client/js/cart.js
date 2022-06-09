@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const cartItems = JSON.parse(getCookie("cart_items"));
 
         const findIndex = cartItems.findIndex(item => item._id === _id);
-        cartItems[findIndex].orderQuantity = qtyValue;
+        cartItems[findIndex].productQuantity = qtyValue;
 
         createCookie("cart_items", JSON.stringify(cartItems));
     }

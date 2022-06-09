@@ -39,3 +39,10 @@ import "../images/sample.jpg";
 import "../images/trashbin_icon.png";
 import "../images/controlUp_icon.png";
 import "../images/controlDown_icon.png";
+
+import "../images/order_icon.png";
+import "../images/shipping_icon.png";
+import "../images/payment_icon.png";
+
+import "../images/process_active.png";
+import "../images/process_deactive.png";

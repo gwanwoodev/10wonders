@@ -147,3 +147,16 @@ a {
     font-size: 24px;
     margin-bottom: 30px;
 }
+
+.hidden {
+    opacity: 0;
+    max-height: 0;
+    visibility: hidden;
+    display: none;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    max-height: 450px;
+}

@@ -1,3 +1,4 @@
+import _ from "mongoose-paginate-v2";
 import Order from "../models/Order";
 import Product from "../models/Product";
 
@@ -33,6 +34,11 @@ export const login = (req, res) => {
     return res.render("admins/login", { pageTitle: "Login" });
 }
 
+export const logout = (req, res) => {
+    req.session.destroy();
+    return res.redirect("/");
+};
+
 
 export const dashboard = async (req, res) => {
     const { page = 1, keyword = '' } = req.query;
@@ -65,4 +71,8 @@ export const dashboard = async (req, res) => {
 
 
     return res.render("admins/dashboard", { pageTitle: "Dashboard", products: products.docs, startPage, endPage, totalPage, currentPage, totalDocs: products.totalDocs, page });
+}
+
+export const addDashboard = async (req, res) => {
+    return res.render("admins/dashboard-add", { pageTitle: "Add" });
 }

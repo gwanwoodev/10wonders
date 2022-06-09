@@ -4,7 +4,9 @@ header.header(style="background-color: black;")
             a(href="/dashboard")
                 img(src="/static/images/logo.png")
         .header__column
-            a(href="/admin/login").header--mg
-                span.header__link--text LOGIN
-            a(href="/admin/dashboard").header--mg
-                span.header__link--text DASHBOARD
+            if loggedIn
+                a(href="/admin/logout").header--mg
+                    span.header__link--text LOGOUT
+            else
+                a(href="/admin/login").header--mg
+                    span.header__link--text LOGIN

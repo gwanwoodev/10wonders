@@ -32,17 +32,19 @@ const productSchema = new mongoose.Schema({
     productSpecs: [
         {
             specTitle: {
-                type: String
+                type: String,
+                default: '',
             },
             specSubTitle: {
-                type: String
+                type: String,
+                default: ''
             }
         }
     ],
 
     productDataSheet: {
         type: String,
-        default: '',
+        default: '#',
     }
 })
 

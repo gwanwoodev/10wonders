@@ -6,11 +6,12 @@ block content
         .admin__section
             .section__wrapper
                 .admin__categories
-                    a(href="/admin/dashboard").admin__categories--item.selected__item Product
-                    h1.admin__categories--item Order
+                    a(href="/admin/dashboard").admin__categories--item.selected__item 상품관리
+                    a(href="/admin/order").admin__categories--item 주문관리
+
                 .admin__product__action--box
                     input(type="text", placeholder="이름 검색").search__input
-                    a(href="/dashboard/new").redirect--newProduct +
+                    a(href="/admin/dashboard/new").redirect--newProduct +
                 table.admin__product__table
                     colgroup
                         col(style="width: 5%")

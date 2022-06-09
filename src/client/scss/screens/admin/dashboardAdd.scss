@@ -1,0 +1,78 @@
+.admin__section {
+    .section__wrapper {
+        .product__add__wrapper {
+            margin-bottom: 50px;
+
+            .productAddButton {
+                position: fixed;
+                right: 50px;
+                bottom: 30px;
+                cursor: pointer;
+                background-color: #003CFF;
+                color: white;
+                font-size: 25px;
+                width: 200px;
+                height: 50px;
+                border: none;
+                border-radius: 5px;
+            }
+
+            .strong__guide--text {
+                font-family: "SDGothicB";
+                font-size: 17px;
+                color: red;
+            }
+
+            .product__add__column {
+                margin-top: 30px;
+                display: flex;
+                flex-direction: column;
+
+                .product__add--headText {
+                    font-family: "SDGothicR";
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                }
+
+                img {
+                    width: 64px;
+                    height: 64px;
+                    cursor: pointer;
+                }
+
+                .product__global--select {
+                    width: 200px;
+                    height: 50px;
+                    font-family: "SDGothicR";
+                    font-size: 25px;
+                    text-align: center;
+                }
+
+                .product__global--input {
+                    width: 400px;
+                    height: 50px;
+                    font-family: "SDGothicR";
+                    font-size: 25px;
+                    text-align: center;
+                }
+
+                .product__spec__textarea {
+                    margin-top: 15px;
+                    width: 400px;
+                    height: 100px;
+                    resize: none;
+                    font-family: "SDGothicR";
+                    font-size: 25px;
+                    text-align: center;
+                    padding: 10px;
+
+                    &::placeholder {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+
+}

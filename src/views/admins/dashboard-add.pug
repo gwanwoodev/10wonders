@@ -1,0 +1,63 @@
+extends ../layouts/base.pug
+
+block content
+    include ../partials/header-admin.pug
+    #content
+        .admin__section
+            .section__wrapper
+                
+                .admin__categories
+                    a(href="/admin/dashboard").admin__categories--item.selected__item 상품관리
+                    h1.admin__categories--item 주문관리
+
+                .product__add__wrapper
+                    p.strong__guide--text *표기는 필수 입력입니다.
+                    button.productAddButton 등록
+                    hr
+                    .product__add__column
+                        p.product__add--headText *대표이미지
+                        img(src="/static/images/gallery_icon.png")
+                    .product__add__column
+                        p.product__add--headText *타입
+                        select.product__type--select.product__global--select
+                            option(value="inverter" selected) INVERTER
+                            option(value="module") MODULE
+                            option(value="optimize") OPTIMIZE
+                    .product__add__column
+                        p.product__add--headText *제조사
+                        select.product__maker--select.product__global--select
+                            option(value="SUNGROW" selected) SUNGROW
+                            option(value="FIMER") FIMER
+                            option(value="HUNDAI") HANWHA Q CELL
+                            option(value="OCIPOWER") OCI POWER
+                            option(value="KSTAR") KSTAR
+                            option(value="SOLIS") SOLIS
+                            option(value="SHINSUNGEG") SHIN SUNG E&G
+                    .product__add__column
+                        p.product__add--headText *상품명
+                        input(type="text", required, placeholder="상품명").product__add--name.product__global--input
+                    .product__add__column
+                        p.product__add--headText *부가설명
+                        input(type="text", required, placeholder="부가설명").product__add--subHead.product__global--input                                                    
+                    .product__add__column
+                        p.product__add--headText (Optional) 스펙 1
+                        input(type="text", required, placeholder="제목").product__add__spec--title.product__global--input
+                        textarea.product__spec__textarea(placeholder="내용")
+                    .product__add__column
+                        p.product__add--headText (Optional) 스펙 2
+                        input(type="text", required, placeholder="제목").product__add__spec--title.product__global--input
+                        textarea.product__spec__textarea(placeholder="내용")
+                    .product__add__column
+                        p.product__add--headText (Optional) 스펙 3
+                        input(type="text", required, placeholder="제목").product__add__spec--title.product__global--input
+                        textarea.product__spec__textarea(placeholder="내용")
+                    .product__add__column
+                        p.product__add--headText (Optional) 스펙 4
+                        input(type="text", required, placeholder="제목").product__add__spec--title.product__global--input
+                        textarea.product__spec__textarea(placeholder="내용")                                                                        
+                        
+
+
+block scripts
+    script(src="/static/js/main.js")
+    script(src="/static/js/dashboardAdd.js")

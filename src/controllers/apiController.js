@@ -139,7 +139,9 @@ export const removeProduct = async (req, res) => {
 }
 
 export const createNewOrder = async (req, res) => {
-    const { clientEmail, clientName, clientAddress, orderProducts } = req.body;
+    const { clientEmail, clientName, clientAddress } = req.body;
+    const { cart_items = '[]' } = req.cookies;
+    const orderProducts = JSON.parse(cart_items);
 
     let isExists = true;
     let orderNumber;
@@ -169,12 +171,12 @@ export const createNewOrder = async (req, res) => {
         console.error("Error - createNewOrder");
         console.error(e);
 
-        return res.json({ success: false, msg: 'error - createNewOrder' });
+        return res.json({ success: false, msg: 'error - createNewOrder', });
     }
 
 
 
-    return res.json({ success: true, msg: 'success createNewOrder' });
+    return res.json({ success: true, msg: 'success createNewOrder', orderNumber });
 }
 
 export const getMyOrder = async (req, res) => {

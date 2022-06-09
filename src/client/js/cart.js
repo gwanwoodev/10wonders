@@ -1,9 +1,76 @@
 import { createCookie, getCookie } from "../../utils/cookies";
+import Notiflix from "notiflix";
+import { emailValidator, blankValidator } from "../../utils/validator";
 
 document.addEventListener("DOMContentLoaded", () => {
     const qtyUpBtns = document.querySelectorAll(".qtyUp--btn");
     const qtyDownBtns = document.querySelectorAll(".qtyDown--btn");
     const tdDelBtns = document.querySelectorAll(".tdDel--btn");
+    const estimateBtn = document.querySelector(".request__estimate--btn");
+    const orderCompletePopup = document.querySelector(".cart__order__complete__popup");
+    const orderCompleteCloseBtn = document.querySelector(".order__complete__close--icon");
+    const orderCompleteYesBtn = document.querySelector(".order__complete--yes");
+
+    const popupOverlay = document.querySelector("#popupOverlay");
+
+    estimateBtn.addEventListener("click", async () => {
+        const emailValue = document.querySelector("input[name=email]").value;
+        const depositerValue = document.querySelector("input[name=depositer]").value;
+        const addressValue = document.querySelector("input[name=address]").value;
+
+        if (!emailValidator(emailValue)) {
+            Notiflix.Notify.failure("Please enter the email correctly.");
+            return;
+        }
+
+
+        if (blankValidator(depositerValue) || blankValidator(addressValue)) {
+            Notiflix.Notify.failure("You cannot enter spaces.");
+            return;
+        }
+
+        const apiResult = await fetch("/api/order", {
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: JSON.stringify({
+                clientEmail: emailValue,
+                clientName: depositerValue,
+                clientAddress: addressValue
+            })
+        });
+
+        const resultJson = await apiResult.json();
+
+        if (resultJson.success) {
+            orderCompletePopup.style.display = "block";
+            orderCompletePopup.classList.replace("animate__fadeOut", "animate__fadeIn");
+            popupOverlay.style.display = "block";
+
+            orderCompleteYesBtn.setAttribute("clientEmail", emailValue);
+            orderCompleteYesBtn.setAttribute("orderNumber", resultJson.orderNumber);
+        } else {
+            Notiflix.Notify.failure("Server Error.");
+            return;
+        }
+
+
+    });
+
+    orderCompleteCloseBtn.addEventListener("click", () => {
+        orderCompletePopup.classList.replace("animate__fadeIn", "animate__fadeOut");
+        orderCompletePopup.style.display = "none;"
+        popupOverlay.style.display = "none";
+    });
+
+    orderCompleteYesBtn.addEventListener("click", function () {
+        const email = this.getAttribute("clientEmail");
+        const orderNumber = this.getAttribute("orderNumber");
+
+        const redirectUrl = `/order?email=${email}&orderNumber=${orderNumber}`;
+        location.href = redirectUrl;
+    })
 
     qtyUpBtns.forEach(item => {
         item.addEventListener("click", function () {

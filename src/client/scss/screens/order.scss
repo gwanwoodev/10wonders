@@ -259,6 +259,116 @@
     }
 }
 
+.our__process__popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    max-width: 658px;
+    width: 100%;
+    z-index: 2;
+    padding: 30px 35px;
+
+    display: none;
+
+    .our__process__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 58px;
+
+        .our__process--head {
+            margin-right: auto;
+            color: #003CFF;
+            font-size: 32px;
+            font-family: "SDGothicB";
+        }
+
+        .our__process__close--icon {
+            cursor: pointer;
+        }
+    }
+
+    .our__process__body {
+        .our__process__body__step {
+            display: flex;
+            margin-bottom: 66px;
+            align-items: center;
+            position: relative;
+
+            .our__process__body__step--title {
+                font-family: "SDGothicB";
+                font-size: 28px;
+                margin-right: 53px;
+                position: relative;
+
+                img {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -50px;
+                }
+            }
+
+            .step__position--absolute {
+                position: absolute;
+                right: 100px;
+                width: 150px;
+            }
+
+            .our__process__step--box {
+                .our__process__body__step--subtitle {
+                    font-family: "SDGothicB";
+                    font-size: 20px;
+                    margin-right: 100px;
+                }
+
+                .our__process__body__step--content {
+                    font-family: "SDGothicR";
+                    font-size: 17px;
+
+                    &.step__accountInfo {
+
+                        color: #003CFF;
+                        font-weight: 600;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .our__process__footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .our__process__footer--head {
+            font-family: "SDGothicB";
+            font-size: 16px;
+            margin-right: 30px;
+        }
+
+        .our__process__footer--subBox {
+            display: flex;
+            align-items: center;
+
+            margin-right: 30px;
+
+            img {
+                margin-right: 8px;
+            }
+
+            .our__process__footer--content {
+                font-family: "SDGothicR";
+                font-size: 16px;
+            }
+        }
+    }
+}
+
 .brightness {
     filter: brightness(0.1);
 }

@@ -46,3 +46,6 @@ import "../images/payment_icon.png";
 
 import "../images/process_active.png";
 import "../images/process_deactive.png";
+import "../images/step_down_icon.png";
+import "../images/phone_black_icon.png";
+import "../images/mail_black_icon.png";

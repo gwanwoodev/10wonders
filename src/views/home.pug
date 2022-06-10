@@ -75,19 +75,18 @@ block content
                         .main__section__footer__column
                             img(src="/static/images/mail_icon.png")
                             p.main__footer__text 10wonder@naver.com
-        .scroll__section.wheelSection 
-            .scroll__back(style="background-image:url('/static/images/scroll_back01.jpg')")
-            .scroll__back(style="background-image:url('/static/images/scroll_back02.jpg')")
-            .scroll__back(style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, rgb(0, 0, 0) 100%), url('/static/images/scroll_back03.jpg')")
-                .scroll__inner__section
-                    .scroll__inner__box
-                        h1.scroll__inner--title Our products
-                    .scroll__inner__box
-                        p.scroll__inner--text the highest quality products such as solar modules, inverters,
-                        p.scroll__inner--text and optimizers for solar power plant construction.
-                    
-                    .scroll__inner__box
-                        a(href="/shop") FIND MORE
+        .scroll__back(style="background-image:url('/static/images/scroll_back01.jpg')").wheelSection.scroll1 
+        .scroll__back(style="background-image:url('/static/images/scroll_back02.jpg')").wheelSection.scroll2                            
+        .scroll__back(style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, rgb(0, 0, 0) 100%), url('/static/images/scroll_back03.jpg')").wheelSection.scroll3
+            .scroll__inner__section
+                .scroll__inner__box
+                    h1.scroll__inner--title Our products
+                .scroll__inner__box
+                    p.scroll__inner--text the highest quality products such as solar modules, inverters,
+                    p.scroll__inner--text and optimizers for solar power plant construction.
+                
+                .scroll__inner__box
+                    a(href="/shop") FIND MORE
         .slice__section.wheelSection 
             .slice__back(style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/images/slice_back01.jpg')")
                 .slice__box
@@ -147,6 +146,8 @@ block content
     include ./partials/footer.pug
 
 block scripts
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous")
     script(src="/static/js/main.js")
     script(src="/static/js/global.js")
     script(src="/static/js/home.js")
+    

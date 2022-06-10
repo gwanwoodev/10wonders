@@ -14,45 +14,74 @@ document.addEventListener("DOMContentLoaded", () => {
     const accountPopupBtn = document.querySelector(".process__child__sub--popup");
     const accountPopupCloseBtn = document.querySelector(".account__close--icon");
 
-
+    const $sections = $(".wheelSection");
     const wheelSections = document.querySelectorAll(".wheelSection");
 
-    
     let currentIndex = 0;
-    let nextSection;
-    let previousSection;
-    let offsetTop;
-    document.addEventListener("wheel", (evt) => {
-        let delta = evt.deltaY;
-        if(delta > 0) {
-            // Go to next
-            if(currentIndex +1 >= wheelSections.length) return;
+    let isAnimating = false; 
 
-            currentIndex++;
-            nextSection = wheelSections[currentIndex];
-            offsetTop = nextSection.offsetTop;
+    let stopAnimation = function() {
+        setTimeout(function() {
+            isAnimating = false;
+        }, 300);
+    };
+
+    let bottomIsReached = function($elem) {
+        let rect = $elem[0].getBoundingClientRect();
+        return rect.bottom <= $(window).height();
+    }
+
+    let topIsReached = function($elem) {
+        let rect = $elem[0].getBoundingClientRect();
+        return rect.top >= 0;
+    }
+
+
+
+
+    document.addEventListener("mousewheel", function(event) {
+
+        if(isAnimating) {
             event.preventDefault();
+            return;
+        }
 
-            window.scrollTo({
-                top: offsetTop,
-                behavior: "smooth",
-            })
+        let $currentSection = $($sections[currentIndex]);
+
+        let direction  = event.deltaY;
+
+        if(direction > 0) {
+            if (currentIndex + 1 >=  $sections.length) return;
+            if(!bottomIsReached($currentSection)) return;
+            currentIndex++;
+
+            let $nextSection = $($sections[currentIndex]);
+            let offsetTop = $nextSection.offset().top;
+            event.preventDefault();
+            isAnimating = true;
+            $("html, body").animate({scrollTop: offsetTop}, 1000, stopAnimation);
+
+
 
         }else {
-            // Go to previous
-
-            if(currentIndex -1 < 0) return;
-
+            if(currentIndex - 1 < 0) return;
+            if (!topIsReached($currentSection)) return;
             currentIndex--;
-            previousSection = wheelSections[currentIndex];
-            offsetTop = previousSection.offsetTop;
+
+
+            let $previousSection = $($sections[currentIndex]);
+            let offsetTop = $previousSection.offset().top;
             event.preventDefault();
-            window.scrollTo({
-                top: offsetTop,
-                behavior: "smooth"
-            });
+            isAnimating = true;
+            $("html, body").animate({scrollTop: offsetTop}, 1000, stopAnimation);
+
+
+
+            
         }
     }, {passive: false});
+
+
 
 
     accountPopupBtn.addEventListener("click", () => {
@@ -72,6 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const interval = setInterval(backgroundChange, 5000);
 
     function scrollToTop() {
+        direction = 0;
+        currentIndex = 0;
         window.scrollTo({
             top: '0',
             behavior: "smooth"

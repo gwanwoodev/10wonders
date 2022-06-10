@@ -266,75 +266,66 @@
         }
     }
 
-    .scroll__section {
+
+
+    .scroll__back {
+        width: 100%;
         height: 100vh;
-        max-height: 100vh;
-        overflow-y: scroll;
+        background-size: cover;
 
 
-        &::-webkit-scrollbar {
-            display: none;
+        &.scroll1 {
+            background-position: center top;
         }
 
-        .scroll__back {
-            width: 100%;
+        &.scroll2  {
+            background-position: center 80%;
+        }
+
+        &.scroll3  {
+            background-position: center 50%;
+            filter: contrast(0.78);
+            -webkit-filter: contrast(0.78);
+        }
+
+        .scroll__inner__section {
+            margin: 0 auto;
+            max-width: 1320px;
             height: 100%;
-            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 200px;
 
+            .scroll__inner__box {
+                color: white;
 
-            &:nth-child(1) {
-                background-position: center top;
-            }
+                .scroll__inner--title {
+                    font-family: "SDGothicH";
+                    font-size: 72px;
+                }
 
-            &:nth-child(2) {
-                background-position: center 80%;
-            }
+                .scroll__inner--text {
+                    font-family: "SDGothicR";
+                    font-size: 18px;
+                }
 
-            &:nth-child(3) {
-                background-position: center 50%;
-                filter: contrast(0.78);
-                -webkit-filter: contrast(0.78);
-            }
+                &:not(:last-child) {
+                    margin-bottom: 20px;
+                }
 
-            .scroll__inner__section {
-                margin: 0 auto;
-                max-width: 1320px;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-end;
-                padding-bottom: 200px;
+                &:last-child {
+                    margin-top: 40px;
+                }
 
-                .scroll__inner__box {
+                a {
+                    border: 2px solid white;
+                    padding: 7px 20px;
+                    font-family: "SDGothicR";
+                    font-size: 18px;
                     color: white;
 
-                    .scroll__inner--title {
-                        font-family: "SDGothicH";
-                        font-size: 72px;
-                    }
 
-                    .scroll__inner--text {
-                        font-family: "SDGothicR";
-                        font-size: 18px;
-                    }
-
-                    &:not(:last-child) {
-                        margin-bottom: 20px;
-                    }
-
-                    &:last-child {
-                        margin-top: 40px;
-                    }
-
-                    a {
-                        border: 2px solid white;
-                        padding: 7px 20px;
-                        font-family: "SDGothicR";
-                        font-size: 18px;
-                        color: white;
-
-
-                    }
                 }
             }
         }

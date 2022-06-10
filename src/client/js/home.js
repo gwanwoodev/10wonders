@@ -36,6 +36,15 @@ document.addEventListener("DOMContentLoaded", () => {
         return rect.top >= 0;
     }
 
+    window.addEventListener("scroll", () => {
+        if(window.pageYOffset >= 120) {
+            header.style.backgroundColor = "black";
+            pageUp.style.opacity = "1";
+        }else {
+            header.style.backgroundColor = "transparent";
+            pageUp.style.opacity = "0";
+        }
+    })
 
 
 
@@ -79,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             header.style.backgroundColor = "black";
         }else if(currentIndex === 0) {
             header.style.backgroundColor = "transparent";
+
         }
     }, {passive: false});
 

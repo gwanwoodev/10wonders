@@ -1,7 +1,11 @@
+
+
 .pageup--icon {
     position: fixed;
     right: 20px;
     bottom: 20px;
+    opacity: 0;
+    transition: opacity .2s ease-in;
     cursor: pointer;
 }
 

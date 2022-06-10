@@ -1,6 +1,7 @@
 const emailRegex = /\S+@\S+\.\S+/;
 const blankRegex = /^\s*$/;
 const orderNumberRegex = /^\d{9}$/;
+const onlyNumberRegex = /^\d+$/;
 const imageExt = [".png", ".jpg", ".jpeg", ".bmp", ".jfif"];
 export const emailValidator = (email) => {
     return emailRegex.test(email);
@@ -27,3 +28,6 @@ export const getExtention = (filename) => {
 };
 
 
+export const onlyNumberValidator = (number) => {
+    return onlyNumberRegex.test(number);
+}

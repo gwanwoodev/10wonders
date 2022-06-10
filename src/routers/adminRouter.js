@@ -1,5 +1,5 @@
 import express from "express";
-import { login, logout, dashboard, addDashboard, updateDashboard, manageOrder } from "../controllers/adminController.js";
+import { login, logout, dashboard, addDashboard, updateDashboard, manageOrder, sendOrderEstimate } from "../controllers/adminController.js";
 import { protecterMiddleware } from "../middlewares";
 
 
@@ -11,4 +11,5 @@ adminRouter.get("/dashboard", protecterMiddleware, dashboard);
 adminRouter.get("/dashboard/new", protecterMiddleware, addDashboard);
 adminRouter.get("/dashboard/update", protecterMiddleware, updateDashboard);
 adminRouter.get("/order", protecterMiddleware, manageOrder);
+adminRouter.get("/order/estimate", protecterMiddleware, sendOrderEstimate);
 export default adminRouter;

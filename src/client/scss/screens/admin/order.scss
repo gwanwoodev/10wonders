@@ -1,5 +1,19 @@
 .admin__section {
     .section__wrapper {
+
+        .estimateSendButton {
+            margin-left: auto;
+            display: block;
+            margin-bottom: 20px;
+            font-family: "SDGothicB";
+            font-size: 22px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+            height: 40px;
+        }
         .admin__product__table {
             tbody {
                 tr {
@@ -23,6 +37,185 @@
                     }
                 }
             }
+        }
+    }
+}
+
+
+.order__table {
+    width: 100%;
+
+
+    thead {
+        th {
+            border: 2px solid #222222;
+            font-family: "SDGothicB";
+            font-size: 20px;
+            padding: 10px 0px;
+        }
+    }
+
+    tbody {
+        tr {
+            height: 120px;
+            border-left: 2px solid #222222;
+            border-bottom: 2px solid #222222;
+
+            td {
+                text-align: center;
+                border-right: 2px solid #222222;
+                vertical-align: middle;
+                font-family: "SDGothicB";
+
+                &.tdNum,
+                &.tdQtyBox,
+                &.tdPaymentBox {
+                    font-size: 20px;
+                }
+
+
+                &.tdBox {
+                    padding: 10px 20px;
+
+                    .table__product {
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                            width: 112px;
+                            height: 112px;
+                            object-fit: cover;
+                            border: 1px solid #DDDDDD;
+                            margin-right: 30px;
+                        }
+
+                        .product__info--box {
+
+
+                            .product__info--title {
+                                font-size: 32px;
+                                margin-bottom: 5px;
+                                text-align: left;
+                            }
+
+                            .product__info--subHead {
+                                font-family: "SDGothicR";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.order__estimate__table {
+    width: 100%;
+
+
+    thead {
+        th {
+            border: 2px solid #222222;
+            font-family: "SDGothicB";
+            font-size: 20px;
+            padding: 10px 0px;
+        }
+    }
+
+    tbody {
+        tr {
+            height: 120px;
+            border-left: 2px solid #222222;
+            border-bottom: 2px solid #222222;
+
+            td {
+                text-align: center;
+                border-right: 2px solid #222222;
+                vertical-align: middle;
+                font-family: "SDGothicB";
+                font-size: 20px;
+
+
+
+                &.tdBox {
+                    padding: 10px 20px;
+
+                    .table__product {
+                        display: flex;
+                        align-items: center;
+
+                        img {
+                            width: 112px;
+                            height: 112px;
+                            object-fit: cover;
+                            border: 1px solid #DDDDDD;
+                            margin-right: 30px;
+                        }
+
+                        .product__info--box {
+
+
+                            .product__info--title {
+                                font-size: 32px;
+                                margin-bottom: 5px;
+                                text-align: left;
+                            }
+
+                            .product__info--subHead {
+                                font-family: "SDGothicR";
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+
+                &.tdPaymentBox {
+                    input {
+                        margin-left: 10px;
+                        text-align:center;
+                        width: 80%;
+                        height: 40px;
+                        background-color: #d3d3d3;
+                        padding: 0px 10px;
+                        font-size: 20px;
+                        border: none;
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+.order__estimate__footer {
+    display: flex;
+    font-size: 20px;
+    font-family: "SDGothicB";
+    margin-bottom: 50px;
+
+    .current__footer__column {
+        display: flex;
+        height: 90px;
+        align-items: center;
+
+        &:last-child {
+            margin-left: auto;
+        }
+
+        p {
+            width: 198px;
+            height: 93px;
+            text-align: center;
+            line-height: 93px;
+        }
+
+        .subtotal--head {
+            color: #003CFF;
+        }
+
+        .subtotal--body {
+            background-color: #003CFF;
+            color: white;
         }
     }
 }

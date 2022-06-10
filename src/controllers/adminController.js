@@ -1,6 +1,7 @@
 import _ from "mongoose-paginate-v2";
 import Order from "../models/Order";
 import Product from "../models/Product";
+import { orderNumberValidator } from "../utils/validator";
 
 const getPageAccessData = (totalDocs, limit, page) => {
     let currentPage = page ? Number(page) : 1;
@@ -25,6 +26,8 @@ const getPageAccessData = (totalDocs, limit, page) => {
     };
     return resultObj;
 };
+
+
 
 export const login = (req, res) => {
     if (req.session.loggedIn) {
@@ -150,4 +153,21 @@ export const manageOrder = async (req, res) => {
         page
     );
     return res.render("admins/order", {pageTitle: "Orders", orders: orders.docs, startPage, endPage, totalPage, currentPage, totalDocs: orders.totalDocs, page});
+}
+
+export const sendOrderEstimate = async (req, res) => {
+    const {orderNumber} = req.query;
+
+    if (!orderNumber) {
+        return res.redirect("/admin/dashboard");
+    }
+
+    if (!orderNumberValidator(orderNumber)) {
+        return res.redirect("/admin/dashboard");
+    }
+
+    const order = await Order.find({orderNumber: orderNumber}).populate("orderProducts.product");
+    console.log(order);
+
+    return res.render("admins/order-estimate", {pageTitle: "Send Estimate", order});
 }

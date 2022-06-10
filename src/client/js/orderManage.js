@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
        
         item.addEventListener("click",function() {
             const orderNumber = this.getAttribute("orderNumber");
-            location.href =`/admin/order/estimate?_id=${orderNumber}`;
+            location.href =`/admin/order/estimate?orderNumber=${orderNumber}`;
         });
     });
 

@@ -125,6 +125,14 @@
                     margin: 0px 47.3px;
                 }
 
+                .step__down--icon {
+                    display: none;
+                    position: absolute;
+                    left: 50%; 
+                    transform: translateX(-50%);
+                    bottom: -30px;
+                }
+
                 .section__process--text {
                     font-family: "SDGothicB";
                     color: white;

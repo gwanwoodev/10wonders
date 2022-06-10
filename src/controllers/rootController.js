@@ -94,7 +94,7 @@ export const shopModule = async (req, res) => {
     );
     const mainCategoryList = [{ value: "inverter", target: '/shop' }, { value: 'module', target: '/shop/module' }, { value: 'optimize', target: '/shop/optimize' }];
 
-    const categoryList = [{ value: "LONGISOLAR", label: "LONGI SOLAR" }, { value: "HANSOL", label: "HANSOL" }, { value: "HUNDAI", label: "HUNDAI" }, { value: "HANWHAQCELL", label: "HANWHA Q CELL" }, { value: "JASOLAR", label: "JA SOLAR" }, { value: "A STRONERGY", label: "ASTRONEGY" }, { value: "SHINSUNGEG", label: "SHIN SUNG E&G" }];
+    const categoryList = [{ value: "LONGISOLAR", label: "LONGI SOLAR" }, { value: "HANSOL", label: "HANSOL" }, { value: "HUNDAI", label: "HUNDAI" }, { value: "HANWHAQCELL", label: "HANWHA Q CELL" }, { value: "JASOLAR", label: "JA SOLAR" }, { value: "ASTRONERGY", label: "A STRONEGY" }, { value: "SHINSUNGEG", label: "SHIN SUNG E&G" }];
 
     return res.render("shop", {
         pageTitle: "Shop",

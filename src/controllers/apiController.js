@@ -2,6 +2,9 @@ import Order from "../models/Order";
 import Product from "../models/Product";
 import User from "../models/User";
 import bcrypt from "bcrypt";
+import sharp from "sharp";
+import fs from "fs";
+import path from "path";
 import { createOrderNumber } from "../utils/generator";
 import { sendClientMail } from "../utils/mailer";
 
@@ -21,7 +24,7 @@ export const createNewProduct = async (req, res) => {
         productSpecs,
     } = req.body;
 
-    console.log(productSpecs);
+
 
     const files = req.files;
 
@@ -34,7 +37,16 @@ export const createNewProduct = async (req, res) => {
         if (!files.image || !files.sheet)
             return res.json({ success: false, msg: 'request invalid' });
 
-        const productImage = `/uploads/images/${files.image[0].filename}`;
+        const newImagePath = `sharp-${files.image[0].fieldname}${Date.now()}${path.extname(files.image[0].originalname)}`;
+
+        sharp(files.image[0].path).resize({ width: 640 }).withMetadata().toFile(`uploads/images/${newImagePath}`, (err, info) => {
+            if (err) throw err;
+            fs.unlink(files.image[0].path, (err) => {
+                if (err) throw err;
+            })
+        })
+
+        const productImage = `/uploads/images/${newImagePath}`;
         const productDataSheet = `/uploads/datasheets/${files.sheet[0].filename}`;
 
         await Product.create({
@@ -83,7 +95,16 @@ export const updateProduct = async (req, res) => {
             return res.json({ success: false, msg: 'request invalid' });
 
         if (files.image) {
-            productImage = `/uploads/images/${files.image[0].filename}`;
+            const newImagePath = `sharp-${files.image[0].fieldname}${Date.now()}${path.extname(files.image[0].originalname)}`;
+
+            sharp(files.image[0].path).resize({ width: 640 }).withMetadata().toFile(`uploads/images/${newImagePath}`, (err, info) => {
+                if (err) throw err;
+                fs.unlink(files.image[0].path, (err) => {
+                    if (err) throw err;
+                })
+            });
+
+            productImage = `/uploads/images/${newImagePath}`;
         } else {
             const previousProduct = await Product.findById(productId);
 

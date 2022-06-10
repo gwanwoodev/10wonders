@@ -115,8 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         productSpecsTitle.forEach((item, i) => {
-            formData.append(`productSpecs[${i}][specTitle]`, item.value.trim());
-            formData.append(`productSpecs[${i}][specSubTitle]`, productSpecsSubTitle[i].value.trim());
+            formData.append(`productSpecs[${i}][specTitle]`, item.value.trim() || '');
+            formData.append(`productSpecs[${i}][specSubTitle]`, productSpecsSubTitle[i].value.trim() || '');
         });
 
 

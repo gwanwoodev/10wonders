@@ -14,7 +14,31 @@
 
     /* Home */
     #home {
+        .process__account--popup {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 80%;
+            overflow-y: scroll;
 
+            .account__popup--content {
+                flex-direction: column;
+
+                .account__popup--subtitle {
+                    position: static;
+                    margin-bottom: 15px;
+                }
+
+                .account__popup__text--box {
+                    .account__popup--text {
+                        margin-left: 0;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
         /* main section */
         .main__section {
             max-width: 425px;
@@ -50,6 +74,7 @@
                     align-items: flex-start;
                     padding-top: 45px;
                     height: 100%;
+
                     .scroll__div {
                         display :none;
                     }
@@ -65,6 +90,7 @@
                         font-size: 16px;
                         margin-bottom: 50px;
 
+
                         .process__child__sub--box {
                             bottom: 0px;
                             top: 50%;
@@ -79,6 +105,8 @@
                             }
 
                         }
+
+
                     }
 
                     .step__down--icon {
@@ -184,7 +212,7 @@
         .brand__section {
             padding: 0px 40px;
             height: 100%;
-            max-height: 130vh;
+            max-height: 150vh;
             min-height: 100vh;
             .brand__section__wrapper {
                 position: relative;

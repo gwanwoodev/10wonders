@@ -86,15 +86,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     accountPopupBtn.addEventListener("click", () => {
+        accountPopup.classList.remove("hide");
         accountPopup.style.display = "block";
         accountPopup.classList.replace("animate__fadeOut", "animate__fadeIn");
         popupOverlay.style.display = "block";
+       
 
     })
 
     accountPopupCloseBtn.addEventListener("click", () => {
         accountPopup.classList.replace("animate__fadeIn", "animate__fadeOut");
-        accountPopup.style.display = "none;"
+        accountPopup.style.display = "none";
+        accountPopup.classList.add("hide");
         popupOverlay.style.display = "none";
     })
 

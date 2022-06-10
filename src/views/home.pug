@@ -3,6 +3,7 @@ extends layouts/base.pug
 block content
     include ./partials/header.pug
     #home
+        include ./popups/account-info-popup.pug 
         #popupOverlay
         .main__section(style="background-image:url('/static/images/main_background01.jpg')").wheelSection 
             .main__section__wrapper
@@ -43,7 +44,7 @@ block content
                         h3.process__child--text Send
                         h3.process__child--text money
                         img(src="/static/images/step_down_icon_white.png").step__down--icon
-                        include ./popups/account-info-popup.pug                                                                                          
+                                                                                                                 
                         .process__child__sub--box
                             a.process__child__sub--popup.process__child__sub--text *Account Info
                             p.process__child--sub--text &nbsp;

@@ -7,8 +7,8 @@ const headerHeight = header.getBoundingClientRect().height;
 
 window.addEventListener("scroll", () => {
 
-    /*
-    if(window.offsetTop >= headerHeight) {
+
+    if(window.pageYOffset >= headerHeight) {
         header.style.backgroundColor = "black";
 
         headerLogo.src = "/static/images/logo.png";
@@ -22,5 +22,5 @@ window.addEventListener("scroll", () => {
         headerLogo.src = "/static/images/logo_dark.png";
         headerLink.style.color = "black";
         headerIcon.src = "/static/images/cart_icon_black.png";
-    }*/
+    }
 })

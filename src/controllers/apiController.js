@@ -239,9 +239,13 @@ export const updateOrder = async (req, res) => {
     if (!isExists) return res.json({ success: false, msg: 'not found orders' });
 
     try {
+
         await Order.updateOne({ orderNumber }, {
-            orderProducts
+            orderProducts,
+            process: 1
         });
+
+        return res.json({success: true, msg: 'success updateOrder'});
     } catch (e) {
         console.error("ERror - updateOrder");
         console.error(e);
@@ -258,7 +262,7 @@ export const updateOrderProcess = async (req, res) => {
     try {
         await Order.updateOne({ orderNumber }, { process });
 
-        return res.json({success: true, msg: '상태변경 성공'});
+        return res.json({success: true, msg: 'success updateOrderProcess'});
     } catch (e) {
         console.error("Error - updateOrderProcess");
         console.error(e);

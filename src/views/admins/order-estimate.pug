@@ -10,7 +10,7 @@ block content
                     a(href="/admin/order").admin__categories--item.selected__item 주문관리
 
                 if order[0]
-                    button.estimateSendButton 견적 발송
+                    button.estimateSendButton(orderNumber=order[0].orderNumber) 견적 발송
                 table.order__estimate__table
                     colgroup
                         col(style="width: 15%")
@@ -40,7 +40,7 @@ block content
                                     td #{item.productQuantity}
                                     td.tdPaymentBox
                                         | $
-                                        input(type="text", required, value=item.estimate).estimate__input
+                                        input(type="text", required, value=item.estimate, productId=item._id, productQuantity=item.productQuantity).estimate__input
                 if order[0]                
                     .order__estimate__footer
                         .current__footer__column

@@ -176,10 +176,11 @@ export const orderResult = async (req, res) => {
     const order = await Order.find({ clientEmail: email, orderNumber }).populate("orderProducts.product");
     let subTotal = 0;
 
-
     order[0].orderProducts.forEach(item => {
         subTotal += item.estimate;
     })
+
+    
 
     return res.render("order-result", { pageTitle: "Result", email, order, subTotal });
 }

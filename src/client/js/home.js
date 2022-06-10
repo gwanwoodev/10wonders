@@ -104,10 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
     function scrollToTop() {
         direction = 0;
         currentIndex = 0;
-        window.scrollTo({
-            top: '0',
-            behavior: "smooth"
-        });
+        header.style.backgroundColor = "transparent";
+        $("html, body").animate({scrollTop: 0}, 1000, stopAnimation);
     }
 
     function backgroundChange() {

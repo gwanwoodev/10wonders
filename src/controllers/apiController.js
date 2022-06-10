@@ -6,7 +6,7 @@ import sharp from "sharp";
 import fs from "fs";
 import path from "path";
 import { createOrderNumber } from "../utils/generator";
-import { sendClientMail } from "../utils/mailer";
+import { sendClientMail, sendEstimateMail } from "../utils/mailer";
 
 function productReqChecker({ productType, productMaker, productName, productSubHead }) {
     if (!productType || !productMaker || !productName || !productSubHead)
@@ -240,10 +240,12 @@ export const updateOrder = async (req, res) => {
 
     try {
 
-        await Order.updateOne({ orderNumber }, {
+        const order = await Order.findOneAndUpdate({ orderNumber }, {
             orderProducts,
             process: 1
-        });
+        },{new: true}).populate("orderProducts.product");
+
+        await sendEstimateMail(order);
 
         return res.json({success: true, msg: 'success updateOrder'});
     } catch (e) {

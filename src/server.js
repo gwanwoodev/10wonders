@@ -29,7 +29,7 @@ app.use(
         cookie: {
             httpOnly: true,
             sameSite: "Lax",
-            maxAge: 60000 * 60,
+            maxAge: 60000 * 60 * 24,
         },
         store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
     })

@@ -4,6 +4,7 @@
 
     header.header {
         max-width: 425px;
+        width:100%;
         padding: 0px 40px;
         .header__columns {
             max-width: 425px !important;
@@ -17,6 +18,7 @@
         /* main section */
         .main__section {
             max-width: 425px;
+            width: 100%;
             padding-left: 40px; 
             padding-right: 40px;
             min-height: 130vh;
@@ -138,7 +140,11 @@
 
         .slice__section {
             flex-direction: column;
+            height: 100%;
+            max-height: 140vh;
+
             .slice__back {
+                min-height: 264px;
                 position: static !important;
                 padding: 0px 40px;
                 background-position: center center !important;
@@ -177,7 +183,9 @@
 
         .brand__section {
             padding: 0px 40px;
-
+            height: 100%;
+            max-height: 130vh;
+            min-height: 100vh;
             .brand__section__wrapper {
                 position: relative;
                 .brand__text--zone {
@@ -195,12 +203,19 @@
                 .brand__image--zone {
                     margin-top: 20px;
                     margin-bottom: 58px;
+                    width:100%;
+                    flex-wrap: wrap;
                     justify-content: space-between;
                     .brand__image--back {
-                        width: 140px;
+                        background-color: white;
+                        width: 125px;
                         height: 60px;
+
+                        img {
+                            width: 85px;
+                        }
                         &:nth-child(2n) {
-                            margin-left: 15px;
+                            margin-left: 0px;
                         }
                     }
                 }
@@ -224,6 +239,7 @@
     /* footer */
 
     .footer {
+        height: 200px;
         .footer__real--section {
             margin: 0;
             padding: 0px 40px;
@@ -247,3 +263,113 @@
     }
 
 }
+
+@media (max-width: 375px) {
+
+    /* header */
+
+
+    header.header {
+        max-width: 375px;
+        .header__columns {
+            max-width: 375px !important;
+        }
+        
+    }
+
+
+    /* Home */
+
+    #home {
+        /* main__section */
+
+        .main__section {
+            max-width: 375px;
+            .main__section__wrapper {
+                .section__process {
+    
+                    .process__child--box {
+    
+    
+                        .process__child__sub--box {
+    
+                            left: 120px;
+        
+    
+                        }
+                    }
+                    .main__section__footer {
+
+                        .main__section__footer__column {
+
+                            .main__footer__text {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* brand__setion */
+
+        .brand__section {
+
+            .brand__section__wrapper {
+
+
+                .brand__image--zone {
+                    margin-bottom: 0px;
+                    padding-bottom: 80px;
+                    
+                    .brand__image--back {
+                        width: 100px;
+                        height: 60px;
+                        max-width: 105px;
+                        img {
+                            max-width: 100px;
+                        }
+                    }
+                }
+
+                .brand__find--btn {
+                    width: 130px;
+                    height: 32px;
+                    font-size: 14px;
+                    line-height:32px;
+                    position: absolute;
+                    bottom: 20px
+                }
+            }
+
+
+            
+        }
+    }
+
+}
+
+@media (max-width: 360px) {
+    
+
+    #home {
+        /* brand__setion */
+
+        .brand__section {
+
+            .brand__section__wrapper {
+
+
+                .brand__image--zone {
+                    padding-bottom: 50px;
+                }
+
+
+            }
+
+
+            
+        }
+    }
+}
+

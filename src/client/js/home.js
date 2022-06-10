@@ -15,7 +15,45 @@ document.addEventListener("DOMContentLoaded", () => {
     const accountPopupCloseBtn = document.querySelector(".account__close--icon");
 
 
-    headerElement.style.backgroundColor = "black";
+    const wheelSections = document.querySelectorAll(".wheelSection");
+
+    
+    let currentIndex = 0;
+    let nextSection;
+    let previousSection;
+    let offsetTop;
+    document.addEventListener("wheel", (evt) => {
+        let delta = evt.deltaY;
+        if(delta > 0) {
+            // Go to next
+            if(currentIndex +1 >= wheelSections.length) return;
+
+            currentIndex++;
+            nextSection = wheelSections[currentIndex];
+            offsetTop = nextSection.offsetTop;
+            event.preventDefault();
+
+            window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth",
+            })
+
+        }else {
+            // Go to previous
+
+            if(currentIndex -1 < 0) return;
+
+            currentIndex--;
+            previousSection = wheelSections[currentIndex];
+            offsetTop = previousSection.offsetTop;
+            event.preventDefault();
+            window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth"
+            });
+        }
+    }, {passive: false});
+
 
     accountPopupBtn.addEventListener("click", () => {
         accountPopup.style.display = "block";
@@ -44,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const infoObj = [
             {
                 image: "/static/images/main_background01.jpg",
-                headerBg: "#000000",
+                headerBg: "transparent",
                 headText1: 'the best solar energy',
                 headText2: 'equipments from Korea',
                 subText1: "We provide the world's heighest quality solar energy equipments from variouis brands.",

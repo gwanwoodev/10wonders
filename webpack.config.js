@@ -15,7 +15,8 @@ module.exports = {
         orderResult: BASE_JS + "orderResult.js",
         login: BASE_JS + "login.js",
         dashboard: BASE_JS + "dashboard.js",
-        dashboardAdd: BASE_JS + "dashboardAdd.js"
+        dashboardAdd: BASE_JS + "dashboardAdd.js",
+        dashboardUpdate: BASE_JS + "dashboardUpdate.js"
     },
     plugins: [
         new MiniCssExtractPlugin({

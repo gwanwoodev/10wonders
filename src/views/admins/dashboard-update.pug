@@ -1,0 +1,109 @@
+extends ../layouts/base.pug
+
+block content
+    include ../partials/header-admin.pug
+    #content
+        .admin__section
+            .section__wrapper
+                
+                .admin__categories
+                    a(href="/admin/dashboard").admin__categories--item.selected__item 상품관리
+                    h1.admin__categories--item 주문관리
+
+                .product__add__wrapper
+                    p.strong__guide--text *표기는 필수 입력입니다.
+                    button.productAddButton(_id=product._id) 수정
+                    hr
+                    .product__add__column
+                        p.product__add--headText 대표이미지
+                        img(src=product.productImage).product__image--preview
+                        input(type="file", hidden, ).product__image__hidden--file
+                    .product__add__column
+                        p.product__add--headText 데이터시트 업로드
+                        input(type="file", required, id="files").product__datasheet--file
+                        label(for="files") #{product.productDataSheet} (시트를 변경하지않으려면 그대로 두십시오)
+                    .product__add__column
+                        p.product__add--headText *타입
+                        select.product__type--select.product__global--select
+                            option 타입 선택
+                            option(value="inverter" selected=`${product.productType}` == 'inverter') INVERTER
+                            option(value="module" selected=`${product.productType}` == 'module') MODULE
+                            option(value="optimize" selected=`${product.productType}` == 'optimize') OPTIMIZE
+                    .product__add__column
+                        p.product__add--headText *제조사
+
+                        if product.productType == 'inverter'
+                            select.product__global--select.show__select.inverter__maker
+                                option(selected) 제조사 선택
+                                each opt in inverterOptions
+                                    option(value=opt.value selected=`${(opt.value)}` == product.productMaker) #{opt.label}
+
+                            select.product__global--select.module__maker
+                                option(selected) 제조사 선택
+                                each opt in moduleOptions
+                                    option(value=opt.value selected=`${(opt.value)}` == product.productMaker) #{opt.label}
+                                    
+                            select.product__global--select.optimize__maker
+                                option(selected) 제조사 선택
+                                each opt in optimizeOptions
+                                    option(value=opt.value selected=`${(opt.value)}` == product.productMaker) #{opt.label}
+                        else if product.productType == 'module'
+                        
+                            select.product__global--select.inverter__maker
+                                option(selected) 제조사 선택
+                                each opt in inverterOptions
+                                    option(value=opt.value selected=`${(opt.value)}` == product.productMaker) #{opt.label}
+
+                            select.product__global--select.show__select.module__maker
+                                option(selected) 제조사 선택
+                                each opt in moduleOptions
+                                    option(value=opt.value selected=`${(opt.value)}` == product.productMaker) #{opt.label}
+                                    
+                            select.product__global--select.optimize__maker
+                                option(selected) 제조사 선택
+                                each opt in optimizeOptions
+                                    option(value=opt.value selected=`${(opt.value)}` == product.productMaker) #{opt.label}
+                        else
+                            select.product__global--select.inverter__maker
+                                option(selected) 제조사 선택
+                                each opt in inverterOptions
+                                    option(value=opt.value selected=`${(opt.value)}` == product.productMaker) #{opt.label}
+
+                            select.product__global--select.module__maker
+                                option(selected) 제조사 선택
+                                each opt in moduleOptions
+                                    option(value=opt.value selected=`${(opt.value)}` == product.productMaker) #{opt.label}
+                                    
+                            select.product__global--select.show__select.optimize__maker
+                                option(selected) 제조사 선택
+                                each opt in optimizeOptions
+                                    option(value=opt.value selected=`${(opt.value)}` == product.productMaker) #{opt.label}                                    
+
+                    .product__add__column
+                        p.product__add--headText *상품명
+                        input(type="text", required, placeholder="상품명" value=product.productName).product__add--name.product__global--input
+                    .product__add__column
+                        p.product__add--headText *부가설명
+                        input(type="text", required, placeholder="부가설명" value=product.productSubHead).product__add--subHead.product__global--input                                                    
+                    .product__add__column
+                        p.product__add--headText (Optional) 스펙 1
+                        input(type="text", required, placeholder="제목" value=product.productSpecs[0].specTitle).product__add__spec--title.product__global--input
+                        textarea.product__spec__textarea(placeholder="내용") #{product.productSpecs[0].specSubTitle}
+                    .product__add__column
+                        p.product__add--headText (Optional) 스펙 2
+                        input(type="text", required, placeholder="제목" value=product.productSpecs[1].specTitle).product__add__spec--title.product__global--input
+                        textarea.product__spec__textarea(placeholder="내용") #{product.productSpecs[1].specSubTitle}
+                    .product__add__column
+                        p.product__add--headText (Optional) 스펙 3
+                        input(type="text", required, placeholder="제목" value=product.productSpecs[2].specTitle).product__add__spec--title.product__global--input
+                        textarea.product__spec__textarea(placeholder="내용") #{product.productSpecs[2].specSubTitle}
+                    .product__add__column
+                        p.product__add--headText (Optional) 스펙 4
+                        input(type="text", required, placeholder="제목" value=product.productSpecs[3].specTitle).product__add__spec--title.product__global--input
+                        textarea.product__spec__textarea(placeholder="내용") #{product.productSpecs[3].specSubTitle}  
+                        
+
+
+block scripts
+    script(src="/static/js/main.js")
+    script(src="/static/js/dashboardUpdate.js")

@@ -76,3 +76,44 @@ export const dashboard = async (req, res) => {
 export const addDashboard = async (req, res) => {
     return res.render("admins/dashboard-add", { pageTitle: "Add" });
 }
+
+export const updateDashboard = async (req, res) => {
+    const { _id } = req.query;
+
+    if (!_id) {
+        return res.redirect("/admin/dashboard");
+    }
+
+    const idCheckRegex = /^(?=[a-f\d]{24}$)(\d+[a-f]|[a-f]+\d)/i;
+
+    if (!idCheckRegex.test(_id)) {
+        return res.redirect("/");
+    }
+
+    const product = await Product.findById(_id);
+
+    const inverterOptions = [
+        { value: 'SUNGROW', label: 'SUNGROW' },
+        { value: 'FIMER', label: 'FIMER' },
+        { value: 'HUNDAI', label: 'HUNDAI' },
+        { value: 'OCIPOWER', label: 'OCI POWER' },
+        { value: 'KSTAR', label: 'KSTAR' },
+        { value: 'SOLIS', label: 'SOLIS' },
+        { value: 'SHINSUNGEG', label: 'SHIN SUNG E&G' },
+    ];
+
+    const moduleOptions = [
+        { value: 'LONGISOLAR', label: 'LONGI SOLAR' },
+        { value: 'HANSOL', label: 'HANSOL' },
+        { value: 'HANWHAQCELL', label: 'HANWHA Q CELL' },
+        { value: 'JASOLAR', label: 'JA SOLAR' },
+        { value: 'ASTRONERGY', label: 'A STRONERGY' },
+        { value: 'SHINSUNGEG', label: 'SHIN SUNG E&G' },
+    ]
+
+    const optimizeOptions = [
+        { value: 'TAIGO', label: 'TAIGO' }
+    ];
+
+    return res.render("admins/dashboard-update", { pageTitle: "Modify", product, inverterOptions, moduleOptions, optimizeOptions });
+}

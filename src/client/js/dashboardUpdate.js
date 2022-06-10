@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const formData = new FormData();
 
+
+
     productImagePreview.addEventListener("click", () => {
         productHiddenFile.click();
     })
@@ -43,12 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const selectedValue = this.value;
 
         if (selectedValue === "inverter") {
-
             inverterMaker.style.display = "block";
             moduleMaker.style.display = "none";
             optimizeMaker.style.display = "none";
-
-
         } else if (selectedValue === "module") {
             inverterMaker.style.display = "none";
             moduleMaker.style.display = "block";
@@ -73,20 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     productAddButton.addEventListener("click", async function () {
-
-
-
+        const _id = this.getAttribute("_id");
         let maker = document.querySelector(`.${productType.value.trim()}__maker`)
-
-        if (!productHiddenFile.value) {
-            Notify.failure("대표 이미지를 업로드 해주세요");
-            return;
-        }
-
-        if (!productDatasheetFile.value) {
-            Notify.failure("데이터 시트를 업로드 해주세요");
-            return;
-        }
 
         if (productType.selectedIndex === 0) {
             Notify.failure("타입을 선택 해주세요");
@@ -108,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
+        formData.append("productId", _id);
         formData.append("productType", productType.value.trim());
         formData.append("productMaker", maker.value.trim());
         formData.append("productName", productName.value.trim());
@@ -115,13 +103,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         productSpecsTitle.forEach((item, i) => {
-            formData.append(`productSpecs[${i}][specTitle]`, item.value.trim());
-            formData.append(`productSpecs[${i}][specSubTitle]`, productSpecsSubTitle[i].value.trim());
+            formData.append(`productSpecs[${i}][specTitle]`, item.value.trim() || '');
+            formData.append(`productSpecs[${i}][specSubTitle]`, productSpecsSubTitle[i].value.trim() || '');
         });
 
 
 
-        const apiResult = await fetch("/api/product", {
+        const apiResult = await fetch("/api/product?_method=PUT", {
             method: "POST",
             body: formData
         });
@@ -129,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const resultJson = await apiResult.json();
 
         if (resultJson.success) {
-            Notify.success("등록이 완료되었습니다. 3초 후 대시보드로 이동합니다.");
+            Notify.success("수정이 완료되었습니다. 3초 후 대시보드로 이동합니다.");
 
             setTimeout(() => {
                 location.href = "/admin/dashboard";

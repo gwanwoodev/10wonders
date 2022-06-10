@@ -16,7 +16,11 @@ block content
                     hr
                     .product__add__column
                         p.product__add--headText *대표이미지
-                        img(src="/static/images/gallery_icon.png")
+                        img(src="/static/images/gallery_icon.png").product__image--preview
+                        input(type="file", hidden, ).product__image__hidden--file
+                    .product__add__column
+                        p.product__add--headText *데이터시트 업로드
+                        input(type="file", required).product__datasheet--file
                     .product__add__column
                         p.product__add--headText *타입
                         select.product__type--select.product__global--select
@@ -54,7 +58,8 @@ block content
                     .product__add__column
                         p.product__add--headText (Optional) 스펙 4
                         input(type="text", required, placeholder="제목").product__add__spec--title.product__global--input
-                        textarea.product__spec__textarea(placeholder="내용")                                                                        
+                        textarea.product__spec__textarea(placeholder="내용")     
+
                         
 
 

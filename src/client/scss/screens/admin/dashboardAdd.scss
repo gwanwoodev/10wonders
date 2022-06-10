@@ -39,6 +39,7 @@
                     width: 64px;
                     height: 64px;
                     cursor: pointer;
+                    object-fit: cover;
                 }
 
                 .product__global--select {
@@ -70,6 +71,10 @@
                     &::placeholder {
                         font-size: 25px;
                     }
+                }
+
+                .product__datasheet--file {
+                    width: 200px;
                 }
             }
         }

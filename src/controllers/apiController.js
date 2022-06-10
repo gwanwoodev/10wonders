@@ -21,6 +21,8 @@ export const createNewProduct = async (req, res) => {
         productSpecs,
     } = req.body;
 
+    console.log(productSpecs);
+
     const files = req.files;
 
     try {

@@ -1,0 +1,28 @@
+.admin__section {
+    .section__wrapper {
+        .admin__product__table {
+            tbody {
+                tr {
+                    td {
+                        .statusBtns__box {
+                            display: flex;
+                            flex-direction: column;
+
+                            .statusBtn {
+                                margin-bottom: 5px;
+                                background-color: black;
+                                color: white;
+                                border-radius: 5px;
+                                font-family: "SDGothicR";
+                                cursor: pointer;
+                                &:last-child {
+                                    margin-bottom: 0px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

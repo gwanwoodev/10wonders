@@ -115,5 +115,39 @@ export const updateDashboard = async (req, res) => {
         { value: 'TAIGO', label: 'TAIGO' }
     ];
 
+    
     return res.render("admins/dashboard-update", { pageTitle: "Modify", product, inverterOptions, moduleOptions, optimizeOptions });
+}
+
+export const manageOrder = async (req, res) => {
+    const { page = 1, keyword } = req.query;
+    const CONTENTS_LIMIT = 5;
+
+    let sortOptions = {
+        createdAt: -1
+    };
+
+    let where = {};
+
+    if(keyword) {
+        where = {
+            orderNumber: keyword
+        }
+    }
+
+
+    const orders = await Order.paginate(where, {
+        page: page,
+        limit: CONTENTS_LIMIT,
+        sort: sortOptions
+    });
+
+
+
+    const { currentPage, startPage, endPage, totalPage } = getPageAccessData(
+        orders.totalDocs,
+        CONTENTS_LIMIT,
+        page
+    );
+    return res.render("admins/order", {pageTitle: "Orders", orders: orders.docs, startPage, endPage, totalPage, currentPage, totalDocs: orders.totalDocs, page});
 }

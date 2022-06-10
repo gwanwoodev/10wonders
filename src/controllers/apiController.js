@@ -257,6 +257,8 @@ export const updateOrderProcess = async (req, res) => {
 
     try {
         await Order.updateOne({ orderNumber }, { process });
+
+        return res.json({success: true, msg: '상태변경 성공'});
     } catch (e) {
         console.error("Error - updateOrderProcess");
         console.error(e);

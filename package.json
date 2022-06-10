@@ -8,8 +8,8 @@
     "build": "npm run build:server && npm run build:assets",
     "build:server": "babel src -d build",
     "build:assets": "webpack --mode=production",
-    "dev:server": "CHOKIDAR_USEPOLLING=true nodemon",
-    "dev:assets": "CHOKIDAR_USEPOLLING=true webpack --mode=development -w"
+    "dev:server": "nodemon",
+    "dev:assets": "webpack --mode=development -w"
   },
   "browserslist": [
     "> 1%",

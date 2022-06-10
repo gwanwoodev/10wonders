@@ -16,7 +16,8 @@ module.exports = {
         login: BASE_JS + "login.js",
         dashboard: BASE_JS + "dashboard.js",
         dashboardAdd: BASE_JS + "dashboardAdd.js",
-        dashboardUpdate: BASE_JS + "dashboardUpdate.js"
+        dashboardUpdate: BASE_JS + "dashboardUpdate.js",
+        orderManage: BASE_JS + "orderManage.js"
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -71,8 +72,10 @@ module.exports = {
                 loader: "file-loader",
                 options: {
                     name: "images/[name].[ext]?[hash]",
+                    limit: 10000
                 },
             },
+
         ]
     }
 }

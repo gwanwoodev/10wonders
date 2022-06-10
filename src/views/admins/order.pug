@@ -1,0 +1,58 @@
+extends ../layouts/base.pug
+
+block content
+    include ../partials/header-admin.pug
+    #content
+        .admin__section
+            .section__wrapper
+                .admin__categories
+                    a(href="/admin/dashboard").admin__categories--item 상품관리
+                    a(href="/admin/order").admin__categories--item.selected__item 주문관리
+                .admin__product__action--box
+                    input(type="text", placeholder="주문번호 검색").search__input
+
+                table.admin__product__table
+                    colgroup
+                        col(style="width: 10%")
+                        col(style="width: 10%")
+                        col(style="width: 15%")
+                        col(style="width: 25%") 
+                        col(style="width: 25%")
+                        col(style="width: 15%")                 
+                    thead
+                        th 주문번호
+                        th 상태
+                        th 주문자
+                        th 배송지
+                        th 주문자 이메일
+                        th 상태 변경
+                        
+                    tbody
+                        if orders
+                            each order in orders
+                                tr
+                                    td #{order.orderNumber}
+                                    if order.process == 0
+                                        td 주문접수
+                                    else if order.process == 1
+                                        td 견적발송
+                                    else if order.process == 2
+                                        td 입금확인
+                                    else if order.process == 3
+                                        td 배송처리
+                                    td #{order.clientName}
+                                    td #{order.clientAddress}
+                                    td #{order.clientEmail}
+                                    td
+                                        .statusBtns__box
+                                            button.statusBtn.sendEstimate(orderNumber=order.orderNumber) 견적발송
+                                            button.statusBtn.checkPayment(orderNumber=order.orderNumber) 입금확인
+                                            button.statusBtn.shippingBtn(orderNumber=order.orderNumber) 배송처리
+
+
+                include ../partials/pagination.pug
+
+block scripts
+    script(src="/static/js/main.js")
+    script(src="/static/js/page.js")
+    script(src="/static/js/orderManage.js")

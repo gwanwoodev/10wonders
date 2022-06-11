@@ -776,6 +776,73 @@
                 .order__mobile__estimates {
                     display: flex;
                 }
+
+                .our__process__popup {
+                    width: 80%;
+                    height: 627px;
+                    overflow-y: auto;
+                    .our__process__header {
+                        margin-bottom: 30px;
+                        .our__process--head {
+                            font-size: 28px;
+                        }
+                    }
+
+                    .our__process__body {
+                        .our__process__body__step {
+                            margin-bottom: 0px;
+                            .our__process__body__step--title {
+                                display: none;
+                            }
+                            .our__process__step--box {
+                                text-align: center;
+                                position: relative;
+                                width: 100px;
+                                .our__process__body__step--subtitle {
+                                    margin-right: 0px;
+                                    font-size: 16px;
+                                    
+                                }
+
+                                .mobile__step__down--icon {
+                                    display: inline;
+                                    margin: 20px 0px;
+                                    
+                                }
+                            }
+                            
+                            .step__position--absolute {
+                                width: auto;
+                                top: 0px;
+                                right: 0px;
+                                position: absolute !important;
+
+                                .our__process__body__step--content {
+                                    font-size: 14px;
+                                    line-height: 18px;
+                                }
+                                
+                            }
+                        }
+                    }
+
+                    .our__process__footer {
+                        flex-direction: column;
+                        .our__process__footer--head{
+                            margin-right: 0px;
+                            margin-bottom: 15px;
+                            
+                        }
+
+                        .our__process__footer--subBox {
+                            margin-right: 0px;
+                            .our__process__footer--content {
+                                font-size: 14px;
+                                margin-bottom: 5px;
+                            }
+                        }
+                    }
+                }
             }
 
         }

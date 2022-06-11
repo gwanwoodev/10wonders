@@ -413,6 +413,9 @@
             }
 
             .our__process__step--box {
+                .mobile__step__down--icon {
+                    display: none;
+                }
                 .our__process__body__step--subtitle {
                     font-family: "SDGothicB";
                     font-size: 20px;

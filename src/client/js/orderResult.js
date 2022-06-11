@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const ourProcessBtn = document.querySelector(".ourprocess__btn");
     const ourProcessCloseBtn = document.querySelector(".our__process__close--icon");
 
+    const ourProcessMobile = document.querySelector(".mobile__Ourprocess");
+
     howtopay.addEventListener("click", () => {
         orderCompletePopup.style.display = "block";
         orderCompletePopup.classList.replace("animate__fadeOut", "animate__fadeIn");
@@ -31,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
         popupOverlay.style.display = "none";
     });
 
-
+    ourProcessMobile.addEventListener("click", () => {
+        ourProcessBtn.click();
+    })
 
 });

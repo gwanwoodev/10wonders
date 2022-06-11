@@ -449,7 +449,50 @@
             padding-right: 40px;
             .cart__wrapper {
                 .cart__order__complete__popup {
+                    height: 627px;
+                    width: 80%;
+                    overflow-y: auto;
 
+                    .order__complete__titles {
+                        .order__complete--title {
+                            font-size: 20px;
+                            line-height: 24px;
+                        }
+                    }
+
+                    .order__complete__contents {
+                        margin-bottom: 35px;
+                        .order__complete--content {
+                            flex-direction: column;
+                            .order__complete--subtitle {
+                                font-size: 15px;
+                                position: static;
+                                margin-bottom: 6px;
+                            }
+
+                            .order__complete__text--box {
+                                .order__complete--text {
+                                    margin-left: 0px;
+                                    font-size: 13px;
+                                    line-height: 18px;
+                                }
+                            }
+                        }
+                    }
+
+                    .order__complete__alerts {
+                        margin-bottom: 40px;
+                        .order__complete__alert {
+                            font-size: 12px;
+                        }
+                    }
+
+                    .order__complete__footer{
+                        .order__complete--yes {
+                            width: 136px;
+                            height: 32px;
+                        }
+                    }
                 }
     
                 .cart__main__categories {

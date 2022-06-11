@@ -1,34 +1,40 @@
-function preloadImages(urls, allImagesLoadedCallback){
-    var loadedCounter = 0;
-  var toBeLoadedNumber = urls.length;
-  urls.forEach(function(url){
-    preloadImage(url, function(){
-        loadedCounter++;
-            console.log('Number of loaded images: ' + loadedCounter);
-      if(loadedCounter == toBeLoadedNumber){
-        allImagesLoadedCallback();
-      }
-    });
-  });
-  function preloadImage(url, anImageLoadedCallback){
-      var img = new Image();
-      img.onload = anImageLoadedCallback;
-      img.src = url;
-  }
-}
-
-
-// Let's call it:
-preloadImages([
-    '/static/images/main_background01.jpg',
-  '/static/images/main_background02.jpg',
-  '/static/images/main_background03.jpg'
-], function(){
-    console.log('All images were loaded');
-});
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    function preloadImages(urls, allImagesLoadedCallback){
+        var loadedCounter = 0;
+      var toBeLoadedNumber = urls.length;
+      urls.forEach(function(url){
+        preloadImage(url, function(){
+            loadedCounter++;
+                console.log('Number of loaded images: ' + loadedCounter);
+          if(loadedCounter == toBeLoadedNumber){
+            allImagesLoadedCallback();
+          }
+        });
+      });
+      function preloadImage(url, anImageLoadedCallback){
+          var img = new Image();
+          img.onload = anImageLoadedCallback;
+          img.src = url;
+      }
+    }
+    
+    
+    // Let's call it:
+    preloadImages([
+        '/static/images/main_background01.jpg',
+      '/static/images/main_background02.jpg',
+      '/static/images/main_background03.jpg'
+    ], function(){
+        const interval = setInterval(backgroundChange, 5000);
+        console.log(interval);
+        console.log('interval start');
+    });
+
+    
+
     let index = 1;
 
     const pageUp = document.querySelector(".pageup--icon");
@@ -141,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     pageUp.addEventListener("click", scrollToTop);
-    const interval = setInterval(backgroundChange, 5000);
+    
 
     function scrollToTop() {
         direction = 0;

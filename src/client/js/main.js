@@ -52,3 +52,4 @@ import "../images/mail_black_icon.png";
 import "../images/gallery_icon.png";
 import "../images/step_down_icon_white.png";
 import "../images/mobile_process_icon.png";
+import "../images/spinner.gif";

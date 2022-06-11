@@ -636,9 +636,7 @@
             padding-left: 40px;
             padding-right: 40px;
             .order__wrapper {
-                .order__current__footer {
-                    display: none;
-                }
+
                 .order__main__categories {
                     a {
                         font-size: 20px;
@@ -769,6 +767,14 @@
                             }
                         }
                     }
+                }
+
+                .order__current__footer {
+                    display: none;
+                }
+
+                .order__mobile__estimates {
+                    display: flex;
                 }
             }
 

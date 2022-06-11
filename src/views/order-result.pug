@@ -75,6 +75,19 @@ block content
                         p.subtotal--head SUBTOTAL
                         p.subtotal--body $ #{numberWithCommas(subTotal)}
 
+                .order__mobile__estimates
+                    .order__estimates__column
+                        p.order__estimates--head PAYMENT
+                        .order__estimates--content
+                            p.order__estimates--num No.1 
+                            p.order__estimates--estimate $ 60,000
+                    .order__estimates__column.subtotal__column
+                        p.order__subtotal--head SUBTOTAL
+                        .order__estimate--content
+                            p.order__estimate__subtotal $ 105,000
+                            p.mobile__Ourprocess Our process
+
+
 
 block scripts
     script(src="/static/js/main.js")

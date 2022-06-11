@@ -264,6 +264,8 @@
 
     }
 
+
+    /* shop */
     #shop {
         .shop__section {
            padding-left: 40px;
@@ -332,7 +334,7 @@
 
                         .shop__ordersheet__popup {
                             width: 90%;
-                            height: 80%;
+                            height: 590px;
                             overflow-y: scroll;
                             padding-top: 30px;
 
@@ -379,7 +381,7 @@
                                         .ordersheet__add--btn {
                                             height: 35px;
                                             font-size: 15px;
-                                            width: 50%;
+                                            width: 65%;
                                         }
                                     }
                                 }
@@ -437,6 +439,133 @@
             }
         }
     }
+
+
+    /* cart */ 
+
+    #cart {
+        .cart__section {
+            padding-left: 40px;
+            padding-right: 40px;
+            .cart__wrapper {
+                .cart__order__complete__popup {
+
+                }
+    
+                .cart__main__categories {
+                    a {
+                        font-size: 20px;
+                        margin-right: 20px;
+                    }
+                }
+
+                .cart__guide--box {
+                    .cart__guide--head {
+                        font-size: 18px;
+                        line-height: 22px;
+                        &:first-child {
+                            margin-bottom: 5px;
+                        }
+                    }
+
+                    .cart__guide--subhead {
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
+                }
+
+                .cart__request--box {
+                    .cart__request__column {
+                        flex-direction: column;
+                        .cart__input--box {
+                            margin-right: 0px;
+                            width: 100%;
+                            .cart__input--label {
+                                font-size: 18px;
+                                margin-bottom: 10px;
+                            }
+
+                            .cart__input {
+                                width: 100%;
+                            }
+                        }
+
+                        .request__estimate--btn {
+                            margin-left: 0;
+                            margin-right: auto;
+                            width: 136px;
+                            height: 32px;
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+                .table__wrapper {
+                    overflow-x: auto;
+                    width: 100%;
+                    .cart__table {
+                        min-width: 640px;
+                        white-space: no-wrap;
+                        border-collapse: collapse;
+
+                        thead {
+                            tr {
+                                th {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+                                td {
+                                    font-size: 15px;
+
+                                    &.tdBox {
+                                        .table__product {
+                                            img {
+                                                width: 100px;
+                                                height: 100px;
+                                            }
+
+                                            .product__info--box {
+                                                .product__info--title {
+                                                    font-size: 20px;
+                                                }
+
+                                                .product__info--subHead {
+                                                    text-align: start;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.tdQtyBox {
+                                        .tdQty__wrapper {
+                                            position: relative;
+                                            input {
+                                                width: auto;
+                                            }
+                                            .qty__control--box {
+                                                position: absolute;
+                                                top: 50%;
+                                                transform: translateY(-50%);
+                                                right: 20px;
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+
 
     /* footer */
 

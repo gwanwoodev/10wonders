@@ -27,37 +27,38 @@ block content
                             p.cart__input--label Address
                             input(type="text", required, name="address").cart__input
                         button.request__estimate--btn Request Estimate
-                table.cart__table
-                    colgroup
-                        col(style="width: 10%")
-                        col(style="width: 60%")
-                        col(style="width: 20%")
-                        col(style="width: 10%")
-                    thead
-                        th.cart__table__head--text No.
-                        th.cart__table__head--text PRODUCT
-                        th.cart__table__head--text Qty
-                        th.cart__table__head--text Del
-                    tbody
-                        each item,index in items
-                            tr
-                                td.tdNum #{index+1}
-                                td.tdBox
-                                    .table__product
-                                        img(src=item.productImage)
-                                        .product__info--box
-                                            h1.product__info--title #{item.productName}
-                                            p.product__info--subHead #{item.productSubHead}
-                                td.tdQtyBox
-                                    .tdQty__wrapper
-                                        input(type="text", required, value=item.productQuantity || 1, disabled)
-                                        .qty__control--box
-                                            img(src="/static/images/controlUp_icon.png" _id=item._id).qtyUp--btn
-                                            img(src="/static/images/controlDown_icon.png" _id=item._id).qtyDown--btn
+                .table__wrapper
+                    table.cart__table
+                        colgroup
+                            col(style="width: 10%")
+                            col(style="width: 60%")
+                            col(style="width: 20%")
+                            col(style="width: 10%")
+                        thead
+                            th.cart__table__head--text No.
+                            th.cart__table__head--text PRODUCT
+                            th.cart__table__head--text Qty
+                            th.cart__table__head--text Del
+                        tbody
+                            each item,index in items
+                                tr
+                                    td.tdNum #{index+1}
+                                    td.tdBox
+                                        .table__product
+                                            img(src=item.productImage)
+                                            .product__info--box
+                                                h1.product__info--title #{item.productName}
+                                                p.product__info--subHead #{item.productSubHead}
+                                    td.tdQtyBox
+                                        .tdQty__wrapper
+                                            input(type="text", required, value=item.productQuantity || 1, disabled)
+                                            .qty__control--box
+                                                img(src="/static/images/controlUp_icon.png" _id=item._id).qtyUp--btn
+                                                img(src="/static/images/controlDown_icon.png" _id=item._id).qtyDown--btn
 
 
-                                td.tdDelBox
-                                    img(src="/static/images/trashbin_icon.png", _id=item._id).tdDel--btn
+                                    td.tdDelBox
+                                        img(src="/static/images/trashbin_icon.png", _id=item._id).tdDel--btn
 
     //-include ./partials/footer.pug
 

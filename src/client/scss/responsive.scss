@@ -589,10 +589,15 @@
                                             .product__info--box {
                                                 .product__info--title {
                                                     font-size: 20px;
+                                                    margin-bottom: 10px;
+                                                    word-break: break-all;
+                                                    white-space: pre-wrap;
                                                 }
 
                                                 .product__info--subHead {
                                                     text-align: start;
+                                                    word-break: break-all;
+                                                    white-space: pre-wrap;
                                                 }
                                             }
                                         }
@@ -624,6 +629,152 @@
         }
     }
 
+    /* order */
+
+    #order {
+        .order__section {
+            padding-left: 40px;
+            padding-right: 40px;
+            .order__wrapper {
+                .order__current__footer {
+                    display: none;
+                }
+                .order__main__categories {
+                    a {
+                        font-size: 20px;
+                        margin-right: 20px;
+                    }
+                }
+
+                .order__enter--title.order__result--title {
+                    font-size: 18px;
+                    line-height: 20px;
+                }
+
+                .order__current__process {
+                    margin-bottom: 50px;
+                    .order__process__step {
+                        height: 100px;
+                        .order__icon {
+                            width: 36px;
+                        }
+                        .payment__icon {
+                            width: 54px;
+                        }
+
+                        .shipping__icon {
+                            width: 37px;
+                        }
+
+                        .step__texts {
+                            white-space: pre;
+                            .order__process__step--text {
+                                font-size: 15px;
+                            }
+                            .order__process__popup--text {
+                                font-size: 12px;
+                            }
+                        }
+
+
+                    }
+                    .process__img {
+                       display: none;
+                    }
+
+                    .process__mobile--img {
+                        display: block;
+                        margin: 0 13px;
+                        padding-bottom: 60px;
+                    }
+                }
+
+                .order__enter--title {
+                    font-size: 22px;
+                }
+
+                .order__enter__form {
+                    flex-direction: column;
+                    align-items: baseline;
+                    .order__enter__form--box {
+                        margin-right: 0px;
+                        width: 100%;
+                        margin-bottom: 25px;
+                        .order__enter__form--head {
+                            font-size: 15px;
+                        }
+
+                        .order__input  {
+                            width: 100%;
+                            height: 35px;
+                            font-size: 18px;
+                        }
+
+                    }
+
+                    .order__enter--btn {
+                        width: 136px;
+                        height: 32px;
+                        font-size: 16px;
+                    }
+                }
+
+                .table__wrapper {
+                    overflow-x: auto;
+                    width: 100%;
+                    .order__table {
+                        min-width: 640px;
+                        white-space: no-wrap;
+                        border-collapse: collapse;
+
+                        thead {
+                            tr {
+                                th {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+
+                        tbody {
+                            tr {
+                                td {
+                                    font-size: 15px;
+
+                                    &.tdBox {
+                                        .table__product {
+                                            img {
+                                                width: 100px;
+                                                height: 100px;
+                                            }
+
+                                            
+                                            .product__info--box {
+                                                .product__info--title {
+                                                    font-size: 20px;
+                                                    margin-bottom: 10px;
+                                                    word-break: break-all;
+                                                    white-space: pre-wrap;
+                                                }
+
+                                                .product__info--subHead {
+                                                    font-size: 16px;
+                                                    text-align: start;
+                                                    word-break: break-all;
+                                                    white-space: pre-wrap;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
 
     /* footer */
 

@@ -310,7 +310,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding-bottom: 200px;
+            padding-bottom: 100px;
 
             .scroll__inner__box {
                 color: white;
@@ -365,11 +365,15 @@
             &:nth-child(1) {
                 width: calc(100% / 3);
                 background-position: center center;
-
+                padding-left: 40px;
+                padding-top: 150px;
             }
 
             &:nth-child(2) {
                 width: 42%;
+                padding-top: 120px;
+                padding-left: 60px;
+                
                 background-position: center;
                 -webkit-transform: skew(-10deg);
                 -ms-transform: skew(-10deg);
@@ -379,13 +383,15 @@
                 align-items: center;
 
                 .slice__box {
-
                     transform: skew(10deg);
                 }
             }
 
             &:nth-child(3) {
                 width: 38%;
+                padding-top: 120px;
+                padding-left: 80px;
+                padding-bottom: 30px;
                 background-position: center;
                 -webkit-transform: skew(-10deg);
                 -ms-transform: skew(-10deg);
@@ -397,26 +403,26 @@
                 .slice__box {
 
                     transform: skew(10deg);
-                    padding-bottom: 50px;
+                    
                 }
             }
 
             display: flex;
 
             .slice__box {
-                padding-top: 150px;
-                padding-left: 80px;
+                
+                
 
                 color: white;
 
                 .slice__box--title {
                     font-family: "SDGothicH";
-                    font-size: 72px;
+                    font-size: 60px;
 
                 }
 
                 .slice__box--text {
-                    font-size: 22px;
+                    font-size: 20px;
                     font-family: "SDGothicR";
 
 
@@ -435,12 +441,14 @@
     }
 
     .brand__section {
-        height: 100vh;
-        max-height: 100vh;
+        height: calc(100vh + 180px);
+        max-height: calc(100vh + 180px);
 
         background-size: cover !important;
 
         .brand__section__wrapper {
+            padding-top: 180px;
+            padding-bottom: 50px;
             margin: 0 auto;
             max-width: 1320px;
             height: 100%;

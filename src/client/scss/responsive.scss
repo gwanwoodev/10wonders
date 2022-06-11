@@ -181,10 +181,12 @@
                 padding: 0px 40px;
                 background-position: center center !important;
                 align-items: center;
+                
                 width: 100% !important;
-
+                padding-bottom: 50px;
                 .slice__box {
-                    padding: 0px;
+                    
+
                     .slice__box--title {
                         font-size: 34px;
                         margin-bottom: 10px;
@@ -197,11 +199,12 @@
                 }
 
                 &:nth-child(1) {
-                    padding-top: 120px;
+                    
                 }
 
                 &:nth-child(2){
                     transform: skew(0deg);
+                    padding-left: 40px;
                     .slice__box {
                         transform: skew(0deg);
                     }
@@ -209,6 +212,7 @@
 
                 &:nth-child(3) {
                     transform: skew(0deg);
+                    padding-left: 40px;
                     .slice__box {
                         transform: skew(0deg);
                     }
@@ -223,14 +227,15 @@
             height: 100%;
             max-height: 150vh;
             min-height: 100vh;
-            padding-top: 120px;
+            padding-top: 50px;
             .brand__section__wrapper {
                 position: relative;
+                padding-top: 0px;
                 .brand__text--zone {
                 
                     .brand__section--title {
                         font-size: 28px;
-                        margin-top: 56px;
+                        
                     }
     
                     .brand__section--text {

@@ -78,13 +78,15 @@ block content
                 .order__mobile__estimates
                     .order__estimates__column
                         p.order__estimates--head PAYMENT
-                        .order__estimates--content
-                            p.order__estimates--num No.1 
-                            p.order__estimates--estimate $ 60,000
+                        if order[0] 
+                            each item, index in order[0].orderProducts
+                                .order__estimates--content
+                                    p.order__estimates--num No.#{index+1}
+                                    p.order__estimates--estimate $ #{numberWithCommas(item.estimate)}
                     .order__estimates__column.subtotal__column
                         p.order__subtotal--head SUBTOTAL
                         .order__estimate--content
-                            p.order__estimate__subtotal $ 105,000
+                            p.order__estimate__subtotal $ #{numberWithCommas(subTotal)}
                             p.mobile__Ourprocess Our process
 
 

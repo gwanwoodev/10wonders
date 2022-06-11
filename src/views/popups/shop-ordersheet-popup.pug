@@ -1,9 +1,12 @@
 .shop__ordersheet__popup.animate__animated.animate__fadeOut
+    
     .ordersheet__popup--head
         img(src="/static/images/close_icon.png").ordersheet__close--btn
+    .ordersheet__mobile--text ORDER
     .ordersheet__popup--body
         .ordersheet__popup__column
             img(src=content.productImage).ordersheet__product--img
+        
         .ordersheet__popup__column
             h1.ordersheet__popup--title ORDER
             h1.ordersheet__popup--productName #{content.productName}

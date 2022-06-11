@@ -264,6 +264,180 @@
 
     }
 
+    #shop {
+        .shop__section {
+           padding-left: 40px;
+           padding-right: 40px;
+            .shop__wrapper {
+
+                .shop__ordersheet__success__popup {
+                    width: 80%;
+                    height: 417px;
+                    overflow-y: scroll;
+
+                    .ordersheet__success--head {
+
+                        .ordersheet__success--headText {
+                            font-size: 28px;
+                        }
+                        
+                    }
+
+                    .ordersheet__success--body {
+                        flex-direction: column;
+                        bottom: 30px;
+                        width: 80%;
+                        
+                        a {
+                            width: 100%;
+                            font-size: 17px;
+                        }
+
+                        .gotoorderText {
+                            margin-right: 0;
+                            margin-bottom: 10px;
+                        }
+
+                        .keepshoppingText {
+                            margin-right: 0;
+                        }
+                    }
+                }
+                .shop__category__wrapper {
+                    margin-bottom: 50px;
+                    .shop__main__categories {
+                        a  {
+                            font-size: 20px; 
+                            margin-right: 20px;
+                        }
+                    }
+
+                    .shop__sub__categories {
+                        overflow-x: scroll;
+                        overflow-y: hidden;
+                        display: flex;
+                        white-space: pre;
+                        a {
+                            margin-right: 20px;
+                            font-size: 14px;
+                        }
+                        padding-bottom: 20px;
+                    }
+                }
+
+                .shop__products {
+                    .shop__product {
+                        margin-bottom: 30px;
+                        flex-direction: column;
+
+                        .shop__ordersheet__popup {
+                            width: 90%;
+                            height: 80%;
+                            overflow-y: scroll;
+                            padding-top: 30px;
+
+                            .ordersheet__mobile--text  {
+                                display: block;
+                                text-align: center;
+                                margin-bottom: 20px;
+                            }
+                            .ordersheet__popup--body {
+                                flex-direction: column;
+
+                                .ordersheet__popup__column {
+                                    &:first-child {
+                                        margin-right: 0px;
+                                        margin-bottom: 20px;
+                                    }
+                                    .ordersheet__popup--title {
+                                        display: none;
+                                    }
+                                    .ordersheet__product--img {
+                                        width: 100%;
+                                        height: 250px;
+                                        
+                                    }
+
+                                    .ordersheet__popup--productName {
+                                        font-size: 24px;
+                                    }
+
+                                    .ordersheet__popup--text {
+                                        font-size: 15px;
+                                    }
+
+                                    .ordersheet__popup--guide {
+                                        font-size: 15px;
+                                    }
+
+                                    .ordersheet__popup__active--box {
+                                        .input__quantity {
+                                            width: 80%;
+                                            height: 35px;
+                                        }
+
+                                        .ordersheet__add--btn {
+                                            height: 35px;
+                                            font-size: 15px;
+                                            width: 50%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .product__column {
+                            & > img {
+                                width: 300px;
+                                height: 300px;
+                                margin-right: 0px;
+                                margin-bottom: 20px;
+                            }
+
+                            .product__title--box {
+                                .product__name {
+                                    font-size: 20px;
+                                    margin-bottom: 10px;
+                                }
+
+                                .product__subhead {
+                                    font-size: 14px;
+                                }
+                            }
+
+                            .product__specs--box {
+                                flex-direction: column;
+
+                                .specs__column {
+                                    width: 100%;
+
+
+                                    .product__spec--title {
+                                        font-size: 15px;
+                                    }
+
+                                    .product__spec--text {
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+
+                            .product__action--box {
+                                flex-direction: column;
+
+
+                                a {
+                                    width: 100%;
+                                    margin-bottom: 15px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     /* footer */
 
     .footer {

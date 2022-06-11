@@ -1,3 +1,14 @@
+.header {
+    &.header__dark {
+        .header__column {
+            .header__link--text {
+    
+                color: black;
+            }
+        }
+    
+    }
+}
 #shop {
 
 
@@ -223,6 +234,12 @@
                         flex-direction: column;
                         justify-content: center;
                         transition: all .5s ease;
+
+                        .ordersheet__mobile--text {
+                            font-family: "SDGothicB";
+                            font-size: 32px;
+                            display: none;
+                        }
 
                         .ordersheet__popup--head {
                             display: flex;

@@ -1,5 +1,11 @@
 @media (max-width: 425px) {
 
+    .pagination a {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        font-size: 14px;
+    }
 
     .pageup--icon {
         width: 60px;

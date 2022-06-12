@@ -186,7 +186,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        mainSection.style.backgroundImage = `url('${infoObj[index].image}')`;
+        let current = infoObj[index].image;
+
+        mainSection.style.backgroundImage = `url('${current}')`;
         mainSectionHeads[0].innerHTML = `${infoObj[index].headText1}`
         mainSectionHeads[1].innerHTML = `${infoObj[index].headText2}`
         mainSectionSubs[0].innerHTML = `${infoObj[index].subText1}`

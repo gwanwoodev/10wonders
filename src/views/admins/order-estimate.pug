@@ -45,7 +45,7 @@ block content
                     .order__estimate__footer
                         .current__footer__column
                             p.subtotal--head SUBTOTAL
-                            p.subtotal--body $ 0
+                            p.subtotal--body $ #{subTotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
 
 
                 

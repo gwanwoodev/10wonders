@@ -167,7 +167,11 @@ export const sendOrderEstimate = async (req, res) => {
     }
 
     const order = await Order.find({orderNumber: orderNumber}).populate("orderProducts.product");
-    console.log(order);
+    let subTotal = 0;
 
-    return res.render("admins/order-estimate", {pageTitle: "Send Estimate", order});
+    order[0].orderProducts.forEach(item => {
+        subTotal += item.estimate;
+    })
+
+    return res.render("admins/order-estimate", {pageTitle: "Send Estimate", order, subTotal});
 }

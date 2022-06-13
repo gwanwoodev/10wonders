@@ -7,7 +7,7 @@ const rootRouter = express.Router();
 rootRouter.get("/", home);
 rootRouter.get("/shop", shop);
 rootRouter.get("/shop/module", shopModule);
-rootRouter.get("/shop/optimize", shopOptimize);
+rootRouter.get("/shop/optimizer", shopOptimize);
 rootRouter.get("/cart", cart);
 rootRouter.get("/order", order);
 rootRouter.get("/order/result", orderResult);

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const productDatasheetFile = document.querySelector(".product__datasheet--file");
     const productAddButton = document.querySelector(".productAddButton");
     const productType = document.querySelector(".product__type--select");
-    // const productMaker = document.querySelector(".inverter__maker");
+    const productMaker = document.querySelector(".inverter__maker");
     const inverterMaker = document.querySelector(".inverter__maker");
     const moduleMaker = document.querySelector(".module__maker");
     const optimizeMaker = document.querySelector(".optimize__maker");
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
             inverterMaker.style.display = "none";
             moduleMaker.style.display = "block";
             optimizeMaker.style.display = "none";
-        } else if (selectedValue === "optimize") {
+        } else if (selectedValue === "optimizer") {
             inverterMaker.style.display = "none";
             moduleMaker.style.display = "none";
             optimizeMaker.style.display = "block";

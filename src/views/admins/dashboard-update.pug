@@ -28,7 +28,7 @@ block content
                             option 타입 선택
                             option(value="inverter" selected=`${product.productType}` == 'inverter') INVERTER
                             option(value="module" selected=`${product.productType}` == 'module') MODULE
-                            option(value="optimize" selected=`${product.productType}` == 'optimize') OPTIMIZE
+                            option(value="optimizer" selected=`${product.productType}` == 'optimizer') OPTIMIZE
                     .product__add__column
                         p.product__add--headText *제조사
 
@@ -74,7 +74,7 @@ block content
                                 each opt in moduleOptions
                                     option(value=opt.value selected=`${(opt.value)}` == product.productMaker) #{opt.label}
                                     
-                            select.product__global--select.show__select.optimize__maker
+                            select.product__global--select.show__select.optimizer__maker
                                 option(selected) 제조사 선택
                                 each opt in optimizeOptions
                                     option(value=opt.value selected=`${(opt.value)}` == product.productMaker) #{opt.label}                                    

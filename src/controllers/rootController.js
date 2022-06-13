@@ -51,7 +51,7 @@ export const shop = async (req, res) => {
         CONTENTS_LIMIT,
         page
     );
-    const mainCategoryList = [{ value: "inverter", target: '/shop' }, { value: 'module', target: '/shop/module' }, { value: 'optimize', target: '/shop/optimize' }];
+    const mainCategoryList = [{ value: "inverter", target: '/shop' }, { value: 'module', target: '/shop/module' }, { value: 'optimizer', target: '/shop/optimizer' }];
 
     const categoryList = [{ value: "SUNGROW", label: "SUNGROW" }, { value: "FIMER", label: "FIMER" }, { value: "HUNDAI", label: "HUNDAI" }, { value: "HANWHAQCELL", label: "HANWHA Q CELL" }, { value: "OCIPOWER", label: "OCI POWER" }, { value: "KSTAR", label: "KSTAR" }, { value: "SOLIS", label: "SOLIS" }, { value: "SHINSUNGEG", label: "SHIN SUNG E&G" }];
 
@@ -92,7 +92,7 @@ export const shopModule = async (req, res) => {
         CONTENTS_LIMIT,
         page
     );
-    const mainCategoryList = [{ value: "inverter", target: '/shop' }, { value: 'module', target: '/shop/module' }, { value: 'optimize', target: '/shop/optimize' }];
+    const mainCategoryList = [{ value: "inverter", target: '/shop' }, { value: 'module', target: '/shop/module' }, { value: 'optimizer', target: '/shop/optimizer' }];
 
     const categoryList = [{ value: "LONGISOLAR", label: "LONGI SOLAR" }, { value: "HANSOL", label: "HANSOL" }, { value: "HUNDAI", label: "HUNDAI" }, { value: "HANWHAQCELL", label: "HANWHA Q CELL" }, { value: "JASOLAR", label: "JA SOLAR" }, { value: "ASTRONERGY", label: "A STRONEGY" }, { value: "SHINSUNGEG", label: "SHIN SUNG E&G" }];
 
@@ -113,7 +113,7 @@ export const shopModule = async (req, res) => {
 }
 
 export const shopOptimize = async (req, res) => {
-    const { page = 1, maker = "TAIGO", productType = "optimize" } = req.query;
+    const { page = 1, maker = "TAIGO", productType = "optimizer" } = req.query;
     const CONTENTS_LIMIT = 5;
     let sortOptions = {
         createdAt: -1
@@ -133,7 +133,7 @@ export const shopOptimize = async (req, res) => {
         CONTENTS_LIMIT,
         page
     );
-    const mainCategoryList = [{ value: "inverter", target: '/shop' }, { value: 'module', target: '/shop/module' }, { value: 'optimize', target: '/shop/optimize' }];
+    const mainCategoryList = [{ value: "inverter", target: '/shop' }, { value: 'module', target: '/shop/module' }, { value: 'optimizer', target: '/shop/optimizer' }];
 
     const categoryList = [{ value: "TAIGO", label: "TAIGO" }];
 

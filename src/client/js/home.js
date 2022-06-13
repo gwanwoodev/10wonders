@@ -33,6 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log('interval start');
     });
 
+
+
+    if(window.innerWidth <= 425) {
+        let scroll1 = document.querySelector(".scroll1");
+        let scroll2 = document.querySelector(".scroll2");
+
+        scroll1.remove();
+        scroll2.remove();
+
+    }
+
     
 
     let index = 1;
@@ -73,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", () => {
         if(window.pageYOffset >= 120) {
-            header.style.backgroundColor = "black";
+            header.style.backgroundColor = "rgba(0, 0, 0, 80%)";
             pageUp.style.opacity = "1";
         }else {
             header.style.backgroundColor = "transparent";

@@ -9,7 +9,7 @@ window.addEventListener("scroll", () => {
 
 
     if(window.pageYOffset >= headerHeight) {
-        header.style.backgroundColor = "black";
+        header.style.backgroundColor = "rgba(0, 0, 0, 80%)";
 
         headerLogo.src = "/static/images/logo.png";
         headerLink.style.color = "white";

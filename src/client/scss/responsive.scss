@@ -82,7 +82,7 @@
     
                     .subheading__child--box {
                         flex-direction: column;
-    
+                        margin-bottom: 0px;
                         a {
                             margin-left: 0px !important;
                             margin-top: 25px;
@@ -102,8 +102,11 @@
                     }
     
                     .section__process--text {
-                        left: 0px;
+                        left: 50%;
                         font-size: 30px;
+                        transform: translateX(-50%);
+                        text-align: center;
+                        width: 100%;
                     }
 
                     .process__child--box {
@@ -167,7 +170,13 @@
 
         /* scroll section */
 
+
         .scroll__back {
+
+            &:nth-child(2) {
+                display: none;
+            }
+
             .scroll__inner__section {
                 padding-left: 40px;
                 padding-right: 40px;

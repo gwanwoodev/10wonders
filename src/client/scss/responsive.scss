@@ -96,7 +96,10 @@
                     align-items: flex-start;
                     padding-top: 45px;
                     height: 100%;
+                    margin: 0 auto;
                     margin-bottom: 60px;
+                    width: 290px;
+                    
                     .scroll__div {
                         display :none;
                     }
@@ -111,22 +114,26 @@
 
                     .process__child--box {
                         width: 114px;
-                        height: 60px;
+                        height: 54px;
                         font-size: 16px;
                         margin-bottom: 50px;
+                        &.last__process__child {
+                            margin-bottom: 20px;
+                        }
+
 
 
                         .process__child__sub--box {
                             bottom: 0px;
                             top: 50%;
                             transform: translateY(-50%);
-                            left: 150px;
+                            left: calc(100% + 15px);
                             .process__child__sub--text {
-                                font-size: 14px;
+                                font-size: 12px;
                             }
 
                             .process__child--sub--text {
-                                font-size: 14px;
+                                font-size: 12px;
                             }
 
                         }
@@ -136,6 +143,7 @@
 
                     .step__down--icon {
                         display: block;
+                        bottom: -35px;
                     }
 
                     .right__arrow--icon {
@@ -144,9 +152,12 @@
 
                     .main__section__footer {
                         align-items: center;
-                        margin: 0 auto;
+                        margin: 0;
+                        margin-top: 15px;
                         position: static;
                         flex-direction: column;
+                        align-self: center;
+                        padding-right: 0px;
                         margin-bottom: 20px;
                         .main__section__footer__column {
                             margin-right: 0px;
@@ -157,6 +168,11 @@
                             }
                             .main__footer__text {
                                 font-size: 18px;
+
+                                &.main__footer__text--bold {
+                                    font-weight: 600;
+                                }
+                               
                             }
                         }
                     }
@@ -300,7 +316,7 @@
                     font-size: 14px;
                     line-height:32px;
                     position: absolute;
-                    bottom: 20px
+                    bottom: 70px;
                 }
             }
 
@@ -972,7 +988,7 @@
             max-width: 375px;
             .main__section__wrapper {
                 .section__process {
-    
+                    
                     .process__child--box {
     
     

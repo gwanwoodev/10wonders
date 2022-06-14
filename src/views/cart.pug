@@ -14,6 +14,24 @@ block content
                     p.cart__guide--head Please don't forget your email and password.
                     p.cart__guide--head They are used to check the process of an order.
                     p.cart__guide--subhead You can inquire the order information with the information your entered.
+
+                .global__product__list
+                    .global__product__head--wrap
+                        h1.product__list--head PRODUCT
+
+                    .global__product__body--wrap
+                        each item, index in items 
+                            .global__product--item
+                                h4.product__item--head #{index+1}. #{item.productName}
+                                p.product__item--subhead #{item.productSubHead}
+                                .product__item__qtyBox
+                                    p.product__qtyBox--title Qty
+                                    input(type="text", required, disabled, value=item.productQuantity || 1).product__qty--input
+                                    img(src="/static/images/controlLeft_icon.png" _id=item._id).qtyDown--btn
+                                    img(src="/static/images/controlRight_icon.png" _id=item._id).qtyUp--btn
+                                    img(src="/static/images/trashbin_icon.png", _id=item._id).binIcon
+                        else
+                            p.notfound There's nothing in the cart
                 .cart__request--box
                     .cart__request__column
                         .cart__input--box

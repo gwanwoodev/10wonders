@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const orderCompleteCloseBtn = document.querySelector(".order__complete__close--icon");
     const orderCompleteYesBtn = document.querySelector(".order__complete--yes");
 
+    const binIcons = document.querySelectorAll(".binIcon");
+
     const popupOverlay = document.querySelector("#popupOverlay");
 
     estimateBtn.addEventListener("click", async () => {
@@ -105,6 +107,16 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     tdDelBtns.forEach(item => {
+        item.addEventListener("click", function () {
+            const parentBox = this.parentElement.parentElement;
+            parentBox.remove();
+
+            const _id = this.getAttribute("_id");
+            deleteCartItem(_id);
+        });
+    })
+
+    binIcons.forEach(item => {
         item.addEventListener("click", function () {
             const parentBox = this.parentElement.parentElement;
             parentBox.remove();

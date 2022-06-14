@@ -1,5 +1,10 @@
 @media (max-width: 425px) {
 
+
+    /* cart , order product list  */
+    .global__product__list {
+        display: block;
+    }
     .pagination a {
         width: 25px;
         height: 25px;
@@ -613,6 +618,7 @@
                 }
 
                 .table__wrapper {
+                    display: none;
                     overflow-x: auto;
                     width: 100%;
                     .cart__table {

@@ -53,3 +53,6 @@ import "../images/gallery_icon.png";
 import "../images/step_down_icon_white.png";
 import "../images/mobile_process_icon.png";
 import "../images/spinner.gif";
+
+import "../images/controlLeft_icon.png";
+import "../images/controlRight_icon.png";

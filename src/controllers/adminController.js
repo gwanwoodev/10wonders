@@ -98,24 +98,27 @@ export const updateDashboard = async (req, res) => {
     const inverterOptions = [
         { value: 'SUNGROW', label: 'SUNGROW' },
         { value: 'FIMER', label: 'FIMER' },
-        { value: 'HUNDAI', label: 'HUNDAI' },
+        { value: 'HUNDAIY', label: 'HUNDAI Y' },
+        { value: 'HANWHAQCELL', label: 'HANWHA Q CELL' },
         { value: 'OCIPOWER', label: 'OCI POWER' },
         { value: 'KSTAR', label: 'KSTAR' },
         { value: 'SOLIS', label: 'SOLIS' },
-        { value: 'SHINSUNGEG', label: 'SHIN SUNG E&G' },
+        { value: 'SHINSUNGEG', label: 'SHINSUNG E&G' },
     ];
 
     const moduleOptions = [
         { value: 'LONGISOLAR', label: 'LONGI SOLAR' },
         { value: 'HANSOL', label: 'HANSOL' },
+        { value: 'HUNDAIY', label: 'HUNDAI Y' },
         { value: 'HANWHAQCELL', label: 'HANWHA Q CELL' },
         { value: 'JASOLAR', label: 'JA SOLAR' },
-        { value: 'ASTRONERGY', label: 'A STRONERGY' },
-        { value: 'SHINSUNGEG', label: 'SHIN SUNG E&G' },
+        { value: 'ASTRONERGY', label: 'ASTRONERGY' },
+        { value: 'SHINSUNGEG', label: 'SHINSUNG E&G' },
+        { value: 'TRINASOLAR', label: 'TRINA SOLAR' },
     ]
 
     const optimizeOptions = [
-        { value: 'TAIGO', label: 'TAIGO' }
+        { value: 'TIGO', label: 'TIGO' }
     ];
 
     

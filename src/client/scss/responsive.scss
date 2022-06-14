@@ -780,6 +780,7 @@
                 .table__wrapper {
                     overflow-x: auto;
                     width: 100%;
+                    display: none;
                     .order__table {
                         min-width: 640px;
                         white-space: no-wrap;

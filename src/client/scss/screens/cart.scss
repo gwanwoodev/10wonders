@@ -349,6 +349,12 @@
                 display: flex;
                 align-items: center;
 
+                .product__qtyBox--result {
+                    font-size: 12px;
+                    font-family: "SDGothicB";
+                    margin-right: 7px;
+                }
+
                 .product__qtyBox--title {
                     font-size: 15px;
                     font-family: "SDGothicB";

@@ -37,6 +37,21 @@ block content
                         .step__texts
                             p.order__process__step--text Shipping
                             p.order__process__popup--text Shipping Info
+
+                .global__product__list
+                    .global__product__head--wrap
+                        h1.product__list--head PRODUCT
+
+                    .global__product__body--wrap
+                        if order[0]
+                            each item, index in order[0].orderProducts 
+                                .global__product--item
+                                    h4.product__item--head #{index+1}. #{item.product.productName}
+                                    p.product__item--subhead #{item.product.productSubHead}
+                                    .product__item__qtyBox
+                                        p.product__qtyBox--result Qty
+                                        p.product__qtyBox--result #{item.productQuantity}
+                      
                 .table__wrapper
                     table.order__table
                         colgroup

@@ -275,12 +275,14 @@
                         display: flex;
                         background-color: #222222;
                         color: white;
-                        text-align:center;
+
                         margin-bottom: 5px;
                         width: 134px;
                         height: 38px;
                         display: flex;
-                        justify-content: center;
+                        justify-content: flex-end;
+                        padding-right: 10px;
+                        position: relative;
                         
                         line-height: 38px;
                         p {
@@ -289,6 +291,8 @@
                         .order__estimates--num {
                             font-family: "SDGothicR";
                             margin-right: 20px;
+                            position: absolute;
+                            left: 10px;
                         }
 
                         .order__estimates--estimate {

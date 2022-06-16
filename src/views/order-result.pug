@@ -45,12 +45,13 @@ block content
                     .global__product__body--wrap
                         if order[0]
                             each item, index in order[0].orderProducts 
-                                .global__product--item
-                                    h4.product__item--head #{index+1}. #{item.product.productName}
-                                    p.product__item--subhead #{item.product.productSubHead}
-                                    .product__item__qtyBox
-                                        p.product__qtyBox--result Qty
-                                        p.product__qtyBox--result #{item.productQuantity}
+                                if item.product
+                                    .global__product--item
+                                        h4.product__item--head #{index+1}. #{item.product.productName}
+                                        p.product__item--subhead #{item.product.productSubHead}
+                                        .product__item__qtyBox
+                                            p.product__qtyBox--result Qty
+                                            p.product__qtyBox--result #{item.productQuantity}
                       
                 .table__wrapper
                     table.order__table

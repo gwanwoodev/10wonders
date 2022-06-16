@@ -98,7 +98,7 @@ export const updateDashboard = async (req, res) => {
     const inverterOptions = [
         { value: 'SUNGROW', label: 'SUNGROW' },
         { value: 'FIMER', label: 'FIMER' },
-        { value: 'HUNDAIY', label: 'HUNDAI Y' },
+        { value: 'HYUNDAI', label: 'HYUNDAI' },
         { value: 'HANWHAQCELL', label: 'HANWHA Q CELL' },
         { value: 'OCIPOWER', label: 'OCI POWER' },
         { value: 'KSTAR', label: 'KSTAR' },
@@ -109,7 +109,7 @@ export const updateDashboard = async (req, res) => {
     const moduleOptions = [
         { value: 'LONGISOLAR', label: 'LONGI SOLAR' },
         { value: 'HANSOL', label: 'HANSOL' },
-        { value: 'HUNDAIY', label: 'HUNDAI Y' },
+        { value: 'HYUNDAI', label: 'HYUNDAI' },
         { value: 'HANWHAQCELL', label: 'HANWHA Q CELL' },
         { value: 'JASOLAR', label: 'JA SOLAR' },
         { value: 'ASTRONERGY', label: 'ASTRONERGY' },

@@ -53,7 +53,7 @@ export const shop = async (req, res) => {
     );
     const mainCategoryList = [{ value: "inverter", target: '/shop' }, { value: 'module', target: '/shop/module' }, { value: 'optimizer', target: '/shop/optimizer' }];
 
-    const categoryList = [{ value: "SUNGROW", label: "SUNGROW" }, { value: "FIMER", label: "FIMER" }, { value: "HUNDAIY", label: "HUNDAI Y" }, { value: "HANWHAQCELL", label: "HANWHA Q CELL" }, { value: "OCIPOWER", label: "OCI POWER" }, { value: "KSTAR", label: "KSTAR" }, { value: "SOLIS", label: "SOLIS" }, { value: "SHINSUNGEG", label: "SHINSUNG E&G" }];
+    const categoryList = [{ value: "SUNGROW", label: "SUNGROW" }, { value: "FIMER", label: "FIMER" }, { value: "HYUNDAI", label: "HYUNDAI" }, { value: "HANWHAQCELL", label: "HANWHA Q CELL" }, { value: "OCIPOWER", label: "OCI POWER" }, { value: "KSTAR", label: "KSTAR" }, { value: "SOLIS", label: "SOLIS" }, { value: "SHINSUNGEG", label: "SHINSUNG E&G" }];
 
     return res.render("shop", {
         pageTitle: "Shop",
@@ -94,7 +94,7 @@ export const shopModule = async (req, res) => {
     );
     const mainCategoryList = [{ value: "inverter", target: '/shop' }, { value: 'module', target: '/shop/module' }, { value: 'optimizer', target: '/shop/optimizer' }];
 
-    const categoryList = [{ value: "LONGISOLAR", label: "LONGI SOLAR" }, { value: "HANSOL", label: "HANSOL" }, { value: "HUNDAIY", label: "HUNDAI Y" }, { value: "HANWHAQCELL", label: "HANWHA Q CELL" }, { value: "JASOLAR", label: "JA SOLAR" }, { value: "ASTRONERGY", label: "ASTRONEGY" }, { value: "SHINSUNGEG", label: "SHINSUNG E&G" }, {value: "TRINASOLAR", label: "TRINA SOLAR"}];
+    const categoryList = [{ value: "LONGISOLAR", label: "LONGI SOLAR" }, { value: "HANSOL", label: "HANSOL" }, { value: "HYUNDAI", label: "HYUNDAI" }, { value: "HANWHAQCELL", label: "HANWHA Q CELL" }, { value: "JASOLAR", label: "JA SOLAR" }, { value: "ASTRONERGY", label: "ASTRONEGY" }, { value: "SHINSUNGEG", label: "SHINSUNG E&G" }, {value: "TRINASOLAR", label: "TRINA SOLAR"}];
 
     return res.render("shop", {
         pageTitle: "Shop",
@@ -175,6 +175,9 @@ export const orderResult = async (req, res) => {
     }
     const order = await Order.find({ clientEmail: email, orderNumber }).populate("orderProducts.product");
     let subTotal = 0;
+
+    console.log('order result');
+    console.log(order[0].orderProducts);
 
     order[0].orderProducts.forEach(item => {
         subTotal += item.estimate;

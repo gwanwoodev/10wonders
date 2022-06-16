@@ -286,10 +286,10 @@
                 position: relative;
                 padding-top: 0px;
                 .brand__text--zone {
-                
+                    margin-bottom: 40px;
                     .brand__section--title {
-                        font-size: 28px;
-                        
+                        font-size: 34px;
+                        margin-bottom: 7px;
                     }
     
                     .brand__section--text {
@@ -305,8 +305,9 @@
                     justify-content: space-between;
                     .brand__image--back {
                         background-color: white;
-                        width: 125px;
+                        width: calc(50% - 16px);
                         height: 60px;
+                        margin-right: 0px;
 
                         img {
                             width: 85px;
@@ -578,7 +579,7 @@
 
                 .cart__guide--box {
                     .cart__guide--head {
-                        font-size: 18px;
+                        font-size: 20px;
                         line-height: 22px;
                         &:first-child {
                             margin-bottom: 5px;
@@ -604,6 +605,7 @@
 
                             .cart__input {
                                 width: 100%;
+                                height: 36px;
                             }
                         }
 
@@ -1034,9 +1036,8 @@
                     padding-bottom: 80px;
                     
                     .brand__image--back {
-                        width: 100px;
+
                         height: 60px;
-                        max-width: 105px;
                         img {
                             max-width: 100px;
                         }

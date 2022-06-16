@@ -35,7 +35,10 @@ block content
                             else
                                 img(src="/static/images/shipping_icon.png").shipping__icon
                         .step__texts
-                            p.order__process__step--text Shipping
+                            if order[0].process !== 3
+                                p.order__process__step--text(style="opacity: 0.2;") Shipping
+                            else
+                                    p.order__process__step--text Shipping
                             p.order__process__popup--text Shipping Info
 
                 .global__product__list

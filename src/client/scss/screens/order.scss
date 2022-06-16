@@ -224,7 +224,7 @@
                 .current__footer__column {
                     display: flex;
                     height: 90px;
-                    align-items: center;
+                    align-items: flex-end;
 
                     &:last-child {
                         margin-left: auto;
@@ -243,7 +243,7 @@
                     }
 
                     p {
-                        width: 222px;
+                        width: 266px;
                         height: 93px;
                         text-align: center;
                         line-height: 93px;
@@ -251,6 +251,7 @@
 
                     .subtotal--head {
                         color: #003CFF;
+                        width: 140px;
                     }
 
                     .subtotal--body {
@@ -366,10 +367,10 @@
     transform: translate(-50%, -50%);
     background-color: white;
     max-width: 658px;
-    width: 100%;
+
     z-index: 2;
     padding: 30px 35px;
-
+    padding-bottom: 80px;
     display: none;
 
     .our__process__header {
@@ -412,7 +413,7 @@
 
             .step__position--absolute {
                 position: absolute;
-                right: 100px;
+                right: 60px;
                 width: 150px;
             }
 

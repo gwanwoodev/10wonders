@@ -9,7 +9,13 @@ block content
                     a(href="/admin/dashboard").admin__categories--item 상품관리
                     a(href="/admin/order").admin__categories--item.selected__item 주문관리
                 .admin__product__action--box
-                    input(type="text", placeholder="주문번호 검색").search__input
+                    select.product__process--selects
+                        option(value=4, selected=process==4) 전체
+                        option(value=0, selected=process==0) 주문접수
+                        option(value=1, selected=process==1) 견적발송
+                        option(value=2, selected=process==2) 입금확인
+                        option(value=3, selected=process==3) 배송처리
+                    input(type="text", placeholder="주문번호 / 주문자 / 이메일" value=keyword || '').search__input
 
                 table.admin__product__table
                     colgroup

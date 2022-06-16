@@ -24,7 +24,7 @@ export const sendClientMail = async (content) => {
     const emailOptions = {
         from: {
             name: "10 WGE",
-            address: "10wonder@naver.com"
+            address: "help10wge@gmail.com"
         },
         to: content.clientEmail,
         subject: 'You have successfully added the product to your order sheet.',
@@ -60,7 +60,7 @@ export const sendEstimateMail = async (content) => {
     const emailOptions = {
         from: {
             name: "10 WGE",
-            address: "10wonder@naver.com"
+            address: "help10wge@gmail.com"
         },
         to: content.clientEmail,
         subject: 'Your estimate has arrived.',

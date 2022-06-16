@@ -7,17 +7,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const sendEstimateBtns = document.querySelectorAll(".sendEstimate");
     const checkPaymentBtns = document.querySelectorAll(".checkPayment");
     const shippingBtns = document.querySelectorAll(".shippingBtn");
+    const processSelectBox = document.querySelector(".product__process--selects");
 
     searchInput.addEventListener("keydown", (evt) => {
         if(evt.keyCode === 13) {
             const keyword = `${searchInput.value}`;
-            if(!orderNumberValidator(Number(keyword))) {
-                Notify.failure("주문번호는 9자리 숫자로만 입력해주세요");
-                
+            const process = processSelectBox.value;
+
+            if(Number(keyword)) {
+                if(!orderNumberValidator(Number(keyword))) {
+                    Notify.failure("주문번호는 9자리 숫자로만 입력해주세요");
+                    
+                    return;
+                }
+                location.href = `?keyword=${searchInput.value}&searchType=orderNumber&process=${process}`;
                 return;
             }
 
-            location.href = `?keyword=${searchInput.value}`;
+            location.href = `?keyword=${searchInput.value}&searchType=text&process=${process}`;
+            
         }
     })
 

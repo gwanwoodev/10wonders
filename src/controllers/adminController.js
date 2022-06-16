@@ -54,10 +54,27 @@ export const dashboard = async (req, res) => {
 
 
     const products = await Product.paginate({
-        productName: {
-            $regex: keyword,
-            $options: "i"
-        }
+        $or: [
+            {
+                productName: {
+                    $regex: keyword,
+                    $options: "i"
+                }
+            },
+            {
+                productType: {
+                    $regex: keyword,
+                    $options: "i"                    
+                }
+            },
+            {
+                productMaker: {
+                    $regex: keyword,
+                    $options: "i"                    
+                }
+            }
+        ]
+
     }, {
         page: page,
         limit: CONTENTS_LIMIT
@@ -126,7 +143,7 @@ export const updateDashboard = async (req, res) => {
 }
 
 export const manageOrder = async (req, res) => {
-    const { page = 1, keyword } = req.query;
+    const { page = 1, keyword, process='4', searchType} = req.query;
     const CONTENTS_LIMIT = 5;
 
     let sortOptions = {
@@ -135,11 +152,66 @@ export const manageOrder = async (req, res) => {
 
     let where = {};
 
-    if(keyword) {
-        where = {
-            orderNumber: keyword
+    if(process === '4') {
+        if(keyword) {
+            if(searchType === "orderNumber") {
+                where = {
+                    orderNumber: keyword
+                }
+            }
+            else {
+                where = {
+                    $or: [
+                        {
+                            clientName: {
+                                $regex: keyword,
+                                $options: "i"
+                            }
+                        },
+                        {
+                            clientEmail: {
+                                $regex: keyword,
+                                $options: "i"
+                            }
+                        }
+                    ]
+        
+                }
+            }
+        }
+    }else {
+        if(keyword) {
+            if(searchType === "orderNumber") {
+                where = {
+                    orderNumber: keyword,
+                    process
+                }
+            }
+            else {
+                where = {
+                    process,
+                    $or: [
+                        {
+                            clientName: {
+                                $regex: keyword,
+                                $options: "i"
+                            }
+                        },
+                        {
+                            clientEmail: {
+                                $regex: keyword,
+                                $options: "i"
+                            }
+                        }
+                    ]
+        
+                }
+            }
         }
     }
+
+
+    
 
 
     const orders = await Order.paginate(where, {
@@ -155,7 +227,7 @@ export const manageOrder = async (req, res) => {
         CONTENTS_LIMIT,
         page
     );
-    return res.render("admins/order", {pageTitle: "Orders", orders: orders.docs, startPage, endPage, totalPage, currentPage, totalDocs: orders.totalDocs, page});
+    return res.render("admins/order", {pageTitle: "Orders", orders: orders.docs, startPage, endPage, totalPage, currentPage, totalDocs: orders.totalDocs, page, process, keyword});
 }
 
 export const sendOrderEstimate = async (req, res) => {

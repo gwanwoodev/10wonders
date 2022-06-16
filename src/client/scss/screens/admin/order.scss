@@ -1,6 +1,18 @@
 .admin__section {
     .section__wrapper {
 
+        .estimate__infoBox {
+            display: flex;
+            align-items: center;
+
+            .estimate__orderInfo {
+                font-family: "SDGothicR";
+                font-size: 15px;
+                margin-right: 15px;
+            }
+
+        }
+
         .estimateSendButton {
             margin-left: auto;
             display: block;

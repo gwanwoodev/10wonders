@@ -10,7 +10,10 @@ block content
                     a(href="/admin/order").admin__categories--item.selected__item 주문관리
 
                 if order[0]
-                    button.estimateSendButton(orderNumber=order[0].orderNumber) 견적 발송
+                    .estimate__infoBox
+                        p.estimate__orderInfo 주문번호: #{order[0].orderNumber}
+                        p.estimate__orderInfo 주문자명: #{order[0].clientName}
+                        button.estimateSendButton(orderNumber=order[0].orderNumber) 견적 발송
                 table.order__estimate__table
                     colgroup
                         col(style="width: 15%")

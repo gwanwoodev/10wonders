@@ -13,11 +13,11 @@
                 i.fas.fa-chevron-right
 .pagination
     if startPage > 5
-        a(href="#").pagination__arrow.left__arrow ‹
+        a(href="#" , page=`${startPage - 1}`).pagination__arrow.left__arrow ‹
     -for(let i=startPage; i<=endPage; i++)
         if i == currentPage
             a(href="#", page=`${i}`).pagination__number.pagination__current #{i}
         else
             a(href="#", page=`${i}`).pagination__number #{i}
     if endPage < totalPage
-        a(href="#").pagination__arrow.right__arrow ›
+        a(href="#" , page=`${endPage +1}`).pagination__arrow.right__arrow ›

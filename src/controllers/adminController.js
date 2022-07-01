@@ -45,7 +45,7 @@ export const logout = (req, res) => {
 
 export const dashboard = async (req, res) => {
     const { page = 1, keyword = '' } = req.query;
-    const CONTENTS_LIMIT = 5;
+    const CONTENTS_LIMIT = 50;
 
     const options = {
         page: page,
@@ -144,7 +144,7 @@ export const updateDashboard = async (req, res) => {
 
 export const manageOrder = async (req, res) => {
     const { page = 1, keyword, process='4', searchType} = req.query;
-    const CONTENTS_LIMIT = 5;
+    const CONTENTS_LIMIT = 50;
 
     let sortOptions = {
         createdAt: -1

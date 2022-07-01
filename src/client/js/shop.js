@@ -46,6 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 Notiflix.Notify.failure("Enter the quantity.");
                 return;
             }
+            console.log(typeof productQuantity);
+
+            if(isNaN(Number(productQuantity))) {
+                Notiflix.Notify.failure("Please enter a number");
+                return;
+            }
 
             let item = {
                 productName,
@@ -66,13 +72,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 return item._id === _id;
             })
 
-
+            // step1. 중복이 있다면
             if (check.length > 0) {
-                Notiflix.Notify.failure("This product is Already Exists in Your cart.");
-                return;
+
+                // step2. index를 찾아서
+                // step3. 값 교체
+                // step4. 쿠키생성
+
+                const prevArray = JSON.parse(prevCookies);
+
+                const findIndex = prevArray.findIndex(item => item._id === _id);
+                const newQuantity = Number(productQuantity)
+                const quantity = Number(prevArray[findIndex].productQuantity);
+                
+                newArray[findIndex].productQuantity = newQuantity + quantity;
+                
+            
+
+                createCookie('cart_items', JSON.stringify(newArray), 7);
+
+            }else {
+                newArray.push(item);
+                createCookie('cart_items', JSON.stringify(newArray), 7);
             }
-            newArray.push(item);
-            createCookie('cart_items', JSON.stringify(newArray), 7);
+            
+        
+            
 
             nodeBox.classList.replace("animate__fadeIn", "animate__fadeOut");
             nodeBox.style.display = "none"

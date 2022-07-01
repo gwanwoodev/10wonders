@@ -32,7 +32,7 @@ export const home = (req, res) => {
 
 export const shop = async (req, res) => {
     const { page = 1, maker = "SUNGROW", productType = "inverter" } = req.query;
-    const CONTENTS_LIMIT = 5;
+    const CONTENTS_LIMIT = 50;
     let sortOptions = {
         createdAt: -1
     };
@@ -73,7 +73,7 @@ export const shop = async (req, res) => {
 
 export const shopModule = async (req, res) => {
     const { page = 1, maker = "LONGISOLAR", productType = "module" } = req.query;
-    const CONTENTS_LIMIT = 5;
+    const CONTENTS_LIMIT = 50;
     let sortOptions = {
         createdAt: -1
     };
@@ -114,7 +114,7 @@ export const shopModule = async (req, res) => {
 
 export const shopOptimize = async (req, res) => {
     const { page = 1, maker = "TIGO", productType = "optimizer" } = req.query;
-    const CONTENTS_LIMIT = 5;
+    const CONTENTS_LIMIT = 50;
     let sortOptions = {
         createdAt: -1
     };

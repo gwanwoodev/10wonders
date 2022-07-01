@@ -56,3 +56,8 @@ import "../images/spinner.gif";
 
 import "../images/controlLeft_icon.png";
 import "../images/controlRight_icon.png";
+
+import "../images/10wge_ogimage.jpg";
+import "../images/apple-icon-180x180.png";
+import "../images/favicon-16x16.png";
+import "../images/android-icon-192x192.png";

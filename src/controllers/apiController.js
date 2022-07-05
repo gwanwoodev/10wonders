@@ -245,7 +245,7 @@ export const updateOrder = async (req, res) => {
             process: 1
         },{new: true}).populate("orderProducts.product");
 
-        await sendEstimateMail(order);
+
 
         return res.json({success: true, msg: 'success updateOrder'});
     } catch (e) {
@@ -255,14 +255,35 @@ export const updateOrder = async (req, res) => {
     }
 }
 
+export const sendFinalEstimateEmail = async ( req, res) => {
+    const { orderNumber } = req.body;
+
+    let isExists = await Order.exists({ orderNumber });
+
+    if (!isExists) return res.json({ success: false, msg: 'not found orders' });
+
+    try {
+
+        const order = await Order.findOne({ orderNumber }).populate("orderProducts.product");
+        console.log(order);
+        await sendEstimateMail(order);
+
+        return res.json({success: true, msg: 'success sendFinalEstimateEmail'});
+    } catch (e) {
+        console.error("Error - sendFinalEstimateEmail");
+        console.error(e);
+        return res.json({ success: false, msg: 'error - sendFinalEstimateEmail' });
+    }
+}
+
 export const updateOrderProcess = async (req, res) => {
-    const { orderNumber, process = 0 } = req.body;
+    const { orderNumber, process = 0, company, trackingNumber } = req.body;
 
     let isExists = await Order.exists({ orderNumber });
     if (!isExists) return res.json({ success: false, msg: 'not found orders' });
 
     try {
-        await Order.updateOne({ orderNumber }, { process });
+        await Order.updateOne({ orderNumber }, { process, company, trackingNumber });
 
         return res.json({success: true, msg: 'success updateOrderProcess'});
     } catch (e) {

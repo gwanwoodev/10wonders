@@ -36,11 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     if(window.innerWidth <= 425) {
-        let scroll1 = document.querySelector(".scroll1");
         let scroll2 = document.querySelector(".scroll2");
+        let scroll3 = document.querySelector(".scroll3");
 
-        scroll1.remove();
         scroll2.remove();
+        scroll3.remove();
 
     }
 
@@ -62,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const $sections = $(".wheelSection");
     const header = document.querySelector(".header");
+
+    const skipSection = document.querySelector(".scroll__skip__section");
 
     let currentIndex = 0;
     let isAnimating = false; 
@@ -139,6 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }, {passive: false});
 
 
+    skipSection.addEventListener("click", () => {
+        const offsetTop = $(".slice__section").offset().top;
+        direction = 4;
+        currentIndex = 4;
+        $("html, body").animate({scrollTop: offsetTop}, 1000, stopAnimation);
+    });
 
 
     accountPopupBtn.addEventListener("click", () => {
@@ -171,9 +179,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const infoObj = [
             {
                 image: "/static/images/main_background01.jpg",
-                headText1: 'the best solar energy',
+                headText1: 'The best solar energy',
                 headText2: 'equipments from Korea',
-                subText1: "We provide the world's heighest quality solar energy equipments from variouis brands.",
+                subText1: "We provide the world's highest quality solar energy equipments from various brands.",
                 subText2: "Especially from Korea."
             },
             {
@@ -188,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 headText1: 'We provide the easiest way to buy',
                 headText2: 'solar power equipment',
                 subText1: "Order, Pay and Get, Go through only 3 steps.",
-                subText2: "You can have the best solar equipment, including Korean leading brands."
+                subText2: "You can have the best solar equipment, including Korea's leading brands."
             }
         ];
 

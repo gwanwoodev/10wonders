@@ -37,6 +37,14 @@ const orderSchema = new mongoose.Schema({
 
         }
     ],
+    company: {
+        type: String,
+        default: ''
+    },
+    trackingNumber: {
+        type: Number,
+        default: 0
+    },
 
     createdAt: { type: Date, required: true, default: Date.now },
     updatedAt: { type: Date, required: true, default: Date.now },

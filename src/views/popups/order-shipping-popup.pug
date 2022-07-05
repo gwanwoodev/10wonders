@@ -1,0 +1,21 @@
+.cart__order__complete__popup.shpping__popup.animate__animated.animate__fadeOut
+    .order__complete__header
+        img(src="/static/images/close_icon.png").shipping__info__close--icon
+    .order__complete__titles
+        h1.order__complete--title Shipping Info
+    if order[0]
+        .order__complete__contents
+            .order__complete--content
+                p.order__complete--subtitle Order Number
+                .order__complete__text--box
+                    p.order__complete--text #{order[0].orderNumber}
+
+            .order__complete--content
+                p.order__complete--subtitle Company
+                    .order__complete__text--box
+                        p.order__complete--text #{order[0].company}
+            .order__complete--content
+                p.order__complete--subtitle Tracking Number
+                    .order__complete__text--box.link__text
+                        a(style="color: #003CFF;" target="_blank" href="https://www.dhl.com/us-en/home/tracking.html?tracking-id=" + order[0].trackingNumber).order__complete--text #{order[0].trackingNumber}
+                        

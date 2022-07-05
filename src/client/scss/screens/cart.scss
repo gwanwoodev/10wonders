@@ -225,6 +225,10 @@
     max-width: 900px;
     width: 100%;
 
+    &.shpping__popup {
+        width: 600px;
+    }
+
 
     z-index: 2;
     padding: 30px 35px;
@@ -269,12 +273,23 @@
                 position: absolute;
 
                 left: 0;
+
+
             }
 
             .order__complete--text {
                 font-family: "SDGothicR";
                 font-size: 20px;
                 margin-left: 250px;
+            }
+
+            .link__text {
+                color: #003CFF !important;
+                text-decoration: underline;
+
+                &:visited {
+                    color: #003CFF !important;
+                }
             }
         }
     }

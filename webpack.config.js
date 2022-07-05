@@ -19,6 +19,7 @@ module.exports = {
         dashboardUpdate: BASE_JS + "dashboardUpdate.js",
         orderManage: BASE_JS + "orderManage.js",
         orderEstimate: BASE_JS + "orderEstimate.js",
+        orderShipping: BASE_JS + "orderShipping.js",
         global: BASE_JS + "global.js"
     },
     plugins: [

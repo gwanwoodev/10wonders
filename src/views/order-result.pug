@@ -8,6 +8,8 @@ block content
             .order__wrapper
                 include ./popups/order-result-howtopay-popup
                 include ./popups/our-process-popup
+                include ./popups/order-shipping-popup
+                include ./popups/order-result-account-info-popup.pug
                 .order__main__categories
                     a(href="/cart") YOUR CART
                     a(href="/order").selected__category YOUR ORDER
@@ -39,7 +41,7 @@ block content
                                 p.order__process__step--text(style="opacity: 0.2;") Shipping
                             else
                                     p.order__process__step--text Shipping
-                            p.order__process__popup--text Shipping Info
+                            p.order__process__popup--text.shipping Shipping Info
 
                 .global__product__list
                     .global__product__head--wrap

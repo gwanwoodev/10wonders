@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const subtotal = document.querySelector(".subtotal--body");
     const estimateInputs = document.querySelectorAll(".estimate__input");
     const estimateSendButton = document.querySelector(".estimateSendButton");
+    const estimateEmailSendButton = document.querySelector(".estimateEmailSendButton");
     let orderProducts = [];
 
     estimateInputs.forEach((item, i) => {
@@ -54,11 +55,30 @@ document.addEventListener("DOMContentLoaded", () => {
         const resultJson = await apiResult.json();
 
         if(resultJson.success) {
-            Notify.success("견적서가 발송되었습니다.");
-            setTimeout(() => {
-                location.href = "/admin/order";
+            Notify.success("견적서가 수정되었습니다.");
+            return;
+        }else {
+            Notify.failure("오류 발생");
+            return;
+        }
+    });
 
-            }, 1000);
+    estimateEmailSendButton.addEventListener("click", async function() {
+        const orderNumber = this.getAttribute("orderNumber");
+
+        const apiResult = await fetch("/api/order/send", {
+            headers: {
+                "Content-Type": "application/json"
+            },
+            method: "POST",
+            body: JSON.stringify({orderNumber })
+        });
+
+        const resultJson = await apiResult.json();
+
+        if(resultJson.success) {
+            Notify.success("견적서가 발송 되었습니다.");
+            return;
         }else {
             Notify.failure("오류 발생");
             return;

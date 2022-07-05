@@ -82,42 +82,44 @@ document.addEventListener("DOMContentLoaded", () => {
     shippingBtns.forEach(item => {
         item.addEventListener("click", function() {
             const orderNumber = Number(this.getAttribute("orderNumber"));
-            const process = 3;
-            Confirm.show(
-                '10WGE Confirm',
-                '배송처리 하시겠습니까?',
-                'Yes',
-                'No',
-                async () => {
-                    const apiResult = await fetch("/api/order/process?_method=PUT", {
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        method: "POST",
-                        body: JSON.stringify({ orderNumber, process })
-                    });
+            //const process = 3;
 
-                    const resultJson = await apiResult.json();
+            location.href = `/admin/order/shipping?orderNumber=${orderNumber}`;
+            // Confirm.show(
+            //     '10WGE Confirm',
+            //     '배송처리 하시겠습니까?',
+            //     'Yes',
+            //     'No',
+            //     async () => {
+            //         const apiResult = await fetch("/api/order/process?_method=PUT", {
+            //             headers: {
+            //                 "Content-Type": "application/json"
+            //             },
+            //             method: "POST",
+            //             body: JSON.stringify({ orderNumber, process })
+            //         });
 
-                    if (resultJson.success) {
-                        Notify.success("상태가 변경되었습니다.");
-                        setTimeout(() => {
-                            location.reload();
-                        }, 1000);
+            //         const resultJson = await apiResult.json();
+
+            //         if (resultJson.success) {
+            //             Notify.success("상태가 변경되었습니다.");
+            //             setTimeout(() => {
+            //                 location.reload();
+            //             }, 1000);
                         
-                        return;
-                    } else {
-                        Notify.failure("오류발생");
-                        return;
-                    }
-                },
-                () => {
-                    return;
-                },
-                {
-                    fontFamily: "SDGothicR"
-                }
-            )
+            //             return;
+            //         } else {
+            //             Notify.failure("오류발생");
+            //             return;
+            //         }
+            //     },
+            //     () => {
+            //         return;
+            //     },
+            //     {
+            //         fontFamily: "SDGothicR"
+            //     }
+            // )
         });
     })
 });

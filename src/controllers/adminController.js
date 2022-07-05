@@ -250,3 +250,21 @@ export const sendOrderEstimate = async (req, res) => {
 
     return res.render("admins/order-estimate", {pageTitle: "Send Estimate", order, subTotal});
 }
+
+export const updateShippingInfo = async(req, res) => {
+    const {orderNumber} = req.query;
+
+    if (!orderNumber) {
+        return res.redirect("/admin/dashboard");
+    }
+
+    if (!orderNumberValidator(orderNumber)) {
+        return res.redirect("/admin/dashboard");
+    }
+
+    
+    const order = await Order.find({orderNumber: orderNumber});
+    
+    return res.render("admins/order-shipping", {pageTitle: "Modify ShippingInfo", order });
+
+}
